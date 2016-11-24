@@ -1,0 +1,14 @@
+Comparaison des fichiers gracelite_integ_checkatt_template.txt et GRACELITE_INTEG_CHECKATT_FOIREUX.TXT
+***** gracelite_integ_checkatt_template.txt
+0|ad_code|VARCHAR (254)|1||1
+1|ad_ban_id|VARCHAR (24)|0||0
+2|ad_nomvoie|VARCHAR (254)|0||0
+3|ad_fantoir|VARCHAR (10)|0||0
+4|ad_numero|INTEGER|0||0
+***** GRACELITE_INTEG_CHECKATT.TXT
+0|ad_code|VARCHAR (255)|1||1
+1|ad_ban_id_foireux|VARCHAR (24)|0||0
+foireux
+4|ad_numero|INTEGER|0||0
+*****
+
