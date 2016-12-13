@@ -1,4 +1,4 @@
-/* gracethdcheck_20_lists.sql */
+/* gracethdcheck_33_conf_user_to_conf.sql */
 /* Owner : GraceTHD-Community - http://gracethd-community.github.io/ */
 /* Author : stephane dot byache at aleno dot eu */
 /* Rev. date : 09/12/2016 */
@@ -22,47 +22,12 @@
 
 SET search_path TO gracethdcheck, public;
 
-DROP TABLE IF EXISTS l_ct_fill CASCADE;
-DROP TABLE IF EXISTS l_ct_type CASCADE;
-DROP TABLE IF EXISTS l_ct_mode CASCADE;
-DROP TABLE IF EXISTS l_ct_sensibilite CASCADE;
-DROP TABLE IF EXISTS l_ct_origine CASCADE;
-DROP TABLE IF EXISTS l_ct_statut CASCADE;
+/*Mettre à jour t_ct_conf avec les valeurs de l'utilisateur stockées dans t_ct_conf_user*/
 
+UPDATE t_ct_conf 
+SET nom = u.nom, definition = u.definition, valeur = u.valeur
+FROM t_ct_conf_user AS u WHERE t_ct_conf.nom = u.nom;
 
-CREATE TABLE l_ct_type(
-code VARCHAR(1) PRIMARY KEY,
-libelle VARCHAR(254),
-definition VARCHAR(254)
-);
-
-CREATE TABLE l_ct_mode(
-code VARCHAR(1) PRIMARY KEY,
-libelle VARCHAR(254),
-definition VARCHAR(254)
-);
-
-CREATE TABLE l_ct_sensibilite(
-code VARCHAR(1) PRIMARY KEY,
-libelle VARCHAR(254),
-definition VARCHAR(254)
-);
-
-CREATE TABLE l_ct_origine(
-code VARCHAR(1) PRIMARY KEY,
-libelle VARCHAR(254),
-definition VARCHAR(254)
-);
-
-CREATE TABLE l_ct_statut(
-code VARCHAR(1) PRIMARY KEY,
-libelle VARCHAR(254),
-definition VARCHAR(254)
-);
-
-/*Valeurs utilisables pour t_ct_conf_fillatt et t_ct_conf_filltab*/
-CREATE TABLE l_ct_fill(
-code VARCHAR(1) PRIMARY KEY,
-libelle VARCHAR(254),
-definition VARCHAR(254)
-);
+/*Possibilité d'intégrer des variables pour des points de contrôles "non standardisés"*/
+INSERT INTO t_ct_conf 
+SELECT * FROM t_ct_conf_user WHERE nom IS NOT NULL;

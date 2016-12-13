@@ -16,7 +16,10 @@
     REM along with GraceTHD.  If not, see <http://www.gnu.org/licenses/>.
 
 
-ECHO NE FONCTIONNE PAS !!! ARRETER CE SCRIPT. 
-PAUSE
+CALL config.bat
 
-REM TODO: 
+ECHO GraceTHD-Check - Postgis - Insertion t_ct_conf_filltab
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f "%GLCTPGSQLPATH%\gracethdcheck_33_conf_user_to_conf.sql" -d %GLCTPGDB% -U %PGUSER% 
+%GLPAUSE%
+
+PAUSE

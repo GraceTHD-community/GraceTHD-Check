@@ -10,29 +10,18 @@ REM TODO : dispatcher les variables en plusieurs fichiers de config puis juste f
 REM TODO : distinguer une prod et une integ pour Postgis comme pour Spatialite. Et GraceTHD-Check doit pouvoir être configurable à volonté sur la prod et sur l'intégration. Le plus souvent ce sera l'intégration, prod pour la cas de la production d'une nouvelle base de prod. 
 
 
-:GL_CONFIG_DEBUG
-REM ##################################################
-REM ### CONFIG GRACELITE - DEBOGAGE
-
-REM Pour ne pas appliquer de pauses
-REM SET GLPAUSE=
-REM Pour appliquer des pauses et visualiser l'affichage
-SET GLPAUSE=PAUSE
-
-
 :GL_CONFIG_APPS_PATH
 REM ##################################################
 REM ### CONFIG GRACELITE - CHEMINS VERS LES APPLICATIONS INSTALLEES
 
 REM ## CONFIG EXECUTABLES OSGEO (QGIS, OGR, ...)
 REM # GLOSGEOPATH : Chemin du dossier d'installation de QGIS / OSGeo4w (OSGeo4W.bat doit y etre present) sans \ a la fin. 
-SET GLOSGEOPATH=C:\Program Files\QGIS Lyon
-REM SET GLOSGEOPATH=C:\Program Files\QGIS 2.14
+SET GLOSGEOPATH=C:\Program Files\QGIS 2.14
 REM SET GLOSGEOPATH=C:\OSGeo4W
 REM # GLQGIS : Chemin vers qgis.bat 
 REM USER : ATTENTION, avec les versions LTR, le nom est qgis-ltr.bat
-SET GLQGIS=%GLOSGEOPATH%\bin\qgis.bat
-REM GLQGIS=%GLOSGEOPATH%\bin\qgis-ltr.bat
+SET GLQGIS=%GLOSGEOPATH%\bin\qgis-ltr.bat
+REM SET GLQGIS=%GLOSGEOPATH%\bin\qgis.bat
 
 REM # GLOSGEO4W : Chemin du batch OSGeo4w.bat pour initialiser l'environnement osgeo pour pouvoir executer ogr2ogr, ogrinfo, etc. 
 SET GLOSGEO4W=%GLOSGEOPATH%\OSGeo4W.bat
@@ -232,11 +221,21 @@ SET GLPGCHECKPATH=%GLPGPATHSHARE%\check
 SET GLCTPGSQLPATH=.\sql_postgis
 
 REM ## CONFIG VARIABLES POSTGRESQL
-REM # GLCTPGDB : Nom de la base de donnees a controler
-REM USER : Normalement on n'utilise pas la base de production pour controler une reception. Donc pointer une base d'integration. 
-REM SET GLCTPGDB=%PGDB%
-SET GLCTPGDB=%PGDB%integ
 REM # GLCTPGSCHEMA : Nom du schema qui accueille Gracethd-MCD dans la base a controler. 
 SET GLCTPGSCHEMA=%PGSCHEMA%
 REM # GLCTPGSCHEMACHECK : Nom du schema qui accueille Gracethd-Check dans la base a controler. 
 SET GLCTPGSCHEMACHECK=gracethdcheck
+REM # GLCTPGDB : Nom de la base de donnees a controler
+REM USER : Normalement on n'utilise pas la base de production pour controler une reception. Donc pointer une base d'integration. 
+REM SET GLCTPGDB=%PGDB%
+SET GLCTPGDB=%PGDB%integ
+
+
+:GL_CONFIG_DEBUG
+REM ##################################################
+REM ### CONFIG GRACELITE - DEBOGAGE
+
+REM Pour ne pas appliquer de pauses
+REM SET GLPAUSE=
+REM Pour appliquer des pauses et visualiser l'affichage
+SET GLPAUSE=PAUSE

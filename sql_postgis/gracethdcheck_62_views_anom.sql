@@ -1,5 +1,29 @@
 /*GraceTHD-Check - VIEWS ANOM*/
 
+/* gracethdcheck_62_views_anom.sql */
+/* Owner : GraceTHD-Community - http://gracethd-community.github.io/ */
+/* Author : stephane dot byache at aleno dot eu */
+/* Rev. date : 09/12/2016 */
+
+/* ********************************************************************
+    This file is part of GraceTHD.
+
+    GraceTHD is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    GraceTHD is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with GraceTHD.  If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************** */
+
+/*TODO: BUG !!! Seuls les type R sont pris en compte !?*/
+
 SET search_path TO gracethdcheck, gracethd, public;
 
 DROP VIEW IF EXISTS v_ct_sqlcreate_v_ct_anom_1_pre;
@@ -19,7 +43,7 @@ FROM v_ct_unit_' || ct_code || '
 GROUP BY ct_code,ct_type,ct_def,ct_sensib--,ct_liv
 UNION' AS ct_views
 FROM t_ct_conf_fillatt AS R, t_ct_cat AS C
-WHERE R.ATTUNIQUE = C.ct_att
+WHERE R.ATTUNIQUE = C.ct_attunique
 AND R.PRE = 'O'
 ;
 
@@ -39,7 +63,7 @@ FROM v_ct_unit_' || ct_code || '
 GROUP BY ct_code,ct_type,ct_def,ct_sensib--,ct_liv
 UNION' AS ct_views
 FROM t_ct_conf_fillatt AS R, t_ct_cat AS C
-WHERE R.ATTUNIQUE = C.ct_att
+WHERE R.ATTUNIQUE = C.ct_attunique
 AND R.DIA = 'O'
 ;
 
@@ -60,7 +84,7 @@ FROM v_ct_unit_' || ct_code || '
 GROUP BY ct_code,ct_type,ct_def,ct_sensib--,ct_liv
 UNION' AS ct_views
 FROM t_ct_conf_fillatt AS R, t_ct_cat AS C
-WHERE R.ATTUNIQUE = C.ct_att
+WHERE R.ATTUNIQUE = C.ct_attunique
 AND R.AVP = 'O'
 ;
 
@@ -80,7 +104,7 @@ FROM v_ct_unit_' || ct_code || '
 GROUP BY ct_code,ct_type,ct_def,ct_sensib--,ct_liv
 UNION' AS ct_views
 FROM t_ct_conf_fillatt AS R, t_ct_cat AS C
-WHERE R.ATTUNIQUE = C.ct_att
+WHERE R.ATTUNIQUE = C.ct_attunique
 AND R.PRO_ou_ACT = 'O'
 ;
 
@@ -101,7 +125,7 @@ FROM v_ct_unit_' || ct_code || '
 GROUP BY ct_code,ct_type,ct_def,ct_sensib--,ct_liv
 UNION' AS ct_views
 FROM t_ct_conf_fillatt AS R, t_ct_cat AS C
-WHERE R.ATTUNIQUE = C.ct_att
+WHERE R.ATTUNIQUE = C.ct_attunique
 AND R.EXE = 'O'
 ;
 
@@ -121,7 +145,7 @@ FROM v_ct_unit_' || ct_code || '
 GROUP BY ct_code,ct_type,ct_def,ct_sensib--,ct_liv
 UNION' AS ct_views
 FROM t_ct_conf_fillatt AS R, t_ct_cat AS C
-WHERE R.ATTUNIQUE = C.ct_att
+WHERE R.ATTUNIQUE = C.ct_attunique
 AND R.TVX_ou_REC = 'O'
 ;
 
@@ -142,6 +166,6 @@ FROM v_ct_unit_' || ct_code || '
 GROUP BY ct_code,ct_type,ct_def,ct_sensib--,ct_liv
 UNION' AS ct_views
 FROM t_ct_conf_fillatt AS R, t_ct_cat AS C
-WHERE R.ATTUNIQUE = C.ct_att
+WHERE R.ATTUNIQUE = C.ct_attunique
 AND R.MCO = 'O'
 ;

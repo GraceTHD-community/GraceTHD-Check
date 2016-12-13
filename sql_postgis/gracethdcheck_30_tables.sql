@@ -1,3 +1,25 @@
+/* gracethdcheck_30_tables.sql */
+/* Owner : GraceTHD-Community - http://gracethd-community.github.io/ */
+/* Author : stephane dot byache at aleno dot eu */
+/* Rev. date : 09/12/2016 */
+
+/* ********************************************************************
+    This file is part of GraceTHD.
+
+    GraceTHD is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    GraceTHD is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with GraceTHD.  If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************** */
+
 SET search_path TO gracethdcheck, public;
 
 DROP TABLE IF EXISTS t_ct_conf CASCADE;	
@@ -92,7 +114,8 @@ CREATE TABLE t_ct_cat(
 	ct_open VARCHAR(1),
 	ct_source VARCHAR(100), --v0.01-alpha3 : AJOUT --SOURCE DU CONCEPT DE CE POINT DE CONTROLE (idealement une adresse mail)
 	ct_date DATE, --v0.01-alpha3 : AJOUT
-	commentaire VARCHAR(254)--,
+	--commentaire VARCHAR(254)--,
+	ct_comment TEXT
 	--pg_sql TEXT, --TODO: v0.01-alpha3 SUPPRIME
 	--spatialite_sql TEXT--, --TODO: v0.01-alpha3 SUPPRIME
 );
