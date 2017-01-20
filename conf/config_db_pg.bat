@@ -48,8 +48,8 @@ SET PGSCHEMA=gracethd
 REM # PGSRID : code du systeme de coordonnees utilise dans cette base de donnees. 
 SET PGSRID=2154
 REM # PGCODE : encodage des caracteres 
-REM SET PGCODE=cp1252
-SET PGCODE=UTF8
+SET PGCODE=cp1252
+REM SET PGCODE=UTF8
 REM # PGCSVCONF : parametres pour PSQL pour la structure des csv. 
 SET PGCSVCONF= WITH DELIMITER ';' CSV HEADER ENCODING 'UTF8'
 REM # pgclientencoding : VARIABLE POSTGRESQL POUR FIXER L'ENCODAGE DES SORTIES (PGSQL2SHP). NON TESTE. 
