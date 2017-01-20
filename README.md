@@ -25,7 +25,9 @@ Fonctionnalités de contrôle disponibles :
     6. contrôle métier : absence de linéaires ou d'objets hors zones
     7. contrôle de la cohérence de la saisie sur les tables et champs obligatoires de l'AVP (première partie)
 
-Seuls des contrôles très allégés sont disponibles pour spatialite (points 1 et 3 en partie, point 2), les autres contrôles sont disponibles pour PostGIS uniquement. Les scripts spatialite n'ont pas été remis à jour.
+**Concernant Spatialite**, les développement de GraceTHD-Check sur Spatialite est pour l'instant **suspendu**. Les scripts maintenus à disposition (gracethdcheck_spatialite*, ...), et suffixés -TODO, sont hérités de la **v0.01-alpha2**. L'architecture a assez nettement changé. Ce n'est pas utilisable en l'état, ça n'est fourni qu'à titre informatif. 
+
+**Concernant les formats shp/csv**, là aussi les scripts (gracethdcheck_shpcsv_*) mis à diposition ne sont pas exploitables, ce sont des fichiers exemple, développement en cours. 
 
 ### Contenu
 * changelog_gracethdcheck.txt : historique des modifications
