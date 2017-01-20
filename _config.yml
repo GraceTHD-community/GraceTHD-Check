@@ -1,0 +1,8 @@
+title: Gracethd-check
+description: Auto-contrôle d'une base de données GraceTHD
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-architect
+
+gems:
+  - jekyll-mentions
