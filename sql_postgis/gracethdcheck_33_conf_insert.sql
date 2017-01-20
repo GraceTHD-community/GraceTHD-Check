@@ -34,6 +34,9 @@ INSERT INTO t_ct_conf VALUES ('ct_1_cbcapamin', 'Capacite minimale des cables', 
 INSERT INTO t_ct_conf VALUES ('ct_1_cbcapamax', 'Capacite maximale des cables', '780');
 INSERT INTO t_ct_conf VALUES ('ct_1_cldistmaxnd', 'Distance maximale entre les extremites d un cable et une bp ou lt', '0.1');
 INSERT INTO t_ct_conf VALUES ('ct_1_topotol', 'Controles topologiques : distance maximale admissible entre deux objets du graphe planaire ', '0.1');
+INSERT INTO t_ct_conf VALUES ('ct_1_distnrozanro', 'Distance maximale entre le NRO et sa zone arrière (0 si le NRO doit être a l''interieur)', '0');
+INSERT INTO t_ct_conf VALUES ('ct_1_distsrozasro', 'Distance maximale entre le SRO et sa zone arriere (0 si le SRO doit être a l''interieur)', '0');
+INSERT INTO t_ct_conf VALUES ('ct_1_distpbozapbo', 'Distance maximale entre le PBO et sa zone arriere (0 si le PBO doit être a l''interieur)', '0');
 COMMIT;
 
 

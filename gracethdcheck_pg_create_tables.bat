@@ -28,11 +28,14 @@ REM CREATION ET REMPLISSAGE DES TABLES
 CALL :CTLISTS
 CALL :CTTABLES
 CALL :CTINSLIST
+CALL :CTINDEX
 CALL :CTINSFILL
 CALL :CTINSCONF
 CALL :CTINSCAT
 CALL :CTINSCODE
+CALL :CTSQLFUNCTIONS
 CALL :CTSQLVIEWS
+
 
 GOTO:EOF
 
@@ -122,6 +125,25 @@ ECHO GraceTHD-Check - Postgis - Insertion t_ct_code_spl
 %GLPAUSE%
 
 GOTO:EOF
+
+:CTINDEX
+ECHO GraceTHD-Check - Postgis - Insertion dans les listes
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f "%GLCTPGSQLPATH%\gracethdcheck_50_index.sql" -d %GLCTPGDB% -U %PGUSER%
+ECHO GraceTHD-Check - Postgis - Fin d'insertion dans les listes
+
+%GLPAUSE%
+
+GOTO:EOF
+
+:CTSQLFUNCTIONS
+REM Déploiement de fonctions PL/pgSQL, ... 
+
+ECHO GraceTHD-Check - Postgis - Creation des fonctions SQL
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f "%GLCTPGSQLPATH%\gracethdcheck_41_functions.sql" -d %GLCTPGDB% -U %PGUSER%
+ECHO GraceTHD-Check - Postgis - Fin de creation des fonctions SQL. 
+
+%GLPAUSE%
+
 
 :CTSQLVIEWS
 REM Vues qui vont generer le code SQL pour generer les vues unitaires et anomalies. 

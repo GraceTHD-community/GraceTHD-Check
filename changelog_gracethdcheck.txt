@@ -1,0 +1,96 @@
+GraceTHD-Check
+
+### Changelog
+
+v0.01-alpha5
+Développement pour Spatialite suspendu depuis v0.01-alpha3. 
+
+#DOC :
+- add: GraceTHD-Check_-_Index_des_scripts.pdf
+- chg: GraceTHD-Check_-_Manuel_administrateur_Postgis.pdf
+- chg: GraceTHD-Check_-_Manuel_développeur.pdf
+- chg: GraceTHD-Check_-_Manuel_utilisateur_Postgis.pdf
+- chg: gracethdcheck-mcd-v0.01-alpha5.pdf
+- chg: gracethdcheck-mcd_schema_v03.png
+
+#ARCHITECTURE : 
+- add: gracethdcheck_50_index.sql
+- chg: gracethdcheck_pg_create_tables.bat - ajout gracethdcheck_50_index.sql. 
+- add: gracethdcheck_30_tables.sql - ajout t_ct_cat_user. 
+- add: gracethdcheck_30_tables.sql - ajout t_ct_code_pgs_user. 
+- add: gracethdcheck_30_tables.sql - ajout t_ct_code_spl_user. 
+- chg: Dossier qgis2.12 renommé qgis. 
+- chg: Renommage des projets qgs en *_qgis2.14_*.qgs. Les projets restent enregistrés en 2.12.3 incitation à la migration 2.14. 
+- fix: .\temp\temp.md : ajout pour documenter l'usage du dossier, et éviter que ce dossier vide soit ignoré. 
+- fix: .\log\log.md : ajout pour documenter l'usage du dossier, et éviter que ce dossier vide soit ignoré. 
+- fix: .\doc\doc.md : ajout pour documenter l'usage du dossier. 
+- fix: .\check\check.md : ajout pour documenter l'usage du dossier. 
+- fix: .\conf\conf.md : ajout pour documenter l'usage du dossier. 
+- fix: .\qgis\qgis.md : ajout pour documenter l'usage du dossier. 
+- chg: renommage gracethdcheck_pg_create_db-exist-TODO.bat en gracethdcheck_pg_create_on_db-TODO.bat
+- chg: gracethdcheck_20_insert.sql : suppression des caractères francophones dans les libellés des listes de valeurs. 
+- add: gracethd_pg_export_shpcsv-out.bat
+- fix: gracethdcheck_pg_import_shpcsv-in_psql.bat : ajout de "" pour PGSHP et PGCSV. 
+- add: gracethdcheck_pg_import_shpcsv-in_psql.bat : ajout :DEBUG
+- chg: config.bat n'intègre plus de définition de variables (sauf GLCONF et GLPAUSE). Il appelle les fichiers de configuration suivants : config_tree.bat, config_apps.bat, config_db_shpcsv.bat, config_db_spl.bat, config_db_pg.bat. Ensuite il appelle config_test.bat. 
+- add: config_apps.bat : ajout GL_PGSQL2SHP
+- chg: config_test.bat : ajout test GL_PGSQL2SHP
+- add: gracethdcheck_pg_conf_liv.bat : Saisie interactive d'un code identifiant une livraison (valeur de ct_1_liv dans t_ct_conf). 
+- add: gracethdcheck_41_functions.sql
+- chg: gracethdcheck_30_tables.sql : ajout t_ct_fct_pgs. 
+- chg: gracethdcheck_pg_create_tables.bat : ajout :CTSQLFUNCTIONS
+- chg: gracethdcheck_pg_maj_conf.bat renommé gracethdcheck_pg_maj_from_user.bat
+- chg: gracethdcheck_pg_maj_from_user.bat intègre la mise à jour de t_ct_cat à partir de t_ct_cat_user, et la mise à jour de t_ct_code_pgs à partir de t_ct_code_pgs_user. 
+- chg: les batchs pour Spatialite sont suffixés -TODO pour signifier que le développpement est suspendu. 
+- chg: les batchs pour shpcsv-in sont suffixés -TODO pour signifier que le développpement est suspendu. 
+
+#POINTS DE CONTROLE : 
+- add: Ajout t_ct_cat : "zn_geom_1_g80016";"La ZNRO se superpose à une autre ZNRO, au delà de la tolérance admise."
+- add: Ajout t_ct_cat : "zn_geom_1_m80019";"Le NRO est très éloigné de la zone dont il dépend."
+- add: Ajout t_ct_cat : "zp_geom_1_g80018";"La ZPBO se superpose à une autre ZPBO, au delà de la tolérance admise."
+- add: Ajout t_ct_cat : "zp_geom_1_m80015";"Le contour de la ZPBO n'est pas à l'intérieur du contour de la ZSRO (erreur de SRO ou débordement supérieur à la tolérance.)"
+- add: Ajout t_ct_cat : "zp_geom_1_m80021";"Le PBO est très éloigné de la zone dont il dépend."
+- add: Ajout t_ct_cat : "zs_geom_1_g80017";"La ZSRO se supperpose à une autre ZSRO, au delà de la tolérance admise."
+- add: Ajout t_ct_cat : "zs_geom_1_m80014";"Le contour de la ZSRO n’est pas à l’intérieur du contour de sa ZNRO (erreur de NRO ou débordement supérieur à la tolérance.)"
+- add: Ajout t_ct_cat : "zs_geom_1_m80020";"Le SRO est très éloigné de la zone dont il dépend."
+- add: Ajout variable t_ct_conf : "ct_1_distnrozanro";"Distance maximale entre le NRO et sa zone arrière (0 si le NRO doit être à l'intérieur)"
+- add: Ajout variable t_ct_conf : "ct_1_distpbozapbo";"Distance maximale entre le PBO et sa zone arrière (0 si le PBO doit être à l'intérieur)"
+- add: Ajout variable t_ct_conf : "ct_1_distsrozasro";"Distance maximale entre le SRO et sa zone arrière (0 si le SRO doit être à l'intérieur)"
+
+
+v0.01-alpha4
+Racine : 
+- add: Ajout de ce changelog
+- add: Ajout gracethdcheck_pg_maj_conf.bat
+- add: Ajout gracethdcheck_pg_maj_remplissage.bat
+- chg: gracethdcheck_pg_maj_cat.bat renommé gracethdcheck_pg_maj_cat_csv.bat
+- chg: gracethdcheck_pg_create_tables.bat : Restructuration 
+- chg: gracethdcheck_pg_create_db.bat : EXIT à la fin. 
+- chg: gracethdcheck_pg_create_db.bat : CALL config_test.bat dans :DEBUG
+- add: Déclaration GPLv3 dans les .bat. 
+- chg: config.bat : changement ordre, GLCTPGDB en fin de sous-routine et :GL_CONFIG_DEBUG en fin de batch. 
+- chg: config.bat : passage par défaut sur QGIS 2.14 (Essen). 
+- chg: config_test.bat : GLPAUSE à la fin. 
+Sources : 
+- add: Ajout .\sources\gracethd-check-mcd-vxxx.ods
+Doc : 
+- add: Ajout GraceTHD-Check_-_Manuel_administrateur_Postgis.pdf
+- chg: Evolution GraceTHD-Check_-_Manuel_développeur.pdf
+- del: Suppression GraceTHD-Check_-_Manuel_utilisateur.pdf
+- add: Ajout GraceTHD-Check_-_Manuel_utilisateur_Postgis.pdf
+- add: Ajout gracethdcheck-mcd-v0.01-alpha4.pdf
+sql_postgis : 
+- chg: Simplification gracethdcheck_33_conf_insert.sql
+- chg: gracethdcheck_33_conf_insert.sql : ajout ct_1_topotol
+- add: Création gracethdcheck_33_conf_user_insert.sql
+- add: Ajout gracethdcheck_33_conf_user_to_conf.sql
+- add: Déclaration GPLv3 dans les .sql. 
+- chg: gracethdcheck_34_cat_insert.sql : ajout valeurs ct_source et ct_date. 
+- fix: gracethdcheck_34_cat_insert.sql : corrections. 
+- chg: gracethdcheck_34_cat_insert.sql : amélioration des ct_def des contrôles de type R. 
+- fix: gracethdcheck_35_code_pgs_insert.sql : correction appels erronés sur t_ct_conf. 
+- chg: gracethdcheck_35_code_pgs_insert.sql : amélioration définition des contrôles de type R dans ct_pgs_script. 
+- chg: gracethdcheck_30_tables.sql : t_ct_cat, renommage commentaire en ct_comment
+- add: gracethdcheck_34_cat_insert.sql : ajout des points de contrôle "cl_geom_1_g80012", "cl_geom_1_m80010", "cm_geom_1_g80013", "cm_geom_1_m80011"
+- add: gracethdcheck_35_code_pgs_insert.sql : ajout des points de contrôle "cl_geom_1_g80012", "cl_geom_1_m80010", "cm_geom_1_g80013", "cm_geom_1_m80011"
+- fix: gracethdcheck_62_views_anom.sql : correction bug C.ct_att remplacé par C.ct_attunique. 

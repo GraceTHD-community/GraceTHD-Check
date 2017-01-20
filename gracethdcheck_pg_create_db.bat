@@ -20,8 +20,8 @@
 REM Lecture du fichier de configuration. 
 CALL :CONF
 
-REM Decommenter quand ça coince. 
-REM CALL :DEBUG
+REM Decommenter quand ca coince. 
+REM CALL:DEBUG
 
 REM CREATION DE LA BASE
 CALL:CTBASE

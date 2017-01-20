@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.4
 -- Dumped by pg_dump version 9.5.4
 
--- Started on 2016-12-12 23:54:16
+-- Started on 2017-01-20 13:00:11
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -18,8 +18,8 @@ SET row_security = off;
 SET search_path = gracethdcheck, pg_catalog;
 
 --
--- TOC entry 6649 (class 0 OID 285522)
--- Dependencies: 314
+-- TOC entry 6655 (class 0 OID 334728)
+-- Dependencies: 317
 -- Data for Name: t_ct_code_pgs; Type: TABLE DATA; Schema: gracethdcheck; Owner: postgres
 --
 
@@ -8391,6 +8391,20 @@ where ad.ad_code = nb.sf_ad_code
 	and ad.ad_nblhab + ad.ad_nblpro <> nb.nbsuf 
 	and ad.ad_nblhab + ad.ad_nblpro <> 0
 ;');
+INSERT INTO t_ct_code_pgs VALUES ('rt_fo_ordr_1_r00605', 'rt_fo_ordr_1_r00605', '3', 'v0.01.01-alpha1', 'stephane.byache@aleno.eu', '2016-10-13 16:09:08.380813', NULL, '/*rt_fo_ordr_1_r00605*/
+	SELECT 
+		''rt_fo_ordr_1_r00605''::text AS ct_code,
+		''r''::text AS ct_type,  
+		''Valeur NULL pour un attribut (t_ropt.rt_fo_ordr) dont le remplissage est obligatoire. ''::text AS ct_def,  
+		''1''::text AS ct_sensib,  
+		NULL::text  AS ct_detail, 
+		--datetime(''now'', ''localtime'') AS ct_date, --sqlite
+		NOW() AS ct_date,  --postgresql
+		(SELECT valeur FROM t_ct_conf WHERE nom=''ct_1_liv'') AS ct_liv,  
+		*
+	FROM t_ropt
+	WHERE rt_fo_ordr IS NULL
+	;');
 INSERT INTO t_ct_code_pgs VALUES ('ad_nbprhab_1_s80003', 'ad_nbprhab_1_s80003', '3', 'v0.01.01-alpha1', 'cristel.legrand@cadageo.com', '2016-10-13 16:09:08.380813', NULL, '/*ad_nbprhab_1_s80003*/ 
 select   
    ''ad_nbprhab_1_s80003'' ::text AS ct_code,
@@ -8561,20 +8575,6 @@ INSERT INTO t_ct_code_pgs VALUES ('rt_fo_code_1_r00604', 'rt_fo_code_1_r00604', 
 		*
 	FROM t_ropt
 	WHERE rt_fo_code IS NULL
-	;');
-INSERT INTO t_ct_code_pgs VALUES ('rt_fo_ordr_1_r00605', 'rt_fo_ordr_1_r00605', '3', 'v0.01.01-alpha1', 'stephane.byache@aleno.eu', '2016-10-13 16:09:08.380813', NULL, '/*rt_fo_ordr_1_r00605*/
-	SELECT 
-		''rt_fo_ordr_1_r00605''::text AS ct_code,
-		''r''::text AS ct_type,  
-		''Valeur NULL pour un attribut (t_ropt.rt_fo_ordr) dont le remplissage est obligatoire. ''::text AS ct_def,  
-		''1''::text AS ct_sensib,  
-		NULL::text  AS ct_detail, 
-		--datetime(''now'', ''localtime'') AS ct_date, --sqlite
-		NOW() AS ct_date,  --postgresql
-		(SELECT valeur FROM t_ct_conf WHERE nom=''ct_1_liv'') AS ct_liv,  
-		*
-	FROM t_ropt
-	WHERE rt_fo_ordr IS NULL
 	;');
 INSERT INTO t_ct_code_pgs VALUES ('rt_comment_1_r00606', 'rt_comment_1_r00606', '3', 'v0.01.01-alpha1', 'stephane.byache@aleno.eu', '2016-10-13 16:09:08.380813', NULL, '/*rt_comment_1_r00606*/
 	SELECT 
@@ -9863,9 +9863,284 @@ from   vs_elem_cl_cb as cbl LEFT JOIN CablDepartOK ON cbl.cl_code = CablDepartOK
 where  CablDepartOK.cl_code is null
 		or CablFinOK.cl_code is null
 ;');
+INSERT INTO t_ct_code_pgs VALUES ('zn_geom_1_m80019', 'zn_geom_1_m80019', '3', 'v0.01.01-alpha5', 'cristel.legrand@cadageo.com', '2017-01-13 00:00:00', NULL, '/*zn_geom_1_m80019*/
+/* Le NRO est très éloigné de la zone dont il dépend */
+WITH
+conf as
+	--sous requete pour le parametre de tolerance
+	(select t_ct_conf.valeur as dist 
+	from t_ct_conf 
+	where nom = ''ct_1_distnrozanro''),
+	
+ct as
+	--sous requete pour les parametrages du point de contrôle
+	(select t_ct_cat.ct_code, t_ct_cat.ct_type, t_ct_cat.ct_def, t_ct_cat.ct_sensib,
+			t_ct_conf.valeur as ct_liv
+	from t_ct_cat, t_ct_conf
+	where t_ct_cat.ct_code = ''zn_geom_1_m80019''
+			AND t_ct_conf.nom = ''ct_1_liv'')
+
+-- Requete principale
+SELECT   
+    ct.ct_code as ct_code,
+    ct.ct_type as ct_type,   
+    ct.ct_def as ct_def,   
+    ct.ct_sensib as ct_sensib,   
+    ''NRO : '' || nro.nd_code ::text AS ct_detail,  
+	NOW() AS ct_date,  -- postgis
+    ct.ct_liv as ct_liv,   
+    zn.* 
+from   t_znro as zn LEFT JOIN t_noeud as nro ON zn.zn_nd_code = nro.nd_code,
+	ct, conf
+where  not ST_DWithin (zn.geom, nro.geom, conf.dist::float)
+;');
+INSERT INTO t_ct_code_pgs VALUES ('zs_geom_1_m80020', 'zs_geom_1_m80020', '3', 'v0.01.01-alpha5', 'cristel.legrand@cadageo.com', '2017-01-13 00:00:00', NULL, '/*zs_geom_1_m80020*/
+/* Le SRO est très éloigné de la zone dont il dépend */
+WITH
+conf as
+	--sous requete pour le parametre de tolerance
+	(select t_ct_conf.valeur as dist 
+	from t_ct_conf 
+	where nom = ''ct_1_distsrozasro''),
+	
+ct as
+	--sous requete pour les parametrages du point de contrôle
+	(select t_ct_cat.ct_code, t_ct_cat.ct_type, t_ct_cat.ct_def, t_ct_cat.ct_sensib,
+			t_ct_conf.valeur as ct_liv
+	from t_ct_cat, t_ct_conf
+	where t_ct_cat.ct_code = ''zs_geom_1_m80020''
+			AND t_ct_conf.nom = ''ct_1_liv'')
+
+-- Requete principale
+SELECT   
+    ct.ct_code as ct_code,
+    ct.ct_type as ct_type,   
+    ct.ct_def as ct_def,   
+    ct.ct_sensib as ct_sensib,   
+    ''SRO : '' || sro.nd_code ::text AS ct_detail,  
+	NOW() AS ct_date,  -- postgis
+    ct.ct_liv as ct_liv,   
+    zs.* 
+from   t_zsro as zs LEFT JOIN t_noeud as sro ON zs.zs_nd_code = sro.nd_code,
+	ct, conf
+where  not ST_DWithin (zs.geom, sro.geom, conf.dist::float)
+;');
+INSERT INTO t_ct_code_pgs VALUES ('zp_geom_1_m80021', 'zp_geom_1_m80021', '3', 'v0.01.01-alpha5', 'cristel.legrand@cadageo.com', '2017-01-13 00:00:00', NULL, '/*zp_geom_1_m80021*/
+/* Le PBO est très éloigné de la zone dont il dépend */
+WITH
+conf as
+	--sous requete pour le parametre de tolerance
+	(select t_ct_conf.valeur as dist 
+	from t_ct_conf 
+	where nom = ''ct_1_distpbozapbo''),
+	
+ct as
+	--sous requete pour les parametrages du point de contrôle
+	(select t_ct_cat.ct_code, t_ct_cat.ct_type, t_ct_cat.ct_def, t_ct_cat.ct_sensib,
+			t_ct_conf.valeur as ct_liv
+	from t_ct_cat, t_ct_conf
+	where t_ct_cat.ct_code = ''zp_geom_1_m80021''
+			AND t_ct_conf.nom = ''ct_1_liv'')
+
+-- Requete principale
+SELECT   
+    ct.ct_code as ct_code,
+    ct.ct_type as ct_type,   
+    ct.ct_def as ct_def,   
+    ct.ct_sensib as ct_sensib,   
+    ''PBO : '' || pbo.nd_code ::text AS ct_detail,  
+	NOW() AS ct_date,  -- postgis
+    ct.ct_liv as ct_liv,   
+    zp.* 
+from   t_zpbo as zp LEFT JOIN t_noeud as pbo ON zp.zp_nd_code = pbo.nd_code,
+	ct, conf
+where  not ST_DWithin (zp.geom, pbo.geom, conf.dist::float)
+;');
+INSERT INTO t_ct_code_pgs VALUES ('zp_geom_1_m80015', 'zp_geom_1_m80015', '3', 'v0.01.01-alpha5', 'cristel.legrand@cadageo.com', '2017-01-13 00:00:00', NULL, '/*zp_geom_1_m80015*/
+/* Contrôle métier : Le contour de la ZPBO n’est pas totalement à l’intérieur du contour de sa ZSRO */
+WITH
+conf as
+	--sous requete pour le parametre de tolerance
+	(select t_ct_conf.valeur as tol 
+	from t_ct_conf 
+	where nom = ''ct_1_topotol''),
+	
+ct as
+	--sous requete pour les parametrages du point de contrôle
+	(select t_ct_cat.ct_code, t_ct_cat.ct_type, t_ct_cat.ct_def, t_ct_cat.ct_sensib,
+			t_ct_conf.valeur as ct_liv
+	from t_ct_cat, t_ct_conf
+	where t_ct_cat.ct_code = ''zp_geom_1_m80015''
+			AND t_ct_conf.nom = ''ct_1_liv''),
+	
+zsb as
+	-- sous requête pour mettre en cache les zsro avec tolérance topologique
+	(select zs.zs_code as zsb_code, ST_Buffer(zs.geom, conf.tol::float) as geom
+		from t_zsro as zs, conf)
+	
+-- Requete principale
+SELECT   
+	ct.ct_code as ct_code,
+    ct.ct_type as ct_type,   
+    ct.ct_def as ct_def,   
+    ct.ct_sensib as ct_sensib,   
+   ''ZSRO : '' || zsb.zsb_code ::text AS ct_detail,  
+	NOW() AS ct_date,  -- postgis
+    ct.ct_liv as ct_liv,   
+    zp.* 
+from   t_zpbo as zp LEFT JOIN zsb ON zp.zp_zs_code = zsb.zsb_code,
+		conf, ct
+where  not ST_Within(zp.geom, zsb.geom)
+;');
+INSERT INTO t_ct_code_pgs VALUES ('zs_geom_1_m80014', 'zs_geom_1_m80014', '3', 'v0.01.01-alpha5', 'cristel.legrand@cadageo.com', '2017-01-13 00:00:00', NULL, '/*zs_geom_1_m80014*/
+/* Contrôle métier : Le contour de la ZSRO n’est pas totalement à l’intérieur du contour de sa ZNRO */
+WITH
+conf as
+	--sous requete pour le parametre de tolerance
+	(select t_ct_conf.valeur as tol 
+	from t_ct_conf 
+	where nom = ''ct_1_topotol''),
+	
+ct as
+	--sous requete pour les parametrages du point de contrôle
+	(select t_ct_cat.ct_code, t_ct_cat.ct_type, t_ct_cat.ct_def, t_ct_cat.ct_sensib,
+			t_ct_conf.valeur as ct_liv
+	from t_ct_cat, t_ct_conf
+	where t_ct_cat.ct_code = ''zs_geom_1_m80014''
+			AND t_ct_conf.nom = ''ct_1_liv''),
+	
+znb as
+	-- sous requête pour mettre en cache les znro avec tolérance topologique
+	(select zn.zn_code as znb_code, ST_Buffer(zn.geom, conf.tol::float) as geom
+		from t_znro as zn, conf)
+	
+-- Requete principale
+SELECT   
+	ct.ct_code as ct_code,
+    ct.ct_type as ct_type,   
+    ct.ct_def as ct_def,   
+    ct.ct_sensib as ct_sensib,   
+   ''ZNRO : '' || znb.znb_code ::text AS ct_detail,  
+	NOW() AS ct_date,  -- postgis
+    ct.ct_liv as ct_liv,   
+    zs.* 
+from   t_zsro as zs LEFT JOIN znb ON zs.zs_zn_code = znb.znb_code,
+		conf, ct
+where  not ST_Within(zs.geom, znb.geom)
+;
+');
+INSERT INTO t_ct_code_pgs VALUES ('zn_geom_1_g80016', 'zn_geom_1_g80016', '3', 'v0.01.01-alpha5', 'cristel.legrand@cadageo.com', '2017-01-13 00:00:00', NULL, '/*zn_geom_1_g80016*/
+/* Contrôle topologique : La ZNRO se superpose à une autre ZNRO */
+WITH
+conf as
+	--sous requete pour le parametre de tolerance
+	(select t_ct_conf.valeur as tol 
+	from t_ct_conf 
+	where nom = ''ct_1_topotol''),
+	
+ct as
+	--sous requete pour les parametrages du point de contrôle
+	(select t_ct_cat.ct_code, t_ct_cat.ct_type, t_ct_cat.ct_def, t_ct_cat.ct_sensib,
+			t_ct_conf.valeur as ct_liv
+	from t_ct_cat, t_ct_conf
+	where t_ct_cat.ct_code = ''zn_geom_1_g80016''
+			AND t_ct_conf.nom = ''ct_1_liv''),
+			
+znb as
+	-- sous requête pour mettre en cache les znro diminuées de la tolérance topologique
+	(select zn.zn_code as znb_code, ST_Buffer(zn.geom, -conf.tol::float) as geom
+		from t_znro as zn, conf)
+
+-- Requete principale
+SELECT   
+    ct.ct_code as ct_code,
+    ct.ct_type as ct_type,   
+    ct.ct_def as ct_def,   
+    ct.ct_sensib as ct_sensib,   
+    ''ZNRO : '' || znb2.znb_code ::text AS ct_detail,  
+	NOW() AS ct_date,  -- postgis
+    ct.ct_liv as ct_liv,   
+    zn1.* 
+from   t_znro as zn1 LEFT JOIN znb as znb2 ON zn1.zn_code <> znb2.znb_code,
+	ct, conf
+where  ST_Intersects (zn1.geom, znb2.geom)
+;
+');
+INSERT INTO t_ct_code_pgs VALUES ('zs_geom_1_g80017', 'zs_geom_1_g80017', '3', 'v0.01.01-alpha5', 'cristel.legrand@cadageo.com', '2017-01-13 00:00:00', NULL, '/*zs_geom_1_g80017*/
+/* Contrôle topologique : La ZSRO se superpose à une autre ZSRO */
+WITH
+conf as
+	--sous requete pour le parametre de tolerance
+	(select t_ct_conf.valeur as tol 
+	from t_ct_conf 
+	where nom = ''ct_1_topotol''),
+	
+ct as
+	--sous requete pour les parametrages du point de contrôle
+	(select t_ct_cat.ct_code, t_ct_cat.ct_type, t_ct_cat.ct_def, t_ct_cat.ct_sensib,
+			t_ct_conf.valeur as ct_liv
+	from t_ct_cat, t_ct_conf
+	where t_ct_cat.ct_code = ''zs_geom_1_g80017''
+			AND t_ct_conf.nom = ''ct_1_liv''),
+
+zsb as
+	-- sous requête pour mettre en cache les zsro diminuées de la tolérance topologique
+	(select zs.zs_code as zsb_code, ST_Buffer(zs.geom, -conf.tol::float) as geom
+		from t_zsro as zs, conf)
+
+-- Requete principale
+SELECT   
+    ct.ct_code as ct_code,
+    ct.ct_type as ct_type,   
+    ct.ct_def as ct_def,   
+    ct.ct_sensib as ct_sensib,   
+    ''ZSRO : '' || zsb2.zsb_code ::text AS ct_detail,  
+	NOW() AS ct_date,  -- postgis
+    ct.ct_liv as ct_liv,   
+    zs1.* 
+from   t_zsro as zs1 LEFT JOIN zsb as zsb2 ON zs1.zs_code <> zsb2.zsb_code,
+	ct, conf
+where  ST_Intersects (zs1.geom, zsb2.geom)
+;');
+INSERT INTO t_ct_code_pgs VALUES ('zp_geom_1_g80018', 'zp_geom_1_g80018', '3', 'v0.01.01-alpha5', 'cristel.legrand@cadageo.com', '2017-01-13 00:00:00', NULL, '/*zp_geom_1_g80018*/
+/* Contrôle topologique : La ZPBO se superpose à une autre ZPBO */
+WITH
+conf as
+	--sous requete pour le parametre de tolerance
+	(select t_ct_conf.valeur as tol 
+	from t_ct_conf 
+	where nom = ''ct_1_topotol''),
+	
+ct as
+	--sous requete pour les parametrages du point de contrôle
+	(select t_ct_cat.ct_code, t_ct_cat.ct_type, t_ct_cat.ct_def, t_ct_cat.ct_sensib,
+			t_ct_conf.valeur as ct_liv
+	from t_ct_cat, t_ct_conf
+	where t_ct_cat.ct_code = ''zp_geom_1_g80018''
+			AND t_ct_conf.nom = ''ct_1_liv''),
+
+zpb as
+	-- sous requête pour mettre en cache les zpbo diminuées de la tolérance topologique
+	(select zp.zp_code as zpb_code, ST_Buffer(zp.geom, -conf.tol::float) as geom
+		from t_zpbo as zp, conf)
+
+-- Requete principale
+SELECT   
+    ct.ct_code as ct_code,
+    ct.ct_type as ct_type,   
+    ct.ct_def as ct_def,   
+    ct.ct_sensib as ct_sensib,   
+    ''ZPBO : '' || zpb2.zpb_code ::text AS ct_detail,  
+	NOW() AS ct_date,  -- postgis
+    ct.ct_liv as ct_liv,   
+    zp1.* 
+from   t_zpbo as zp1 LEFT JOIN zpb as zpb2 ON zp1.zp_code <> zpb2.zpb_code,
+	ct, conf
+where  ST_Intersects (zp1.geom, zpb2.geom)
+;');
 
 
--- Completed on 2016-12-12 23:54:16
+-- Completed on 2017-01-20 13:00:12
 
 --
 -- PostgreSQL database dump complete

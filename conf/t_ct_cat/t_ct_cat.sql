@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.4
 -- Dumped by pg_dump version 9.5.4
 
--- Started on 2016-12-11 00:26:26
+-- Started on 2017-01-20 13:00:11
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -18,8 +18,8 @@ SET row_security = off;
 SET search_path = gracethdcheck, pg_catalog;
 
 --
--- TOC entry 6651 (class 0 OID 277949)
--- Dependencies: 313
+-- TOC entry 6662 (class 0 OID 334685)
+-- Dependencies: 316
 -- Data for Name: t_ct_cat; Type: TABLE DATA; Schema: gracethdcheck; Owner: postgres
 --
 
@@ -706,9 +706,17 @@ INSERT INTO t_ct_cat VALUES ('cm_geom_1_m80011', 'Les extrêmités du cheminemen
 INSERT INTO t_ct_cat VALUES ('cl_geom_1_g80012', 'Les extrêmités du cable ne sont pas reliées géographiquement à un noeud. ', 0, 'G', 'A', 't_cableline', 'geom', 'cl_geom', 'G', '2', '1', '3', NULL, NULL, '1', '0', NULL, NULL, NULL, NULL, NULL, 'cristel.legrand@cadageo.com,stephane.byache@aleno.eu', '2016-12-10', NULL);
 INSERT INTO t_ct_cat VALUES ('cl_geom_1_m80010', 'Les extrêmités du câble ne sont pas reliées géographiquement à un élément de branchement passif ou un site.', 0, 'M', 'A', 't_cableline', 'geom', 'cl_geom', 'G', '2', '2', '3', NULL, NULL, '1', '0', NULL, NULL, NULL, NULL, NULL, 'cristel.legrand@cadageo.com,stephane.byache@aleno.eu', '2016-12-10', 'Ce point sera à réétudier lorsque nous ferons le contrôle des extrémités d''un câble par rapport à un EBP et/ou baie. ');
 INSERT INTO t_ct_cat VALUES ('cm_geom_1_g80013', 'Les extrêmités du cheminement ne sont pas reliées géographiquement à un noeud ou un autre cheminement.', 0, 'G', 'A', 't_cheminement', 'geom', 'cm_geom', 'G', '2', '2', '3', NULL, NULL, '1', '0', NULL, NULL, NULL, NULL, NULL, 'cristel.legrand@cadageo.com,stephane.byache@aleno.eu', '2016-12-10', NULL);
+INSERT INTO t_ct_cat VALUES ('zp_geom_1_m80015', 'Le contour de la ZPBO n''est pas à l''intérieur du contour de la ZSRO (erreur de SRO ou débordement supérieur à la tolérance.)', 80015, 'M', 'A', 't_zpbo', 'geom', 'zp_geom', 'G', '3', NULL, '3', NULL, NULL, '0', '1', NULL, NULL, NULL, 'ct_1_topotol', '1', 'cristel.legrand@cadageo.com', '2015-01-13', NULL);
+INSERT INTO t_ct_cat VALUES ('zs_geom_1_m80014', 'Le contour de la ZSRO n’est pas à l’intérieur du contour de sa ZNRO (erreur de NRO ou débordement supérieur à la tolérance.)', 80014, 'M', 'A', 't_zsro', 'geom', 'zs_geom', 'G', '3', NULL, '3', NULL, NULL, '1', '0', NULL, NULL, NULL, 'ct_1_topotol', '1', 'cristel.legrand@cadageo.com', '2017-01-13', '');
+INSERT INTO t_ct_cat VALUES ('zp_geom_1_g80018', 'La ZPBO se superpose à une autre ZPBO, au delà de la tolérance admise.', 80018, 'G', 'A', 't_zpbo', 'geom', 'zp_geom', 'G', '3', NULL, '3', NULL, NULL, '1', '0', NULL, NULL, NULL, 'ct_1_topotol', '1', NULL, '2017-01-13', '');
+INSERT INTO t_ct_cat VALUES ('zs_geom_1_m80020', 'Le SRO est très éloigné de la zone dont il dépend.', 80020, 'M', 'S', 't_zsro', 'geom', 'zs_geom', 'P', '4', NULL, '3', NULL, NULL, '1', '0', NULL, NULL, NULL, 'ct_1_distsrozasro', '1', NULL, '2017-01-13', NULL);
+INSERT INTO t_ct_cat VALUES ('zn_geom_1_m80019', 'Le NRO est très éloigné de la zone dont il dépend.', 80019, 'M', 'S', 't_znro', 'geom', 'zn_geom', 'P', '4', NULL, '3', NULL, NULL, '1', '0', NULL, NULL, NULL, 'ct_1_distnrozanro', '1', NULL, '2017-01-13', NULL);
+INSERT INTO t_ct_cat VALUES ('zp_geom_1_m80021', 'Le PBO est très éloigné de la zone dont il dépend.', 80021, 'M', 'S', 't_zpbo', 'geom', 'zp_geom', 'P', '4', NULL, '3', NULL, NULL, '1', '0', NULL, NULL, NULL, 'ct_1_distpbozapbo', '1', NULL, '2017-01-13', NULL);
+INSERT INTO t_ct_cat VALUES ('zs_geom_1_g80017', 'La ZSRO se supperpose à une autre ZSRO, au delà de la tolérance admise.', 80017, 'G', 'A', 't_zsro', 'geom', 'zs_geom', 'G', '3', NULL, '3', NULL, NULL, '1', '0', NULL, NULL, NULL, 'ct_1_topotol', '1', NULL, '2017-01-13', NULL);
+INSERT INTO t_ct_cat VALUES ('zn_geom_1_g80016', 'La ZNRO se superpose à une autre ZNRO, au delà de la tolérance admise.', 80016, 'G', 'A', 't_znro', 'geom', 'zn_geom', 'G', '3', NULL, '3', NULL, NULL, '1', '0', NULL, NULL, NULL, 'ct_1_topotol', '1', 'cristel.legrand@cadageo.com', '2017-01-13', NULL);
 
 
--- Completed on 2016-12-11 00:26:27
+-- Completed on 2017-01-20 13:00:11
 
 --
 -- PostgreSQL database dump complete

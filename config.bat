@@ -51,7 +51,9 @@ SET GL_PG_DUMP=%GL_PGBIN%\pg_dump.exe
 REM # GL_SHP2PGSQL : Chemin vers shp2pgsql
 REM SET GL_SHP2PGSQL=shp2pgsql
 SET GL_SHP2PGSQL=%GL_PGBIN%\shp2pgsql.exe
-
+REM # GL_PGSQL2SHP : Chemin vers pgsql2shp
+REM SET GL_PGSQL2SHP=shp2pgsql
+SET GL_PGSQL2SHP=%GL_PGBIN%\pgsql2shp.exe
 
 
 :GL_CONFIG_TREE

@@ -1,7 +1,7 @@
 /* gracethdcheck_30_tables.sql */
 /* Owner : GraceTHD-Community - http://gracethd-community.github.io/ */
 /* Author : stephane dot byache at aleno dot eu */
-/* Rev. date : 09/12/2016 */
+/* Rev. date : 09/01/2017 */
 
 /* ********************************************************************
     This file is part of GraceTHD.
@@ -27,9 +27,13 @@ DROP TABLE IF EXISTS t_ct_conf_user CASCADE;
 DROP TABLE IF EXISTS t_ct_conf_filltab CASCADE;	
 DROP TABLE IF EXISTS t_ct_conf_fillatt CASCADE;	
 DROP TABLE IF EXISTS t_ct_cat CASCADE;
-DROP TABLE IF EXISTS t_ct_cat_ext CASCADE;
+DROP TABLE IF EXISTS t_ct_cat_user CASCADE;
+--DROP TABLE IF EXISTS t_ct_cat_ext CASCADE;
+DROP TABLE IF EXISTS t_ct_func_pgs CASCADE;
 DROP TABLE IF EXISTS t_ct_code_pgs CASCADE;
+DROP TABLE IF EXISTS t_ct_code_pgs_user CASCADE;
 DROP TABLE IF EXISTS t_ct_code_spl CASCADE;
+DROP TABLE IF EXISTS t_ct_code_spl_user CASCADE;
 
 CREATE TABLE t_ct_conf (
 	nom VARCHAR(254)
@@ -120,16 +124,52 @@ CREATE TABLE t_ct_cat(
 	--spatialite_sql TEXT--, --TODO: v0.01-alpha3 SUPPRIME
 );
 
-/*Collecte et catalogage de contributions extérieures*/
-/*
-CREATE TABLE t_ct_cat_ext(
-	ct_code VARCHAR(100) PRIMARY KEY, --Il faut ajouter un attribut à t_ct_cat pour stocker le code de la contribution d'origine. 
-	ct_imp_statut VARCHAR(1) REFERENCES l_ct_statut(code),
-	ct_imp_source VARCHAR(100),
-	ct_imp_date TIMESTAMP, 
-	ct_imp_script TEXT
+CREATE TABLE t_ct_cat_user(
+	--ct_id INTEGER PRIMARY KEY AUTOINCREMENT, --spatialite
+	--ct_id BIGSERIAL PRIMARY KEY, --postgis
+	--ct_code VARCHAR(100) UNIQUE, --v0.01-alpha2
+	ct_code VARCHAR(100) PRIMARY KEY,
+	ct_def VARCHAR(254),
+	ct_ordre INTEGER,
+	ct_type VARCHAR(1) REFERENCES l_ct_type(code),
+	ct_mode VARCHAR(1) REFERENCES l_ct_mode(code),
+	ct_maintable VARCHAR(100) REFERENCES t_ct_conf_filltab(NOMTABLE),
+	ct_att VARCHAR(20) ,--REFERENCES t_ct_conf_fillatt(ATTRIBUT),
+	ct_attunique VARCHAR(20) REFERENCES t_ct_conf_fillatt(ATTUNIQUE), --AJOUT
+	ct_origine VARCHAR(1) REFERENCES l_ct_origine(code),
+	ct_sensib VARCHAR(1) REFERENCES l_ct_sensibilite(code),
+	ct_prio VARCHAR(100), --REFERENCES l_ct_prio(code),
+	ct_statut VARCHAR(1) REFERENCES l_ct_statut(code),
+	ct_priodev VARCHAR(2), --REFERENCES l_ct_priodev(code), --1 to 9
+	ct_file VARCHAR(1), 
+	ct_sqlview VARCHAR(1), 
+	ct_sqltable VARCHAR(1),
+	ct_sqlcheck VARCHAR(1), 
+	ct_sqlfunction VARCHAR(1), 
+	ct_conf_fill VARCHAR(100), --v0.01-alpha3 : t_ct_conf_fill renommé 
+	ct_conf VARCHAR(100), --v0.01-alpha3 : t_ct_conf_spec renommé 
+	ct_open VARCHAR(1),
+	ct_source VARCHAR(100), --v0.01-alpha3 : AJOUT --SOURCE DU CONCEPT DE CE POINT DE CONTROLE (idealement une adresse mail)
+	ct_date DATE, --v0.01-alpha3 : AJOUT
+	--commentaire VARCHAR(254)--,
+	ct_comment TEXT
+	--pg_sql TEXT, --TODO: v0.01-alpha3 SUPPRIME
+	--spatialite_sql TEXT--, --TODO: v0.01-alpha3 SUPPRIME
 );
-*/
+
+
+/*Catalogue d'implémentation des fonctions Postgis*/
+
+CREATE TABLE t_ct_fct_pgs(
+	ct_pgs_func VARCHAR(100) PRIMARY KEY, --code de la fonction
+	ct_pgs_statut VARCHAR(1) REFERENCES l_ct_statut(code), --STATUT DE L IMPLEMENTATION
+	ct_pgs_version VARCHAR(20), --version du ct_pgs_script
+	ct_pgs_source VARCHAR(100), --SOURCE DU SCRIPT (idealement une adresse mail)
+	ct_pgs_date TIMESTAMP, --DATE D INTEGRATION DU SCRIPT
+	ct_pgs_commentaire VARCHAR(254),
+	ct_pgs_script_func TEXT --CHECK (ct_pgs_script LIKE '/*' || ct_pgs_code || '*/%') --LE SCRIPT SQL
+);
+
 
 /*Catalogue d'implémentation de points de contrôle sous Postgis*/
 CREATE TABLE t_ct_code_pgs(
@@ -143,6 +183,19 @@ CREATE TABLE t_ct_code_pgs(
 	ct_pgs_script TEXT CHECK (ct_pgs_script LIKE '/*' || ct_pgs_code || '*/%') --LE SCRIPT SQL
 );
 
+/*Catalogue d'implémentation de points de contrôle sous Postgis par un ou des utilisateurs externes*/
+CREATE TABLE t_ct_code_pgs_user(
+	ct_pgs_code VARCHAR(100) PRIMARY KEY, --=ct_code
+	ct_pgs_cat_code VARCHAR(100) UNIQUE REFERENCES t_ct_cat(ct_code), --=ct_code, permet d'identifier si correct dans t_ct_cat. Laisse la place pour intégrer des ct_pgs_code en test qui n'auraient pas encore de référencement dans t_ct_cat (en cours de dev). 
+	ct_pgs_statut VARCHAR(1) REFERENCES l_ct_statut(code), --STATUT DE L IMPLEMENTATION
+	ct_pgs_version VARCHAR(20), --version du ct_pgs_script
+	ct_pgs_source VARCHAR(100), --SOURCE DU SCRIPT (idealement une adresse mail)
+	ct_pgs_date TIMESTAMP, --DATE D INTEGRATION DU SCRIPT
+	ct_pgs_commentaire VARCHAR(254),
+	ct_pgs_script TEXT CHECK (ct_pgs_script LIKE '/*' || ct_pgs_code || '*/%') --LE SCRIPT SQL
+);
+
+
 /*Catalogue d'implémentation de points de contrôle sous Spatialite*/
 CREATE TABLE t_ct_code_spl(
 	ct_spl_code VARCHAR(100) PRIMARY KEY, --=ct_code
@@ -154,3 +207,17 @@ CREATE TABLE t_ct_code_spl(
 	ct_spl_commentaire VARCHAR(254),
 	ct_spl_script TEXT CHECK (ct_spl_script LIKE '/*' || ct_spl_code || '*/%') --LE SCRIPT SQL
 );
+
+
+/*Catalogue d'implémentation de points de contrôle sous Spatialite par un ou des utilisateurs externes*/
+CREATE TABLE t_ct_code_spl_user(
+	ct_spl_code VARCHAR(100) PRIMARY KEY, --=ct_code
+	ct_spl_cat_code VARCHAR(100) UNIQUE REFERENCES t_ct_cat(ct_code), --=ct_code, permet d'identifier si correct dans t_ct_cat. Laisse la place pour intégrer des ct_spl_code en test qui n'auraient pas encore de référencement dans t_ct_cat (en cours de dev). 
+	ct_spl_statut VARCHAR(1) REFERENCES l_ct_statut(code), --STATUT DE L IMPLEMENTATION
+	ct_spl_version VARCHAR(20), --version du ct_spl_script
+	ct_spl_source VARCHAR(100), --SOURCE DU SCRIPT (idealement une adresse mail)
+	ct_spl_date TIMESTAMP, --DATE D INTEGRATION DU SCRIPT
+	ct_spl_commentaire VARCHAR(254),
+	ct_spl_script TEXT CHECK (ct_spl_script LIKE '/*' || ct_spl_code || '*/%') --LE SCRIPT SQL
+);
+
