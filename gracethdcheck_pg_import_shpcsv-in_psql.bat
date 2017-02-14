@@ -105,6 +105,46 @@ ECHO Gracelite - Fin Import %PGTBL%
 
 %GLPAUSE%
 
+SET PGTBL=t_znro
+SET PGSHP=%PGSHPINPATH%\%PGTBL%
+ECHO Gracelite - Debut Import %PGTBL%
+IF EXIST "%PGSHP%.shp" ("%GL_SHP2PGSQL%" -t 2D -s %PGSRID% -a -W %PGCODE% %PGSHP% %PGSCHEMA%.%PGTBL% > "%GLCTPGTEMP%\%PGTBL%.sql" && "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %GLCTPGDB% -U %PGUSER% -f "%GLCTPGTEMP%\%PGTBL%.sql") ELSE (ECHO %PGSHP% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+ECHO Gracelite - Fin Import %PGTBL%
+
+%GLPAUSE%
+
+SET PGTBL=t_zsro
+SET PGSHP=%PGSHPINPATH%\%PGTBL%
+ECHO Gracelite - Debut Import %PGTBL%
+IF EXIST "%PGSHP%.shp" ("%GL_SHP2PGSQL%" -t 2D -s %PGSRID% -a -W %PGCODE% %PGSHP% %PGSCHEMA%.%PGTBL% > "%GLCTPGTEMP%\%PGTBL%.sql" && "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %GLCTPGDB% -U %PGUSER% -f "%GLCTPGTEMP%\%PGTBL%.sql") ELSE (ECHO %PGSHP% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+ECHO Gracelite - Fin Import %PGTBL%
+
+%GLPAUSE%
+
+SET PGTBL=t_zpbo
+SET PGSHP=%PGSHPINPATH%\%PGTBL%
+ECHO Gracelite - Debut Import %PGTBL%
+IF EXIST "%PGSHP%.shp" ("%GL_SHP2PGSQL%" -t 2D -s %PGSRID% -a -W %PGCODE% %PGSHP% %PGSCHEMA%.%PGTBL% > "%GLCTPGTEMP%\%PGTBL%.sql" && "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %GLCTPGDB% -U %PGUSER% -f "%GLCTPGTEMP%\%PGTBL%.sql") ELSE (ECHO %PGSHP% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+ECHO Gracelite - Fin Import %PGTBL%
+
+%GLPAUSE%
+
+SET PGTBL=t_zdep
+SET PGSHP=%PGSHPINPATH%\%PGTBL%
+ECHO Gracelite - Debut Import %PGTBL%
+IF EXIST "%PGSHP%.shp" ("%GL_SHP2PGSQL%" -t 2D -s %PGSRID% -a -W %PGCODE% %PGSHP% %PGSCHEMA%.%PGTBL% > "%GLCTPGTEMP%\%PGTBL%.sql" && "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %GLCTPGDB% -U %PGUSER% -f "%GLCTPGTEMP%\%PGTBL%.sql") ELSE (ECHO %PGSHP% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+ECHO Gracelite - Fin Import %PGTBL%
+
+%GLPAUSE%
+
+SET PGTBL=t_coax
+SET PGSHP=%PGSHPINPATH%\%PGTBL%
+ECHO Gracelite - Debut Import %PGTBL%
+IF EXIST "%PGSHP%.shp" ("%GL_SHP2PGSQL%" -t 2D -s %PGSRID% -a -W %PGCODE% %PGSHP% %PGSCHEMA%.%PGTBL% > "%GLCTPGTEMP%\%PGTBL%.sql" && "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %GLCTPGDB% -U %PGUSER% -f "%GLCTPGTEMP%\%PGTBL%.sql") ELSE (ECHO %PGSHP% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+ECHO Gracelite - Fin Import %PGTBL%
+
+%GLPAUSE%
+
 SET PGTBL=t_sitetech
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
@@ -272,46 +312,6 @@ SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
 IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %GLCTPGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
-
-%GLPAUSE%
-
-SET PGTBL=t_znro
-SET PGSHP=%PGSHPINPATH%\%PGTBL%
-ECHO Gracelite - Debut Import %PGTBL%
-IF EXIST "%PGSHP%.shp" ("%GL_SHP2PGSQL%" -t 2D -s %PGSRID% -a -W %PGCODE% %PGSHP% %PGSCHEMA%.%PGTBL% > "%GLCTPGTEMP%\%PGTBL%.sql" && "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %GLCTPGDB% -U %PGUSER% -f "%GLCTPGTEMP%\%PGTBL%.sql") ELSE (ECHO %PGSHP% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
-ECHO Gracelite - Fin Import %PGTBL%
-
-%GLPAUSE%
-
-SET PGTBL=t_zsro
-SET PGSHP=%PGSHPINPATH%\%PGTBL%
-ECHO Gracelite - Debut Import %PGTBL%
-IF EXIST "%PGSHP%.shp" ("%GL_SHP2PGSQL%" -t 2D -s %PGSRID% -a -W %PGCODE% %PGSHP% %PGSCHEMA%.%PGTBL% > "%GLCTPGTEMP%\%PGTBL%.sql" && "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %GLCTPGDB% -U %PGUSER% -f "%GLCTPGTEMP%\%PGTBL%.sql") ELSE (ECHO %PGSHP% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
-ECHO Gracelite - Fin Import %PGTBL%
-
-%GLPAUSE%
-
-SET PGTBL=t_zpbo
-SET PGSHP=%PGSHPINPATH%\%PGTBL%
-ECHO Gracelite - Debut Import %PGTBL%
-IF EXIST "%PGSHP%.shp" ("%GL_SHP2PGSQL%" -t 2D -s %PGSRID% -a -W %PGCODE% %PGSHP% %PGSCHEMA%.%PGTBL% > "%GLCTPGTEMP%\%PGTBL%.sql" && "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %GLCTPGDB% -U %PGUSER% -f "%GLCTPGTEMP%\%PGTBL%.sql") ELSE (ECHO %PGSHP% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
-ECHO Gracelite - Fin Import %PGTBL%
-
-%GLPAUSE%
-
-SET PGTBL=t_zdep
-SET PGSHP=%PGSHPINPATH%\%PGTBL%
-ECHO Gracelite - Debut Import %PGTBL%
-IF EXIST "%PGSHP%.shp" ("%GL_SHP2PGSQL%" -t 2D -s %PGSRID% -a -W %PGCODE% %PGSHP% %PGSCHEMA%.%PGTBL% > "%GLCTPGTEMP%\%PGTBL%.sql" && "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %GLCTPGDB% -U %PGUSER% -f "%GLCTPGTEMP%\%PGTBL%.sql") ELSE (ECHO %PGSHP% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
-ECHO Gracelite - Fin Import %PGTBL%
-
-%GLPAUSE%
-
-SET PGTBL=t_coax
-SET PGSHP=%PGSHPINPATH%\%PGTBL%
-ECHO Gracelite - Debut Import %PGTBL%
-IF EXIST "%PGSHP%.shp" ("%GL_SHP2PGSQL%" -t 2D -s %PGSRID% -a -W %PGCODE% %PGSHP% %PGSCHEMA%.%PGTBL% > "%GLCTPGTEMP%\%PGTBL%.sql" && "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %GLCTPGDB% -U %PGUSER% -f "%GLCTPGTEMP%\%PGTBL%.sql") ELSE (ECHO %PGSHP% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
-ECHO Gracelite - Fin Import %PGTBL%
 
 %GLPAUSE%
 

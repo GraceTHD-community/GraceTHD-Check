@@ -2,6 +2,22 @@ GraceTHD-Check
 
 ### Changelog
 
+v0.01-alpha5c
+- fix: gracethdcheck_pg_import_shpcsv-in_psql.bat : remise en ordre de l'exécution (zones passent de la fin au début du script). 
+- fix: gracethd_pg_import_shpcsv-in_psql.bat : idem gracethdcheck_pg_import_shpcsv-in_psql.bat mais sur PGDB et non GLCTPGDB. 
+- fix: gracethdcheck_pg_export_v_ct_anom_csv.bat : désormais opérationnel. 
+- fix: gracethdcheck_30_tables.sql : renommage t_ct_func_pgs en t_ct_fct_pgs 
+- add: gracethd_pg_create_tables.bat : ajout
+- chg: gracethd_pg_create_db.bat : uniformisation avec gracethdcheck_pg_create_db.bat + appel gracethd_pg_create_tables.bat
+- chg: gracethdcheck_pg_create_db.bat : appel gracethd_pg_create_tables.bat
+- fix: gracethdcheck_pg_create_on_db.bat : opérationnel
+- fix: gracethd_pg_import_shpcsv-in_psql.bat
+- chg: config_db_pg.bat : restructuration afin que PGDB soit la première variable déclarée. 
+- fix: gracethd_pg_export_shpcsv-out.bat : remplacement GLCTPGDB par PGDB. 
+
+v0.01-alpha5b
+- fix: config.bat - mauvaise version publiée dans la version 0.01-alpha5. 
+
 v0.01-alpha5
 Développement pour Spatialite suspendu depuis v0.01-alpha3. 
 

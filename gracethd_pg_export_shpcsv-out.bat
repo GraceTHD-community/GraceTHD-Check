@@ -25,7 +25,7 @@ CALL:CONF
 REM Decommenter quand ca coince. 
 REM CALL :DEBUG
 
-ECHO Gracelite - Debut export SHP CSV depuis la base PostGIS %PGHOSTNAME%:%GLCTPGDB%. 
+ECHO Gracelite - Debut export SHP CSV depuis la base PostGIS %PGHOSTNAME%:%PGDB%. 
 CALL:EXPORT
 %GLPAUSE%
 GOTO:EOF

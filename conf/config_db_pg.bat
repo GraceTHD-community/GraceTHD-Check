@@ -5,6 +5,42 @@ REM ### FICHIER DE CONFIG GRACELITE BASES POSTGIS
 REM ##################################################
 
 
+:GL_CONFIG_GRACETHD_POSTGIS_PROD
+REM ##################################################
+REM ### CONFIG GRACELITE - GRACETHD-MCD POSTGRESQL
+
+REM ## CONFIG BASE DE DONNEES GRACETHD SOUS POSTGIS
+REM # PGDB : Base de donnees Postgis a utiliser
+SET PGDB=gracethd20
+REM # PGSCHEMA : Schema a utiliser dans la base de donnes. 
+SET PGSCHEMA=gracethd
+REM # PGSRID : code du systeme de coordonnees utilise dans cette base de donnees. 
+SET PGSRID=2154
+REM # PGCODE : encodage des caracteres 
+REM SET PGCODE=cp1252
+SET PGCODE=UTF8
+REM # PGCSVCONF : parametres pour PSQL pour la structure des csv. 
+SET PGCSVCONF= WITH DELIMITER ';' CSV HEADER ENCODING 'UTF8'
+REM # pgclientencoding : VARIABLE POSTGRESQL POUR FIXER L'ENCODAGE DES SORTIES (PGSQL2SHP). NON TESTE. 
+REM SET PGCLIENTENCODING=WIN1252
+SET PGCLIENTENCODING=UTF-8
+
+
+REM ## CONFIG VARIABLES POSTGRESQL
+REM # PGPASSWORD : mot de passe de l'utilisateur utilise avec postgresql. 
+REM USER : Configurez votre password file (pgpass.conf). 
+REM USER : https://www.postgresql.org/docs/current/static/libpq-pgpass.html
+SET PGPASSWORD=MYPASSWORD
+REM # PGUSER : utilisateur postgresql a utiliser
+SET PGUSER=postgres
+REM # PGROLE : role postgresql a utiliser
+SET PGROLE=postgres
+REM # PGHOSTNAME : host postgresql
+SET PGHOSTNAME=localhost
+REM # PGPORT : port de la base postgresql a utiliser
+SET PGPORT=5432
+
+
 :GL_CONFIG_GRACETHD_POSTGIS_PATH
 REM ##################################################
 REM ### CONFIG GRACELITE - CHEMINS GRACETHD POUR POSTGIS
@@ -21,40 +57,6 @@ SET GL_PG_DUMP_FILE=%GLPGPATHSHARE%\gracethd20_dump.sql
 REM # GLPGCONFPATH : Chemin ou l'utilisateur %PGUSER% peut lire et ecrire des fichiers de configuration. 
 SET GLPGCONFPATH=%GLPGPATHSHARE%\conf
 
-
-:GL_CONFIG_GRACETHD_POSTGIS_PROD
-REM ##################################################
-REM ### CONFIG GRACELITE - GRACETHD-MCD POSTGRESQL
-
-REM ## CONFIG VARIABLES POSTGRESQL
-REM # PGPASSWORD : mot de passe de l'utilisateur utilise avec postgresql. 
-REM USER : Configurez votre password file (pgpass.conf). 
-REM USER : https://www.postgresql.org/docs/current/static/libpq-pgpass.html
-SET PGPASSWORD=MYPASSWORD
-REM # PGUSER : utilisateur postgresql a utiliser
-SET PGUSER=postgres
-REM # PGROLE : role postgresql a utiliser
-SET PGROLE=postgres
-REM # PGHOSTNAME : host postgresql
-SET PGHOSTNAME=localhost
-REM # PGPORT : port de la base postgresql a utiliser
-SET PGPORT=5432
-
-REM ## CONFIG BASE DE DONNEES GRACETHD SOUS POSTGIS
-REM # PGDB : Base de donnees Postgis a utiliser
-SET PGDB=gracethd20
-REM # PGSCHEMA : Schema a utiliser dans la base de donnes. 
-SET PGSCHEMA=gracethd
-REM # PGSRID : code du systeme de coordonnees utilise dans cette base de donnees. 
-SET PGSRID=2154
-REM # PGCODE : encodage des caracteres 
-SET PGCODE=cp1252
-REM SET PGCODE=UTF8
-REM # PGCSVCONF : parametres pour PSQL pour la structure des csv. 
-SET PGCSVCONF= WITH DELIMITER ';' CSV HEADER ENCODING 'UTF8'
-REM # pgclientencoding : VARIABLE POSTGRESQL POUR FIXER L'ENCODAGE DES SORTIES (PGSQL2SHP). NON TESTE. 
-REM SET PGCLIENTENCODING=WIN1252
-SET PGCLIENTENCODING=UTF-8
 
 
 :GL_CONFIG_GRACETHDCHECK
@@ -79,7 +81,7 @@ REM # GLCTPGSCHEMACHECK : Nom du schema qui accueille Gracethd-Check dans la bas
 SET GLCTPGSCHEMACHECK=gracethdcheck
 REM # GLCTPGDB : Nom de la base de donnees a controler
 REM USER : Normalement on n'utilise pas la base de production pour controler une reception. Donc pointer une base d'integration. 
-REM SET GLCTPGDB=%PGDB%
+REM GLCTPGDB risque de disparaitre. 
 REM SET GLCTPGDB=%PGDB%integ
-SET GLCTPGDB=%PGDB%check
+SET GLCTPGDB=%PGDB%
 

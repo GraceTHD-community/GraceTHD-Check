@@ -23,11 +23,13 @@ CALL :CONF
 REM Decommenter quand ca coince. 
 REM CALL:DEBUG
 
+REM TODO: Remplacer par un appel de gracethd_pg_create_db.bat
 REM CREATION DE LA BASE
 CALL:CTBASE
 REM CREATION DE GRACETHD
 CALL:SCHEMA_GRACETHD
 CALL:TABLES_GRACETHD
+
 REM CREATION DE GRACETHDCHECK
 CALL:SCHEMA_GRACETHDCHECK
 CALL:TABLES_GRACETHDCHECK 
@@ -63,8 +65,17 @@ REM "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "ALTER DATABASE %GLCTPGDB% SET se
 "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "ALTER DATABASE %GLCTPGDB% SET search_path = %GLCTPGSCHEMA%, public;" -U %PGUSER% 
 GOTO:EOF
 
-
 :TABLES_GRACETHD
+
+CALL gracethd_pg_create_tables.bat
+GOTO:EOF
+
+:TABLES_GRACETHD_OLD
+
+
+REM TODO: SORTIR CA DANS gracethd_pg_create_tables.bat
+
+REM Pour pouvoir passer les caractères francophones des définitions dans les listes de valeurs. 
 SET PGCLIENTENCODING=UTF-8
 CHCP 65001
 
@@ -76,6 +87,7 @@ SET FSQL=gracethd_20_insert.sql
 ECHO GraceTHD - Postgis - %FSQL%
 "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f "%GLCTPGSQLPATH%\%FSQL%" -d %GLCTPGDB% -U %PGUSER%
 
+REM Retour dans l'encodage malheureusement "normal" de la console windows. 
 SET PGCLIENTENCODING=WIN1252
 CHCP 1252
 
