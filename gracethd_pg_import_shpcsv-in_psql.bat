@@ -84,7 +84,7 @@ ECHO Gracelite - Fin Import %PGTBL%
 SET PGTBL=t_organisme
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -92,7 +92,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_reference
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -148,7 +148,7 @@ ECHO Gracelite - Fin Import %PGTBL%
 SET PGTBL=t_sitetech
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -156,7 +156,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_ltech
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -164,7 +164,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_baie
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -172,7 +172,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_tiroir
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -180,7 +180,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_equipement
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -188,7 +188,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_suf
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -196,7 +196,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_ptech
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -204,7 +204,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_ebp
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -212,7 +212,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_cassette
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -229,7 +229,7 @@ ECHO Gracelite - Fin Import %PGTBL%
 SET PGTBL=t_conduite
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -237,7 +237,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_cond_chem
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -245,7 +245,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_masque
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -253,7 +253,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_cable
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -270,7 +270,7 @@ ECHO Gracelite - Fin Import %PGTBL%
 SET PGTBL=t_cab_cond
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -278,7 +278,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_love
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -286,7 +286,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_fibre
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -294,7 +294,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_position
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -302,7 +302,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_ropt
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -310,7 +310,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_siteemission
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -318,7 +318,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_document
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -326,7 +326,7 @@ ECHO Gracelite - Fin import %PGTBL%
 SET PGTBL=t_docobj
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 
 %GLPAUSE%
@@ -403,7 +403,7 @@ SET PGTBL=t_organisme
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO Gracelite - Debut import %PGTBL%
 ECHO "%date%–%time%","%~nx0","INFO","Gracelite - Debut Import %PGTBL%","%COMPUTERNAME%","%USERNAME%" >> "%GLLOGFILE%"
-IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
 ECHO Gracelite - Fin import %PGTBL%
 ECHO "%date%–%time%","%~nx0","INFO","Gracelite - Fin Import %PGTBL%","%COMPUTERNAME%","%USERNAME%" >> "%GLLOGFILE%"
 

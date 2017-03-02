@@ -1,24 +1,26 @@
 @ECHO OFF
 
 REM ##################################################
-REM ### FICHIER DE CONFIG GRACELITE BASES POSTGIS
+REM ### FICHIER DE CONFIG GRACETHD-CHECK BASES POSTGIS
 REM ##################################################
 
 
 :GL_CONFIG_GRACETHD_POSTGIS_PROD
 REM ##################################################
-REM ### CONFIG GRACELITE - GRACETHD-MCD POSTGRESQL
+REM ### CONFIG GRACETHD-CHECK - GRACETHD-MCD POSTGRESQL
 
 REM ## CONFIG BASE DE DONNEES GRACETHD SOUS POSTGIS
 REM # PGDB : Base de donnees Postgis a utiliser
 SET PGDB=gracethd20
 REM # PGSCHEMA : Schema a utiliser dans la base de donnes. 
 SET PGSCHEMA=gracethd
+REM # GLTEMPLATE : nom de la base template pour la creation d'une base GraceTHD. 
+SET PGTEMPLATE=postgres
 REM # PGSRID : code du systeme de coordonnees utilise dans cette base de donnees. 
 SET PGSRID=2154
 REM # PGCODE : encodage des caracteres 
-REM SET PGCODE=cp1252
-SET PGCODE=UTF8
+SET PGCODE=cp1252
+REM SET PGCODE=UTF8
 REM # PGCSVCONF : parametres pour PSQL pour la structure des csv. 
 SET PGCSVCONF= WITH DELIMITER ';' CSV HEADER ENCODING 'UTF8'
 REM # pgclientencoding : VARIABLE POSTGRESQL POUR FIXER L'ENCODAGE DES SORTIES (PGSQL2SHP). NON TESTE. 
@@ -43,9 +45,10 @@ SET PGPORT=5432
 
 :GL_CONFIG_GRACETHD_POSTGIS_PATH
 REM ##################################################
-REM ### CONFIG GRACELITE - CHEMINS GRACETHD POUR POSTGIS
+REM ### CONFIG GRACETHD-CHECK - CHEMINS GRACETHD POUR POSTGIS
 REM # GLPGPATHSHARE : dossier pour lequel l'utilisateur reference dans la variable PGUSER a les droits de lecture et d'ecriture. 
-SET GLPGPATHSHARE=D:\postgres_files
+SET GLPGPATHSHARE=.\
+REM SET GLPGPATHSHARE=D:\postgres_files
 REM # PGSHPINPATH : Dossier comportant les shp/csv a importer dans Postgis.
 REM USER : ATTENTION l'utilisateur definit pour PGUSER doit avoir les droits d'acces au contenu de ce dossier. 
 SET PGSHPINPATH=%GLPGPATHSHARE%\shpcsv-in
@@ -61,7 +64,7 @@ SET GLPGCONFPATH=%GLPGPATHSHARE%\conf
 
 :GL_CONFIG_GRACETHDCHECK
 REM ##################################################
-REM ### CONFIG GRACELITE - GRACETHD-CHECK
+REM ### CONFIG GRACETHD-CHECK - GRACETHD-CHECK
 
 
 :GL_CONFIG_GRACETHDCHECK_POSTGIS

@@ -48,7 +48,7 @@ GOTO:EOF
 REM SHELL
 REM SHELL
 ECHO GraceTHD - Postgis - Creation de la base de donnees %PGHOSTNAME%:%PGDB%. 
-"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "CREATE DATABASE %PGDB%;" -U %PGUSER%
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "CREATE DATABASE %PGDB%;" -d %PGTEMPLATE% -U %PGUSER%
 "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "CREATE EXTENSION postgis;" -d %PGDB% -U %PGUSER%
 REM "%GL_PSQL%" -d %PGDB% -c "CREATE EXTENSION postgis_topology;"
 

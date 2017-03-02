@@ -1,8 +1,11 @@
 @ECHO OFF
 
-CALL config.bat
+REM TODO : 
+REM - Questions pour créer le dossier s'il n'existe pas. 
 
-ECHO Gracelite - Debut de controle de validite des variables Gracelite. 
+REM CALL config.bat
+
+REM ECHO Gracelite - Debut de controle de validite des variables Gracelite. 
 
 IF NOT EXIST "%GLOSGEOPATH%" (
 ECHO GLOSGEOPATH - %GLOSGEOPATH% n'existe pas !
@@ -177,6 +180,10 @@ ECHO GL_SHP2PGSQL - %GL_SHP2PGSQL% n'existe pas !
 PAUSE
 )
 
+IF NOT EXIST "%GL_SHP2PGSQL%" (
+ECHO GL_SHP2PGSQL - %GL_PGSQL2SHP% n'existe pas !
+PAUSE
+)
 
 
 REM Faire un test de connexion Postgis" (mais peut ne pas etre utilise)
@@ -218,6 +225,6 @@ ECHO GLCTPGSQLPATH - %GLCTPGSQLPATH% n'existe pas !
 PAUSE
 )
 
-ECHO Gracelite - Fin de controle de validite des variables Gracelite. 
+REM ECHO Gracelite - Fin de controle de validite des variables Gracelite. 
 
 %GLPAUSE%

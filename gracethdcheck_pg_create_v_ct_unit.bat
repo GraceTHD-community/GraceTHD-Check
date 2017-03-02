@@ -51,7 +51,7 @@ IF EXIST "%DOUT%psql" DEL "%DOUT%psql"
 REM Creation d'un fichier texte avec v_ct_sqldrop_view_unit_pgs
 SET GLCTPGTBL=v_ct_sqldrop_view_unit_pgs
 REM SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
-"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "COPY (SELECT * FROM %GLCTPGSCHEMACHECK%.%GLCTPGTBL%) TO '%DOUT%psql';" -d %GLCTPGDB% -U %PGUSER%
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "\COPY (SELECT * FROM %GLCTPGSCHEMACHECK%.%GLCTPGTBL%) TO '%DOUT%psql';" -d %GLCTPGDB% -U %PGUSER%
 
 REM Ajout de la commande SET search_path au fichier sql genere. 
 ECHO SET search_path TO %GLCTPGSCHEMACHECK%, %GLCTPGSCHEMA%, public; > "%DOUT%add"
@@ -73,7 +73,7 @@ IF EXIST "%FOUT%psql" DEL "%FOUT%psql"
 REM Creation d'un fichier texte avec v_ct_sqldrop_view_unit_pgs
 SET GLCTPGTBL=v_ct_sqlcreate_view_unit_pgs
 REM SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
-"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "COPY (SELECT * FROM %GLCTPGSCHEMACHECK%.%GLCTPGTBL%) TO '%FOUT%psql';" -d %GLCTPGDB% -U %PGUSER%
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "\COPY (SELECT * FROM %GLCTPGSCHEMACHECK%.%GLCTPGTBL%) TO '%FOUT%psql';" -d %GLCTPGDB% -U %PGUSER%
 
 REM Ajout de la commande SET search_path au fichier sql genere. 
 ECHO SET search_path TO %GLCTPGSCHEMACHECK%, %GLCTPGSCHEMA%, public; > "%FOUT%add"
@@ -103,7 +103,7 @@ SET GLCTPGTBL=v_ct_sqlcreate_view_unit_pgs
 
 REM ECHO SELECT * FROM v_ct_sqlcreate_view_unit_pgs; | %GL_PSQL% -h %PGHOSTNAME% -p %PGPORT% -d %GLCTPGDB% %PGUSER% -o %FOUT%
 
-"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %GLCTPGDB% %PGUSER% -c "COPY (SELECT * FROM %GLCTPGSCHEMACHECK%.%GLCTPGTBL%) TO '%FOUT%psql';" -o "%FOUT%test"
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %GLCTPGDB% %PGUSER% -c "\COPY (SELECT * FROM %GLCTPGSCHEMACHECK%.%GLCTPGTBL%) TO '%FOUT%psql';" -o "%FOUT%test"
 
 GOTO :EOF
 

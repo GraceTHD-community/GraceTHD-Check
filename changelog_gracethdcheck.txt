@@ -2,6 +2,29 @@ GraceTHD-Check
 
 ### Changelog
 
+v0.01-alpha5d
+- fix: \temp : ajout temp.md
+- fix: \check\postgis : ajout postgis.md
+- fix: \check\spatialite : ajout spatialite.md
+- chg: gracethd_pg_import_shpcsv-in_psql.bat : remplacement de COPY par \COPY
+- chg: gracethdcheck_pg_import_shpcsv-in_psql.bat : remplacement de COPY par \COPY
+- chg: gracethdcheck_pg_create_v_ct_anom.bat : remplacement de COPY par \COPY
+- fix: gracethdcheck_pg_create_v_ct_anom.bat : prise en compte des LF et pas seulement CRLF (ajout ligne 139 : %GLSFK% replace %FOUT% -spat "/UNION\n;/;/" -yes). 
+- chg: gracethdcheck_pg_create_v_ct_unit.bat : remplacement de COPY par \COPY
+- chg: gracethdcheck_pg_maj_cat_csv.bat : remplacement de COPY par \COPY
+- chg: gracethdcheck_pg_export_csv.bat : remplacement de COPY par \COPY
+- chg: gracethdcheck_pg_export_v_ct_anom_csv.bat : remplacement de COPY par \COPY
+- chg: gracethd_pg_export_shpcsv-out.bat : remplacement de COPY par \COPY
+- chg: config_db_pg.bat : PGCODE par défaut sur cp1252. 
+- chg: config_db_pg.bat : ajout SET PGTEMPLATE=postgres
+- chg: config_db_pg.bat : par défaut SET GLPGPATHSHARE=.\
+- fix: config_test.bat : CALL config.bat commenté. 
+- chg: config.bat : passage partie DEBUG en tête. 
+- chg: config.bat : remplacement GRACELITE par GRACETHD-CHECK. 
+- fix: gracethdcheck_pg_create_db.bat : ligne 55 ajout de -d %PGTEMPLATE%
+- fix: gracethd_pg_create_db.bat : ligne 51 ajout de -d %PGTEMPLATE%
+
+
 v0.01-alpha5c
 - fix: gracethdcheck_pg_import_shpcsv-in_psql.bat : remise en ordre de l'exécution (zones passent de la fin au début du script). 
 - fix: gracethd_pg_import_shpcsv-in_psql.bat : idem gracethdcheck_pg_import_shpcsv-in_psql.bat mais sur PGDB et non GLCTPGDB. 
