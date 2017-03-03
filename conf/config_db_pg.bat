@@ -36,7 +36,7 @@ SET PGPASSWORD=MYPASSWORD
 REM # PGUSER : utilisateur postgresql a utiliser
 SET PGUSER=postgres
 REM # PGROLE : role postgresql a utiliser
-SET PGROLE=postgres
+SET PGROLE=%PGUSER%
 REM # PGHOSTNAME : host postgresql
 SET PGHOSTNAME=localhost
 REM # PGPORT : port de la base postgresql a utiliser
