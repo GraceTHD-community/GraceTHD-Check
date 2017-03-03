@@ -23,7 +23,7 @@ v0.01-alpha5d
 - chg: config.bat : remplacement GRACELITE par GRACETHD-CHECK. 
 - fix: gracethdcheck_pg_create_db.bat : ligne 55 ajout de -d %PGTEMPLATE%
 - fix: gracethd_pg_create_db.bat : ligne 51 ajout de -d %PGTEMPLATE%
-
+- chg: renommage dossier doc en docs pour accueillir la Github page. 
 
 v0.01-alpha5c
 - fix: gracethdcheck_pg_import_shpcsv-in_psql.bat : remise en ordre de l'exécution (zones passent de la fin au début du script). 
