@@ -3,6 +3,8 @@ description: Auto-contrôle d'une base de données GraceTHD
 google_analytics: 
 show_downloads: true
 theme: jekyll-theme-architect
-
+github:
+  zip_url: 'https://github.com/GraceTHD-community/GraceTHD-Check/zipball/master'
+  tar_url: 'https://github.com/GraceTHD-community/GraceTHD-Check/tarball/master'
 gems:
   - jekyll-mentions
