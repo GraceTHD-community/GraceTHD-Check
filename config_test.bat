@@ -1,5 +1,10 @@
 @ECHO OFF
 
+REM config_test.bat
+REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
+REM Author : stephane dot byache at aleno dot eu
+REM Rev. date : 05/07/2017
+
 REM TODO : 
 REM - Questions pour créer le dossier s'il n'existe pas. 
 
@@ -206,6 +211,26 @@ PAUSE
 
 IF NOT EXIST "%GLPGCONFPATH%" (
 ECHO GLPGCONFPATH - %GLPGCONFPATH% n'existe pas !
+PAUSE
+)
+
+IF NOT EXIST "%GLPGCONFPATH%\t_ct_cat" (
+ECHO GLPGCONFPATH - %GLPGCONFPATH%\t_ct_cat n'existe pas !
+PAUSE
+)
+
+IF NOT EXIST "%GLPGCONFPATH%\t_ct_code" (
+ECHO GLPGCONFPATH - %GLPGCONFPATH%\t_ct_code n'existe pas !
+PAUSE
+)
+
+IF NOT EXIST "%GLPGCONFPATH%\t_ct_conf" (
+ECHO GLPGCONFPATH - %GLPGCONFPATH%\t_ct_conf n'existe pas !
+PAUSE
+)
+
+IF NOT EXIST "%GLPGCONFPATH%\t_ct_exe" (
+ECHO GLPGCONFPATH - %GLPGCONFPATH%\t_ct_exe n'existe pas !
 PAUSE
 )
 

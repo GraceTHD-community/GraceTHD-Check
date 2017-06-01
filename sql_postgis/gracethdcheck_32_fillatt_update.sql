@@ -1,7 +1,7 @@
 /* gracethdcheck_32_fillatt_update.sql */
 /* Owner : GraceTHD-Community - http://gracethd-community.github.io/ */
 /* Author : stephane dot byache at aleno dot eu */
-/* Rev. date : 09/12/2016 */
+/* Rev. date : 13/03/2017 */
 
 /* ********************************************************************
     This file is part of GraceTHD.
@@ -67,3 +67,39 @@ UPDATE t_ct_conf_fillatt
 SET ATTUNIQUE = 'em_' || ATTRIBUT
 WHERE ATTRIBUT = 'geom' AND NOMTABLE = 't_empreinte';
 
+/*REMPLACEMENT DES NULL PAR F*/
+UPDATE t_ct_conf_fillatt
+SET PRE = 'F'
+WHERE PRE = NULL 
+OR PRE = ''
+;
+UPDATE t_ct_conf_fillatt
+SET DIA = 'F'
+WHERE DIA = NULL 
+OR DIA = ''
+;
+UPDATE t_ct_conf_fillatt
+SET AVP = 'F'
+WHERE AVP = NULL 
+OR AVP = ''
+;
+UPDATE t_ct_conf_fillatt
+SET PRO_ou_ACT = 'F'
+WHERE PRO_ou_ACT = NULL 
+OR PRO_ou_ACT = ''
+;
+UPDATE t_ct_conf_fillatt
+SET EXE = 'F'
+WHERE EXE = NULL 
+OR EXE = ''
+;
+UPDATE t_ct_conf_fillatt
+SET TVX_ou_REC = 'F'
+WHERE TVX_ou_REC = NULL 
+OR TVX_ou_REC = ''
+;
+UPDATE t_ct_conf_fillatt
+SET MCO = 'F'
+WHERE MCO = NULL 
+OR MCO = ''
+;

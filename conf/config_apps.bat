@@ -66,6 +66,8 @@ REM shp_doctor.exe
 SET GLSHP_DOCTOR=%GLBIN%shp_doctor.exe
 REM Executable sfk (swiss file knife)
 SET GLSFK=%GLBIN%sfk180.exe
+REM Executable zip
+SET GLZIP=%GLBIN%zip.exe
 REM Executable 7zip en ligne de commande (7z.Exe)
 SET GL7Z=%GLBIN%7z.exe
 

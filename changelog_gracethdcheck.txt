@@ -2,6 +2,90 @@ GraceTHD-Check
 
 ### Changelog
 
+v0.01-alpha6a
+# Général
+- chg: tous les batchs, homogénéisation de l'entête. 
+- add: gracethdcheck_pg.bat : exécution de toutes les opérations en un script. 
+- chg: gracethdcheck_pg_export_tab_csv.bat : renommage de gracethdcheck_pg_export_csv.bat
+- chg: gracethdcheck_pg_export_tab_sql.bat : renommage de gracethdcheck_pg_export_sql.bat
+- chg: gracethdcheck_pg_export_anom_csv.bat : renommage de gracethdcheck_pg_export_csv_anom.bat
+- chg: gracethdcheck_pg_update_cat_from_csv.bat : renommage de gracethdcheck_pg_maj_cat_csv.bat
+- chg: gracethdcheck_pg_update_fill.bat : renommage de gracethdcheck_pg_maj_remplissage.bat
+- add: zip.exe : ajout zip.exe pour créer des archives. 
+- chg: config_apps.bat : ajout SET GLZIP=%GLBIN%zip.exe
+- del: gracethdcheck_pg_maj_conf.bat : suppression. 
+- chg: gracethdcheck_33_conf_insert.sql : ct_1_liv n'a plus LIV0001 comme valeur par défaut, mais le nom de la base de données. 
+# Intégration de t_ct_exe
+- chg: gracethdcheck_pg_create_tables.bat : ajout appel gracethdcheck_60_views.sql
+- chg: gracethdcheck_10_lists.sql : ajout création l_ct_exe. 
+- chg: gracethdcheck_20_insert.sql : ajout chargement l_ct_exe
+- chg: gracethdcheck_30_tables.sql : ajout création t_ct_exe. 
+- chg: gracethdcheck_32_fillatt_update.sql : remplacement des valeurs '' ou NULL par F. 
+- chg: gracethdcheck_50_index.sql : ajout indexes t_ct_exe. 
+- add: gracethdcheck_60_views.sql : avec v_ct_exe
+- chg: gracethdcheck_pg_create_v_ct_anom.bat : v_ct_anom et v_ct_anom_[statut]
+- chg: gracethdcheck_pg_export_v_ct_anom_csv.bat : prise de compte de chaque statut (plus de xxx_ou_yyy)
+- chg: gracethdcheck_pg_export_csv.bat : prise en compte de t_ct_exe. 
+- chg: gracethdcheck_pg_export_sql.bat : prise en compte de t_ct_exe. 
+- chg: config_text.bat : prise en compte de %GLPGCONFPATH%\t_ct_cat , %GLPGCONFPATH%\t_ct_code , %GLPGCONFPATH%\t_ct_conf , %GLPGCONFPATH%\t_ct_exe
+- add: gracethdcheck_37_exe_pgs_fillatt_to_exe.sql : insert dans t_ct_exe par extrapolation t_ct_conf_fillatt. 
+- add: gracethdcheck_37_exe_pgs_from_user.sql
+# Amélioration des messages
+- chg: gracethdcheck_pg_create_v_ct_anom.bat : affichage nom de batch exécuté
+- chg: gracethdcheck_pg_create_v_ct_unit.bat : affichage nom de batch exécuté
+- chg: gracethdcheck_pg_create_tables.bat : affichage nom de batch exécuté
+- chg: gracethdcheck_pg_maj_from_user.bat : affichage nom de batch exécuté. 
+- chg: gracethd_pg_import_shpcsv-in_psql.bat : Gracelite remplacé par GraceTHD. 
+- chg: gracethdcheck_pg_import_shpcsv-in_psql.bat : Gracelite remplacé par GraceTHD. 
+# Vues synthétiques
+- add: gracethdcheck_63_views_synt.sql : création des vues pour créer des vues synthétiques. 
+- add: gracethdcheck_pg_create_v_ct_synt.bat : création des vues synthétiques. 
+# GraceTHD-Check Publication (gracethdcheckpub)
+- chg: gracethdcheck_pg_create_db.bat : ajout de la création du schéma gracethdcheckpub. 
+- add: gracethdcheck_62_views_anom_vmat.sql : création des vues matérialisées pour les rapports d'anomalies. 
+- add: gracethdcheck_63_views_synt_vmat.sql : création des vues matérialisées pour les vues synthétiques. 
+- add: gracethdcheck_pg_refresh.bat : Refresh des vues matérialisées GraceTHD-Check (gracethdcheckpub). 
+- chg: gracethdcheck_pg_export_csv_anom.bat : renommage de gracethdcheck_pg_export_v_ct_anom_csv.bat 
+- add: gracethdcheck_pg_export_pub_shpcsv.bat : 
+# Simplification ct_script
+- chg: gracethdcheck_35_code_pgs_insert.sql : requête unitaire n'a plus que ct_code, ct_detail et les attributs de la table contrôlée. 
+- chg: gracethdcheck_62_views_anom.sql : now() remplacé par LOCALTIMESTAMP(0)
+# Gestion des versions de MCD
+- chg: gracethdcheck_30_tables.sql : ajout de la creation de la table t_ct_conf_exe_pgs
+# Optimisations
+- add: gracethd_61_vues_elem_vmat.sql : Vues élémentaires MATERIALIZED. 
+- chg: gracethd_pg_create_tables.bat : prise en compte gracethd_61_vues_elem_vmat.sql
+- add: gracethd_pg_refresh.bat : REFRESH des vues élémentaires matérialisées. 
+# Debug
+- fix: gracethdcheck_pg_create_tables.bat : correction problème de double exécution du script. 
+- fix: gracethdcheck_pg_create_db.bat : ajout -d %GLCTPGDB%
+- fix: gracethd_pg_create_db.bat : ajout -d %GLCTPGDB%
+- fix: gracethd_pg_export_shpcsv-out.bat : ajout -k pour export des noms d'attributs en minuscules. 
+- fix: gracethd_pg_create_db.bat : correction du nom da sous-routine :SCHEMA_GRACETHD
+# Indicateurs
+- add: gracethdcheck_65_views_indi.sql : ajout de ce fichier pour stocker des indicateurs calculés sous forme de vues dans le schéma gracethd. 
+- add: gracethdcheck_65_views_indi.sql : ajout v_in_1_rowsnb. 
+- add: gracethdcheck_65_views_indi.sql : ajout v_in_1_rowsmd5. 
+- add: gracethdcheck_65_views_indi.sql : ajout v_in_1_cblgreel
+# Intégration Gracelite
+- add: sql_spatialite : ajout des SQL Spatialite GraceTHD-MCD 2.0.1 (gracethd_10_lists.sql, gracethd_20_insert.sql, gracethd_30_tables.sql, gracethd_40_spatialite.sql, gracethd_50_index.sql, gracethd_61_vues_elem.sql, gracethd_90_labo.sql, gracethd_91_patchs.sql)
+- add: gracethd_spl_dbinteg_export_to_shpcsv-out.bat : export Spatialite dbinteg vers shpcsv-out. 
+# Points de contrôle
+- add: gracethdcheck_33_conf_insert.sql : ajout de la variable ct_1_srsepsg. 
+- add: gracethdcheck_34_cat_insert.sql : t_ct_cat, ajout cm_nature_1_m00001.
+- fix: gracethdcheck_35_code_pgs_insert.sql : correction cl_geom_1_g80010
+- fix: gracethdcheck_35_code_pgs_insert.sql : correction cl_geom_1_g80012
+- fix: gracethdcheck_35_code_pgs_insert.sql : correction ad_geom_1_g80005
+# QGIS
+- add: gracethdcheck_qgis2.14_postgis.qgs : gracethd-layers + vues matérialisées gracethd-layers + gracethd-check (vues dynamiques et matérialisées). 
+- chg: gracethdcheck_qgis2.14_postgis.qgs : amélioration de la symbologie pour certaines couches GraceTHD-Layers (affichage par échelle, étiquetage, ...)
+# Doc
+- chg: mise à jour de tous les éléments de la documentation. 
+- chg: déplacement dans le dossier .\docs\GraceTHD-Check\
+- add: ajout du contenu de mcd_doc dans .\docs\GraceTHD-MCD\
+- add: ajout du contenu de mod_doc dans .\docs\GraceTHD-MOD\
+- add: ajout du contenu de layers_doc dans .\docs\GraceTHD-Layers\
+
 v0.01-alpha5d
 - fix: \temp : ajout temp.md
 - fix: \check\postgis : ajout postgis.md

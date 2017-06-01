@@ -1,7 +1,7 @@
 /* gracethdcheck_33_conf_insert.sql */
 /* Owner : GraceTHD-Community - http://gracethd-community.github.io/ */
 /* Author : stephane dot byache at aleno dot eu */
-/* Rev. date : 09/12/2016 */
+/* Rev. date : 30/05/2017 */
 
 /* ********************************************************************
     This file is part of GraceTHD.
@@ -28,7 +28,7 @@ TRUNCATE t_ct_conf;
 
 /*Renseigner t_ct_conf avec les valeurs par défaut*/
 BEGIN;
-INSERT INTO t_ct_conf VALUES ('ct_1_liv', 'Code de la livraison controlee', 'LIV0001');
+INSERT INTO t_ct_conf VALUES ('ct_1_liv', 'Code de la livraison controlee', (SELECT current_database()));
 INSERT INTO t_ct_conf VALUES ('ct_1_sfdistmaxad', 'Distance maximale entre le SUF et l adresse', '20'); 
 INSERT INTO t_ct_conf VALUES ('ct_1_cbcapamin', 'Capacite minimale des cables', '2');
 INSERT INTO t_ct_conf VALUES ('ct_1_cbcapamax', 'Capacite maximale des cables', '780');
@@ -37,6 +37,8 @@ INSERT INTO t_ct_conf VALUES ('ct_1_topotol', 'Controles topologiques : distance
 INSERT INTO t_ct_conf VALUES ('ct_1_distnrozanro', 'Distance maximale entre le NRO et sa zone arrière (0 si le NRO doit être a l''interieur)', '0');
 INSERT INTO t_ct_conf VALUES ('ct_1_distsrozasro', 'Distance maximale entre le SRO et sa zone arriere (0 si le SRO doit être a l''interieur)', '0');
 INSERT INTO t_ct_conf VALUES ('ct_1_distpbozapbo', 'Distance maximale entre le PBO et sa zone arriere (0 si le PBO doit être a l''interieur)', '0');
+INSERT INTO t_ct_conf VALUES ('ct_1_srsepsg', 'Code EPSG du systeme de coordonnees', '2154');
+
 COMMIT;
 
 

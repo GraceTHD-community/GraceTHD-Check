@@ -7,14 +7,15 @@ REM ##################################################
 REM # GLCONF : Dossier qui accueille les fichiers de configuration. 
 SET GLCONF=.\conf
 
+
 :GL_CONFIG_DEBUG
 REM ##################################################
 REM ### CONFIG GRACETHD-CHECK - DEBOGAGE
 
 REM Pour ne pas appliquer de pauses
-REM SET GLPAUSE=
+SET GLPAUSE=
 REM Pour appliquer des pauses et visualiser l'affichage
-SET GLPAUSE=PAUSE
+REM SET GLPAUSE=PAUSE
 
 
 :GL_CALLCONF
@@ -62,5 +63,4 @@ IF NOT EXIST "%GLCF%" (
 ECHO GRACETHD-CHECK - %GLCF% n'existe pas !
 PAUSE
 ) ELSE CALL "%GLCF%"
-
 

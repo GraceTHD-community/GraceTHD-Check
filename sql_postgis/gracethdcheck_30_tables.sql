@@ -1,7 +1,7 @@
 /* gracethdcheck_30_tables.sql */
 /* Owner : GraceTHD-Community - http://gracethd-community.github.io/ */
 /* Author : stephane dot byache at aleno dot eu */
-/* Rev. date : 09/01/2017 */
+/* Rev. date : 11/04/2017 */
 
 /* ********************************************************************
     This file is part of GraceTHD.
@@ -34,6 +34,8 @@ DROP TABLE IF EXISTS t_ct_code_pgs CASCADE;
 DROP TABLE IF EXISTS t_ct_code_pgs_user CASCADE;
 DROP TABLE IF EXISTS t_ct_code_spl CASCADE;
 DROP TABLE IF EXISTS t_ct_code_spl_user CASCADE;
+DROP TABLE IF EXISTS t_ct_exe_pgs CASCADE;
+DROP TABLE IF EXISTS t_ct_exe_pgs_user CASCADE;
 
 CREATE TABLE t_ct_conf (
 	nom VARCHAR(254)
@@ -221,3 +223,71 @@ CREATE TABLE t_ct_code_spl_user(
 	ct_spl_script TEXT CHECK (ct_spl_script LIKE '/*' || ct_spl_code || '*/%') --LE SCRIPT SQL
 );
 
+/*Table d'exécution des points de contrôle*/
+CREATE TABLE t_ct_exe_pgs(
+	ct_code VARCHAR(100) REFERENCES t_ct_code_pgs(ct_pgs_code),
+	ct_def VARCHAR(254), --check t_ct_cat
+	ct_type VARCHAR(1), --check t_ct_cat
+	ct_sensib VARCHAR(1), --check t_ct_cat --check que c'est cohérent avec le '%_[code]_____'
+	ct_order INTEGER, --UNIQUE ? Serait pénible si on se fout de l'ordre. 
+	ct_case VARCHAR(100), --REFERENCES t_ct_conf_cases(code), --t_ct_conf_fillatt devrait pointer cette table. --avec v_ct_exe on peut imaginer avoir différents cas configurés dans t_ct_exe et n'exécuter que sur un cas. 
+	ct_table VARCHAR(100) REFERENCES t_ct_conf_filltab (nomtable), --check t_ct_cat.ct_maintable --check que c'est une table qui existe dans gracethd ?
+	ct_att VARCHAR(20), --check t_ct_cat --check ct_att + ct_table = OK
+	ct_exe_pre VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_dia VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_avp VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_pro VARCHAR(2) REFERENCES l_ct_exe(code),	
+	ct_exe_act VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_exe VARCHAR(2) REFERENCES l_ct_exe(code),	
+	ct_exe_tvx VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_rec VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_mco VARCHAR(2) REFERENCES l_ct_exe(code),
+	CONSTRAINT ct_exe_pk PRIMARY KEY (ct_code, ct_case)
+);
+
+/*Table d'exclusion de points de contrôle*/
+/*Permet d'exclure des points de contrôle selon le ct_case*/
+/*ct_case doit intégrer la version du MCD prise en compte et donc permet de ne pas exécuter certains points de contrôle pour certaines versions de MCD*/ 
+/*Exemples de valeurs ct_case :
+- DSP Affermage FTTH GraceTHD-MCD v2.0
+- DSP Affermage FTTH GraceTHD-MCD v2.0.1
+- DSP Affermage FTTH GraceTHD-MCD v2.1.0
+*/
+/*Un script uodate permet de modifier t_ct_exe_pgs avec les valeurs de t_ct_conf_exe_pgs*/
+CREATE TABLE t_ct_conf_exe_pgs(
+	ct_code VARCHAR(100) REFERENCES t_ct_code_pgs(ct_pgs_code),
+	ct_case VARCHAR(100), --REFERENCES t_ct_conf_cases(code), 
+	ct_exe_pre VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_dia VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_avp VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_pro VARCHAR(2) REFERENCES l_ct_exe(code),	
+	ct_exe_act VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_exe VARCHAR(2) REFERENCES l_ct_exe(code),	
+	ct_exe_tvx VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_rec VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_mco VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_comment VARCHAR(254),
+	CONSTRAINT ct_conf_exe_pk PRIMARY KEY (ct_code, ct_case)
+);
+
+/*Table d'exécution des points de contrôle*/
+CREATE TABLE t_ct_exe_pgs_user(
+	ct_code VARCHAR(100) REFERENCES t_ct_code_pgs(ct_pgs_code),
+	ct_def VARCHAR(254), --check t_ct_cat
+	ct_type VARCHAR(1), --check t_ct_cat
+	ct_sensib VARCHAR(1), --check t_ct_cat --check que c'est cohérent avec le '%_[code]_____'
+	ct_order INTEGER, --UNIQUE ? Serait pénible si on se fout de l'ordre. 
+	ct_case VARCHAR(100), --REFERENCES t_ct_conf_cases(code), --t_ct_conf_fillatt devrait pointer cette table. --avec v_ct_exe on peut imaginer avoir différents cas configurés dans t_ct_exe et n'exécuter que sur un cas. 
+	ct_table VARCHAR(100) REFERENCES t_ct_conf_filltab (nomtable), --check t_ct_cat.ct_maintable --check que c'est une table qui existe dans gracethd ?
+	ct_att VARCHAR(20), --check t_ct_cat --check ct_att + ct_table = OK
+	ct_exe_pre VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_dia VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_avp VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_pro VARCHAR(2) REFERENCES l_ct_exe(code),	
+	ct_exe_act VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_exe VARCHAR(2) REFERENCES l_ct_exe(code),	
+	ct_exe_tvx VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_rec VARCHAR(2) REFERENCES l_ct_exe(code),
+	ct_exe_mco VARCHAR(2) REFERENCES l_ct_exe(code),
+	CONSTRAINT ct_exe_user_pk PRIMARY KEY (ct_code, ct_case)
+);

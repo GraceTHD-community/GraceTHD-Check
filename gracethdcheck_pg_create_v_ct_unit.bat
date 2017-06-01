@@ -1,5 +1,12 @@
 @ECHO OFF
 
+REM gracethdcheck_pg_create_v_ct_unit.bat
+REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
+REM Author : stephane dot byache at aleno dot eu
+REM Rev. date : 13/03/2017
+
+
+
     REM This file is part of GraceTHD.
 
     REM GraceTHD is free software: you can redistribute it and/or modify
@@ -36,13 +43,13 @@ GOTO :EOF
 
 :DELETE
 ECHO %DOUT%
-ECHO GraceTHD-Check - Suppression des fichiers sql temporaires. 
+ECHO GraceTHD-Check - %~nx0 - Suppression des fichiers sql temporaires. 
 IF EXIST "%DOUT%" DEL "%DOUT%"
 IF EXIST "%FOUT%" DEL "%FOUT%"
 GOTO :EOF
 
 :EXPORT_DROP
-ECHO GraceTHD-Check - Creation des fichiers sql temporaires pour supprimer les vues unitaires. 
+ECHO GraceTHD-Check - %~nx0 - Creation des fichiers sql temporaires pour supprimer les vues unitaires. 
 
 REM Suppression fichiers temporaires
 IF EXIST "%DOUT%add" DEL "%DOUT%add"
@@ -64,7 +71,7 @@ IF EXIST "%DOUT%psql" DEL "%DOUT%psql"
 GOTO :EOF
 
 :EXPORT_CREATE
-ECHO GraceTHD-Check - Creation des fichiers sql temporaires pour creer les vues unitaires. 
+ECHO GraceTHD-Check - %~nx0 - Creation des fichiers sql temporaires pour creer les vues unitaires. 
 
 REM Suppression fichiers temporaires
 IF EXIST "%FOUT%add" DEL "%FOUT%add"
@@ -87,12 +94,12 @@ GOTO :EOF
 
 :EXPORT_CREATE_REPLACE
 
-ECHO GraceTHD-Check - Debut de remplacement des caracteres speciaux. 
+ECHO GraceTHD-Check - %~nx0 - Debut de remplacement des caracteres speciaux. 
 "%GLSFK%" replace "%FOUT%" -spat "/\\t/\t/" -yes
 "%GLSFK%" replace "%FOUT%" -spat "/\\r\\n/\r\n/" -yes
 "%GLSFK%" replace "%FOUT%" -spat "/\\n\\n/\r\n/" -yes
 "%GLSFK%" replace "%FOUT%" -spat "/\\n/\n/" -yes
-ECHO GraceTHD-Check - Fin de remplacement des caracteres speciaux. 
+ECHO GraceTHD-Check - %~nx0 - Fin de remplacement des caracteres speciaux. 
 
 GOTO :EOF
 
@@ -109,16 +116,16 @@ GOTO :EOF
 
 
 :EXEC
-ECHO GraceTHD-Check - Execution du script de suppression des vues unitaires %DOUT%. 
+ECHO GraceTHD-Check - %~nx0 - Execution du script de suppression des vues unitaires %DOUT%. 
 "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %GLCTPGDB% -U %PGUSER% -f "%DOUT%" 
 
-ECHO GraceTHD-Check - Execution du script de suppression des vues unitaires %DOUT%. 
+ECHO GraceTHD-Check - %~nx0 - Execution du script de suppression des vues unitaires %DOUT%. 
 "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %GLCTPGDB% -U %PGUSER% -f "%FOUT%" 
 
 GOTO :EOF
 
 
 :END
-ECHO GraceTHD-Check - Fin
+ECHO GraceTHD-Check - %~nx0 - Fin
 %GLPAUSE%
 

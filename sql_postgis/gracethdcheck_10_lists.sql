@@ -1,7 +1,7 @@
 /* gracethdcheck_20_lists.sql */
 /* Owner : GraceTHD-Community - http://gracethd-community.github.io/ */
 /* Author : stephane dot byache at aleno dot eu */
-/* Rev. date : 09/12/2016 */
+/* Rev. date : 11/04/2017 */
 
 /* ********************************************************************
     This file is part of GraceTHD.
@@ -22,6 +22,7 @@
 
 SET search_path TO gracethdcheck, public;
 
+DROP TABLE IF EXISTS l_ct_exe CASCADE;
 DROP TABLE IF EXISTS l_ct_fill CASCADE;
 DROP TABLE IF EXISTS l_ct_type CASCADE;
 DROP TABLE IF EXISTS l_ct_mode CASCADE;
@@ -29,6 +30,14 @@ DROP TABLE IF EXISTS l_ct_sensibilite CASCADE;
 DROP TABLE IF EXISTS l_ct_origine CASCADE;
 DROP TABLE IF EXISTS l_ct_statut CASCADE;
 
+
+CREATE TABLE l_ct_exe(
+	code VARCHAR(2),
+	libelle character varying(254),
+	definition character varying(254),
+CONSTRAINT l_ct_exe_pk PRIMARY KEY (code)
+)
+;
 
 CREATE TABLE l_ct_type(
 code VARCHAR(1) PRIMARY KEY,

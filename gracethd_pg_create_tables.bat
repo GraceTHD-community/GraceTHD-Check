@@ -1,5 +1,11 @@
 @ECHO OFF
 
+REM gracethd_pg_create_tables.bat
+REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
+REM Author : stephane dot byache at aleno dot eu
+REM Rev. date : 08/05/2017
+
+
     REM This file is part of GraceTHD.
 
     REM GraceTHD is free software: you can redistribute it and/or modify
@@ -68,6 +74,11 @@ ECHO GraceTHD - Postgis - %FSQL%
 "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f "%GLCTPGSQLPATH%\%FSQL%" -d %PGDB% -U %PGUSER%
 
 SET FSQL=gracethd_61_vues_elem.sql
+ECHO GraceTHD - Postgis - %FSQL%
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f "%GLCTPGSQLPATH%\%FSQL%" -d %PGDB% -U %PGUSER%
+%GLPAUSE% 
+
+SET FSQL=gracethd_61_vues_elem_vmat.sql
 ECHO GraceTHD - Postgis - %FSQL%
 "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f "%GLCTPGSQLPATH%\%FSQL%" -d %PGDB% -U %PGUSER%
 %GLPAUSE% 

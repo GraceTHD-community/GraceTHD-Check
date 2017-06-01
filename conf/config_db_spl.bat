@@ -15,14 +15,14 @@ SET GLDBINTEG=.\dbinteg\gracelite_integ.sqlite
 REM # GLDBINTEGSCHEMA : chemin vers les fichiers SQL permettant de creer la base. 
 SET GLDBINTEGSCHEMA=.\sql_spatialite
 REM # GLDBINTEGPRAGMA : EXPERIMENTAL - pragma avec ogr
-SET GLDBINTEGPRAGMA=--config OGR_SQLITE_PRAGMA = "foreign_keys = on,cache_size = 500000"
+REM SET GLDBINTEGPRAGMA=--config OGR_SQLITE_PRAGMA = "foreign_keys = on,cache_size = 500000"
 
 REM ## CONFIG GRACELITE - GRACETHD-MCD DBPROD SPATIALITE
 REM # GLDBINTEG : chemin vers la base de donnees Spatialite de production
 SET GLDBPROD=.\dbprod\gracelite_prod.sqlite
 SET GLDBPRODSCHEMA=.\sql_spatialite
 REM EXPERIMENTAL - pragma avec ogr
-SET GLDBPRODPRAGMA=--config OGR_SQLITE_PRAGMA = "foreign_keys = on,cache_size = 500000"
+REM SET GLDBPRODPRAGMA=--config OGR_SQLITE_PRAGMA = "foreign_keys = on,cache_size = 500000"
 
 
 :GL_CONFIG_GRACETHDCHECK

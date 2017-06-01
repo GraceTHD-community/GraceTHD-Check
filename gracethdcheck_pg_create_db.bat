@@ -1,5 +1,11 @@
 @ECHO OFF
 
+REM gracethdcheck_pg_create_db.bat
+REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
+REM Author : stephane dot byache at aleno dot eu
+REM Rev. date : 08/05/2017
+
+
     REM This file is part of GraceTHD.
 
     REM GraceTHD is free software: you can redistribute it and/or modify
@@ -32,8 +38,10 @@ CALL:TABLES_GRACETHD
 
 REM CREATION DE GRACETHDCHECK
 CALL:SCHEMA_GRACETHDCHECK
+CALL:SCHEMA_GRACETHDCHECKPUB
 CALL:TABLES_GRACETHDCHECK 
 CALL:VUES_GRACETHDCHECK 
+CALL:VUES_GRACETHDCHECKPUB
 
 CALL:END
 
@@ -62,7 +70,7 @@ GOTO:EOF
 ECHO GraceTHD - Postgis - Creation du schema %PGSCHEMA%. 
 "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "CREATE SCHEMA IF NOT EXISTS %PGSCHEMA% AUTHORIZATION %PGROLE%;" -d %GLCTPGDB% -U %PGUSER% 
 REM "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "ALTER DATABASE %GLCTPGDB% SET search_path = %GLCTPGSCHEMACHECK%, %GLCTPGSCHEMA%, public;" -U %PGUSER% 
-"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "ALTER DATABASE %GLCTPGDB% SET search_path = %GLCTPGSCHEMA%, public;" -U %PGUSER% 
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "ALTER DATABASE %GLCTPGDB% SET search_path = %GLCTPGSCHEMA%, public;" -d %GLCTPGDB% -U %PGUSER% 
 GOTO:EOF
 
 :TABLES_GRACETHD
@@ -127,6 +135,14 @@ REM "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "ALTER DATABASE %GLCTPGDB% SET se
 
 GOTO:EOF
 
+:SCHEMA_GRACETHDCHECKPUB
+ECHO GraceTHD-Check - Postgis - Creation du schema %GLCTPGSCHEMACHECKPUB%. 
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "CREATE SCHEMA IF NOT EXISTS %GLCTPGSCHEMACHECKPUB% AUTHORIZATION %PGROLE%;" -d %GLCTPGDB% -U %PGUSER% 
+REM "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "ALTER DATABASE %GLCTPGDB% SET search_path = %GLCTPGSCHEMACHECK%, %GLCTPGSCHEMA%, public;" -U %PGUSER% 
+
+GOTO:EOF
+
+
 :TABLES_GRACETHDCHECK
 
 CALL gracethdcheck_pg_create_tables.bat
@@ -137,6 +153,13 @@ GOTO:EOF
 
 CALL gracethdcheck_pg_create_v_ct_unit.bat
 CALL gracethdcheck_pg_create_v_ct_anom.bat
+CALL gracethdcheck_pg_create_v_ct_synt.bat
+
+GOTO:EOF
+
+:VUES_GRACETHDCHECKPUB
+
+CALL gracethdcheck_pg_create_v_ct_vmat.bat
 
 GOTO:EOF
 
@@ -145,4 +168,4 @@ GOTO:EOF
 ECHO GraceTHD - Postgis - Fin de creation de la base de donnees %PGHOSTNAME%:%GLCTPGDB%. 
 
 %GLPAUSE%
-EXIT
+REM EXIT

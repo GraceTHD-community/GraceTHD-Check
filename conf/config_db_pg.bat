@@ -47,7 +47,7 @@ SET PGPORT=5432
 REM ##################################################
 REM ### CONFIG GRACETHD-CHECK - CHEMINS GRACETHD POUR POSTGIS
 REM # GLPGPATHSHARE : dossier pour lequel l'utilisateur reference dans la variable PGUSER a les droits de lecture et d'ecriture. 
-SET GLPGPATHSHARE=.\
+SET GLPGPATHSHARE=.
 REM SET GLPGPATHSHARE=D:\postgres_files
 REM # PGSHPINPATH : Dossier comportant les shp/csv a importer dans Postgis.
 REM USER : ATTENTION l'utilisateur definit pour PGUSER doit avoir les droits d'acces au contenu de ce dossier. 
@@ -82,6 +82,8 @@ REM # GLCTPGSCHEMA : Nom du schema qui accueille Gracethd-MCD dans la base a con
 SET GLCTPGSCHEMA=%PGSCHEMA%
 REM # GLCTPGSCHEMACHECK : Nom du schema qui accueille Gracethd-Check dans la base a controler. 
 SET GLCTPGSCHEMACHECK=gracethdcheck
+REM # GLCTPGSCHEMACHECKPUB : Nom du schema qui accueille les vues de publication de Gracethd-Check dans la base a controler. 
+SET GLCTPGSCHEMACHECKPUB=gracethdcheckpub
 REM # GLCTPGDB : Nom de la base de donnees a controler
 REM USER : Normalement on n'utilise pas la base de production pour controler une reception. Donc pointer une base d'integration. 
 REM GLCTPGDB risque de disparaitre. 

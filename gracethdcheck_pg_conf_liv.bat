@@ -1,4 +1,9 @@
 @ECHO OFF
+
+REM gracethdcheck_pg_conf_liv.bat
+REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
+REM Author : stephane dot byache at aleno dot eu
+REM Rev. date : 09/01/2017
     
 	REM This file is part of GraceTHD.
 
@@ -21,7 +26,8 @@ CALL :DEBUG
 CALL :LIVOLD
 CALL :LIVNEW
 CALL :LIVPG
-GOTO END
+REM GOTO END
+CALL :END
 
 :CONF
 CALL config.bat

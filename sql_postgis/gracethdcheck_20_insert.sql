@@ -1,7 +1,7 @@
 /* gracethdcheck_20_insert.sql */
 /* Owner : GraceTHD-Community - http://gracethd-community.github.io/ */
 /* Author : stephane dot byache at aleno dot eu */
-/* Rev. date : 09/12/2016 */
+/* Rev. date : 13/03/2017 */
 
 /* ********************************************************************
     This file is part of GraceTHD.
@@ -24,6 +24,16 @@ SET search_path TO gracethdcheck, public;
 
 
 BEGIN;
+/*Insertion données l_ct_exe*/
+INSERT INTO l_ct_exe VALUES ('O','Obligatoire','Obligatoire quelles que soient les circonstances');
+INSERT INTO l_ct_exe VALUES ('C', 'Conditionnel', 'Obligatoire si la condition est remplie');
+INSERT INTO l_ct_exe VALUES ('N','Non','Donnée inutile dans ce contexte ou à ce stade du projet');
+INSERT INTO l_ct_exe VALUES ('F','Facultatif','Non obligatoire sauf contexte particulier a determiner et contractualiser');
+INSERT INTO l_ct_exe VALUES ('NO','Obligatoire non execute','Non execution de Obligatoire quelles que soient les circonstances');
+INSERT INTO l_ct_exe VALUES ('NC', 'Conditionnel', 'Non execution de Obligatoire si la condition est remplie');
+INSERT INTO l_ct_exe VALUES ('EN','Execution Non','Donnée inutile dans ce contexte ou à ce stade du projet');
+INSERT INTO l_ct_exe VALUES ('EF','Execution Facultatif','Execution point de controle Non obligatoire sauf contexte particulier a determiner et contractualiser');
+
 INSERT INTO l_ct_fill VALUES ('O', 'Obligatoire','');
 INSERT INTO l_ct_fill VALUES ('C', 'Condictionnel','');
 INSERT INTO l_ct_fill VALUES ('', 'Facultatif',''); --TODO: a remplacer par des F dans la grille de remplissage

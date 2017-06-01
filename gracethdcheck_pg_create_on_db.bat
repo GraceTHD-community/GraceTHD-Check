@@ -1,5 +1,12 @@
 @ECHO OFF
 
+REM gracethdcheck_pg_create_on_db.bat
+REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
+REM Author : stephane dot byache at aleno dot eu
+REM Rev. date : 14/02/2017
+
+
+
     REM This file is part of GraceTHD.
 
     REM GraceTHD is free software: you can redistribute it and/or modify

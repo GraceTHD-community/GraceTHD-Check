@@ -3,7 +3,7 @@
 /* gracethdcheck_62_views_anom.sql */
 /* Owner : GraceTHD-Community - http://gracethd-community.github.io/ */
 /* Author : stephane dot byache at aleno dot eu */
-/* Rev. date : 09/12/2016 */
+/* Rev. date : 13/03/2017 */
 
 /* ********************************************************************
     This file is part of GraceTHD.
@@ -22,10 +22,29 @@
     along with GraceTHD.  If not, see <http://www.gnu.org/licenses/>.
 *********************************************************************** */
 
-/*TODO: BUG !!! Seuls les type R sont pris en compte !?*/
-
 SET search_path TO gracethdcheck, gracethd, public;
 
+
+DROP VIEW IF EXISTS v_ct_sqlcreate_v_ct_anom;
+
+CREATE VIEW v_ct_sqlcreate_v_ct_anom AS
+SELECT
+'SELECT 
+	COUNT(*) AS ct_nbobj,
+	(SELECT valeur FROM t_ct_conf WHERE nom=''ct_1_liv'') AS ct_liv,
+	LOCALTIMESTAMP(0) AS ct_date,
+	ct_code
+FROM v_ct_unit_' || ct_code || '
+GROUP BY ct_code
+UNION' AS ct_views
+FROM v_ct_exe
+;
+
+
+
+/* ******************************************* */
+/* OLD */
+/*
 DROP VIEW IF EXISTS v_ct_sqlcreate_v_ct_anom_1_pre;
 CREATE VIEW v_ct_sqlcreate_v_ct_anom_1_pre AS
 SELECT 
@@ -169,3 +188,4 @@ FROM t_ct_conf_fillatt AS R, t_ct_cat AS C
 WHERE R.ATTUNIQUE = C.ct_attunique
 AND R.MCO = 'O'
 ;
+*/
