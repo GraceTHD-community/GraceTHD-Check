@@ -1,0 +1,78 @@
+﻿GraceTHD-MOD
+
+### Changelog
+
+19/09/2017
+v2.0.2
+- chg: Harmonisation de l'arborescence avec les autres projets GraceTHD. 
+- chg: gracethd-mod-v2.0.2_doc_v01 : ajout du type de document DTA + page de garde. 
+- chg: gracethd-mod-v2.0.2 : ajout du type de document DTA + page de garde. 
+- chg: changelog.txt : renommé changelog_gracethdmod.txt et déplacé dans .\docs\GraceTHD-MOD. 
+- chg: AVP-DLG-R2DSPEA001-01-V1.zip : mise à jour à partir de GraceTHD-Demo v2.0.1. 
+
+23/11/2016
+v2.0.1
+	Ajout de la grille de remplissage : 
+	Ce nouveau document, disponible dans le répertoire "doc", précise le contenu attendu selon les phases du projet pour le type de document "DLG - Dossier de livrable GraceTHD-MCD"
+	En lien avec le géostandard GraceTHD ANT V2 (voir le projet Github GraceTHD-MCD), il préconise pour chaque phase le détail des tables et attributs à collecter.
+	La grille était anciennement téléchargeable directement sur le site de l'AVICCA, les évolutions apportées à l'occasion de son intégration dans GraceTHD-MOD sont :
+		- Passage en .ods
+		- Valeurs centrées. 
+		- Restructuration pour intégration base. 
+			- MCD_Attributs et MCD_Classes
+				- Suppression des / dans les titres de colonnes. 
+				- Remplacement de "Nom court de l'attribut" par "Attribut". 
+				- Ajout de "Attribut" devant la table concessif ftth. 
+				- Avant, ajout d'une colonne "Reseau" pour y passer "DSP CONCESSIF FTTH
+				éléments propriété DSP" etc. 
+				- Suppression ligne 1
+				- Ajout colonne vide avant attribut afin de visuellement séparer les tables. 
+				- Renommage des noms de colonnes : Classe, NomTable, Definition, Regle, Location
+				- Ajout d'une colonne après chaque table pour générer le code SQL d'intégration des données. 
+		- Production des tables en csv (UTF-8 / séparateur ; / séparateur texte ")
+		- Classes : remplacement d'espaces par des NULL. 
+
+07/01/2016
+v2.0
+	Synchronisation et mise en cohérence avec la version 2.0 validée du Geostandard ANT et du projet GraceTHD-MCD
+	Les modifications apportées sont mineures :
+		- correction du numéro de version qui était v1_beta1a au lieu de v2_beta1a dans certains documents
+		- passage en release v2.0
+		- création d'un répertoire "sources" pour le placement du fichier de travail (identique GraceTHD-MCD)
+		- prise en compte de la suppression des identifiants dans GraceTHD-MCD (onglet MOD_nommage du fichier gracethd-mod-v2.0_doc_v01.ods, commentaires sur le code et faux amis)
+		- ajout de précisions sur l'arborescence (onglet MOD_nommage également)
+		- remplacement du jeu de données par le dernier jeu de données actuellement disponible (v2.0.0)
+		
+10/06/2015
+v2_beta1a
+	Ajout d'un fichier readme.txt dans le répertoire "Exemple"
+	Modification de la page d'accueil et du fichier readme.md (à la racine)
+	Mise en forme du fichier ods
+	Création d'un répertoire pour la documentation (mod_doc) et création d'un fichier documentation (le même que le fichier ods, allégé des batchs)
+
+v2_alpha1c
+	Modification de l'arborescence exemple
+
+06/06/2015
+v2_alpha1b
+	Première version destinée à la consultation des acteurs
+	- Ajout d'un exemple d'arborescence contenant un exemple de livrables graceTHD
+	- Modifications générales dans le fichier ods :
+		- Ajout d'une colonne "Exemple nommage"
+		- Suppression de la notion de "famille de document"
+		- Homogénéisation de la colonne "condition"
+		- Simplification du nommage des parties variables
+		- Ajout des onglets Exemples et batchs (pour la génération de l'arborescence exemple)
+	- Modifications sur les types de documents :
+		- Ajout des livrables géo correspondants au MCD GraceTHD V2
+		- Ajout du PLU et du PV de réception de voirie
+		- Suppression du PV de câblage et du PV optique
+		- Rattachement du dossier d'appui aérien à un seul appui
+		- ajout du dossier de commande pour location/occupation d'infrastructure
+		- Séparation du dossier immeuble en "Dossier de création de site (DCS)" et "Dossier de raccordement de site (DRS)"
+
+
+17/05/2015
+v2_alpha1a
+  	Première version créée comme base de discussion, non publiée
+	Directement nommée v2 car associée au MCD GraceTHD v2

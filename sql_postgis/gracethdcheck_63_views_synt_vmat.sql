@@ -157,6 +157,17 @@ FROM v_ct_synt_t_cassette AS S, vs_elem_cs_bp_pt_nd AS E
 WHERE S.cs_code = E.cs_code
 ;
 
+/*mvs_ct_synt_t_cassette-lt*/ 
+DROP MATERIALIZED VIEW IF EXISTS "mvs_ct_synt_t_cassette-lt";
+CREATE MATERIALIZED VIEW "mvs_ct_synt_t_cassette-lt" AS
+SELECT 
+    --ct_code || '__' || zs_code AS ct_anom,
+  S.*,
+  E.geom
+FROM v_ct_synt_t_cassette AS S, vs_elem_cs_bp_lt_st_nd AS E
+WHERE S.cs_code = E.cs_code
+;
+
 /*mvs_ct_synt_t_conduite*/ 
 DROP MATERIALIZED VIEW IF EXISTS "mvs_ct_synt_t_conduite";
 CREATE MATERIALIZED VIEW "mvs_ct_synt_t_conduite" AS
@@ -177,6 +188,28 @@ SELECT
   S.*,
   E.geom
 FROM v_ct_synt_t_ebp AS S, vs_elem_bp_pt_nd AS E
+WHERE S.bp_code = E.bp_code
+;
+
+/*mvs_ct_synt_t_ebp-lt*/ 
+DROP MATERIALIZED VIEW IF EXISTS "mvs_ct_synt_t_ebp-lt";
+CREATE MATERIALIZED VIEW "mvs_ct_synt_t_ebp-lt" AS
+SELECT 
+    --ct_code || '__' || zs_code AS ct_anom,
+  S.*,
+  E.geom
+FROM v_ct_synt_t_ebp AS S, vs_elem_bp_lt_st_nd AS E
+WHERE S.bp_code = E.bp_code
+;
+
+/*mvs_ct_synt_t_ebp-sf*/ 
+DROP MATERIALIZED VIEW IF EXISTS "mvs_ct_synt_t_ebp-sf";
+CREATE MATERIALIZED VIEW "mvs_ct_synt_t_ebp-sf" AS
+SELECT 
+    --ct_code || '__' || zs_code AS ct_anom,
+  S.*,
+  E.geom
+FROM v_ct_synt_t_ebp AS S, vs_elem_bp_sf_nd AS E
 WHERE S.bp_code = E.bp_code
 ;
 
@@ -405,7 +438,10 @@ CREATE INDEX mvs_ct_synt_t_zsro_geom_gist ON mvs_ct_synt_t_zsro USING GIST (geom
 CREATE INDEX mvs_ct_synt_t_baie_geom_gist ON mvs_ct_synt_t_baie USING GIST (geom);
 CREATE INDEX mvs_ct_synt_t_cable_geom_gist ON mvs_ct_synt_t_cable USING GIST (geom);
 CREATE INDEX mvs_ct_synt_t_cassette_geom_gist ON mvs_ct_synt_t_cassette USING GIST (geom);
+CREATE INDEX mvs_ct_synt_t_cassette-lt_geom_gist ON mvs_ct_synt_t_cassette-lt USING GIST (geom);
 CREATE INDEX mvs_ct_synt_t_ebp_geom_gist ON mvs_ct_synt_t_ebp USING GIST (geom);
+CREATE INDEX mvs_ct_synt_t_ebp-lt_geom_gist ON mvs_ct_synt_t_ebp-lt USING GIST (geom);
+CREATE INDEX mvs_ct_synt_t_ebp-sf_geom_gist ON mvs_ct_synt_t_ebp-sf USING GIST (geom);
 CREATE INDEX mvs_ct_synt_t_equipement_geom_gist ON mvs_ct_synt_t_equipement USING GIST (geom);
 CREATE INDEX mvs_ct_synt_t_fibre_geom_gist ON mvs_ct_synt_t_fibre USING GIST (geom);
 CREATE INDEX mvs_ct_synt_t_love_geom_gist ON mvs_ct_synt_t_love USING GIST (geom);

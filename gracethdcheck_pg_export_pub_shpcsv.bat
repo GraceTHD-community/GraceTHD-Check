@@ -3,7 +3,7 @@
 REM gracethdcheck_pg_export_shpcsv_synt_vmat.bat
 REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
 REM Author : stephane dot byache at aleno dot eu
-REM Rev. date : 12/05/2017
+REM Rev. date : 19/09/2017
 
 
     REM This file is part of GraceTHD.
@@ -138,11 +138,17 @@ SET PGTBL=mvs_ct_synt_t_cableline
 CALL :EXPORTSHP
 SET PGTBL=mvs_ct_synt_t_cassette
 CALL :EXPORTSHP
+SET PGTBL=mvs_ct_synt_t_cassette-lt
+CALL :EXPORTSHP
 SET PGTBL=mvs_ct_synt_t_cheminement
 CALL :EXPORTSHP
 SET PGTBL=mvs_ct_synt_t_conduite
 CALL :EXPORTSHP
 SET PGTBL=mvs_ct_synt_t_ebp
+CALL :EXPORTSHP
+SET PGTBL=mvs_ct_synt_t_ebp-lt
+CALL :EXPORTSHP
+SET PGTBL=mvs_ct_synt_t_ebp-sf
 CALL :EXPORTSHP
 SET PGTBL=mvs_ct_synt_t_empreinte
 CALL :EXPORTSHP

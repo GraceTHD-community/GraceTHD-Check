@@ -3,7 +3,7 @@
 REM gracethd_pg_import_shpcsv-in_psql.bat
 REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
 REM Author : stephane dot byache at aleno dot eu
-REM Rev. date : 17/02/2017
+REM Rev. date : 18/09/2017
 
     REM This file is part of GraceTHD.
 
@@ -142,7 +142,7 @@ ECHO GraceTHD - Fin Import %PGTBL%
 
 %GLPAUSE%
 
-SET PGTBL=t_coax
+SET PGTBL=t_zcoax
 SET PGSHP=%PGSHPINPATH%\%PGTBL%
 ECHO GraceTHD - Debut Import %PGTBL%
 IF EXIST "%PGSHP%.shp" ("%GL_SHP2PGSQL%" -t 2D -s %PGSRID% -a -W %PGCODE% %PGSHP% %PGSCHEMA%.%PGTBL% > "%GLCTPGTEMP%\%PGTBL%.sql" && "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -f "%GLCTPGTEMP%\%PGTBL%.sql") ELSE (ECHO %PGSHP% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 

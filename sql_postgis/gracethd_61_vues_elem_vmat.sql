@@ -5,7 +5,7 @@
 /* gracethd_61_vues_elem_materialized.sql */
 /* Owner : GraceTHD-Community - http://gracethd-community.github.io/ */
 /* Author : stephane dot byache at aleno dot eu */
-/* Rev. date : 10/04/2017 */
+/* Rev. date : 07/09/2017 */
 
 /* ********************************************************************
     This file is part of GraceTHD.
@@ -85,7 +85,39 @@ FROM
 WHERE 
   t_sitetech.st_nd_code = t_noeud.nd_code AND
   t_ltech.lt_st_code = t_sitetech.st_code;
-  
+
+/*mvs_elem_bp_lt_st_nd*/ 
+DROP MATERIALIZED VIEW IF EXISTS "mvs_elem_bp_lt_st_nd";
+CREATE MATERIALIZED VIEW "mvs_elem_bp_lt_st_nd" AS
+SELECT 
+  * 
+FROM 
+  gracethd.t_ebp,
+  gracethd.t_ltech,
+  gracethd.t_sitetech, 
+  gracethd.t_noeud 
+WHERE 
+  t_sitetech.st_nd_code = t_noeud.nd_code AND
+  t_ltech.lt_st_code = t_sitetech.st_code AND
+  t_ebp.bp_lt_code = t_ltech.lt_code;  
+
+/*vs_elem_cs_bp_lt_st_nd*/ 
+DROP MATERIALIZED VIEW IF EXISTS "mvs_elem_cs_bp_lt_st_nd";
+CREATE MATERIALIZED VIEW "mvs_elem_cs_bp_lt_st_nd" AS
+SELECT 
+  * 
+FROM 
+  gracethd.t_cassette,
+  gracethd.t_ebp,
+  gracethd.t_ltech,
+  gracethd.t_sitetech, 
+  gracethd.t_noeud 
+WHERE 
+  t_sitetech.st_nd_code = t_noeud.nd_code AND
+  t_ltech.lt_st_code = t_sitetech.st_code AND
+  t_ebp.bp_lt_code = t_ltech.lt_code AND
+  t_cassette.cs_bp_code = t_ebp.bp_code
+  ; 
 
 /*mvs_elem_ba_lt_st_nd*/
 DROP MATERIALIZED VIEW IF EXISTS "mvs_elem_ba_lt_st_nd";
@@ -335,6 +367,7 @@ CREATE INDEX mvs_elem_do_em_geom_gist ON mvs_elem_do_em USING GIST (geom);
 CREATE INDEX mvs_elem_eq_ba_lt_st_nd_geom_gist ON mvs_elem_eq_ba_lt_st_nd USING GIST (geom);
 CREATE INDEX mvs_elem_fo_cb_cl_geom_gist ON mvs_elem_fo_cb_cl USING GIST (geom);
 CREATE INDEX mvs_elem_lt_st_nd_geom_gist ON mvs_elem_lt_st_nd USING GIST (geom);
+CREATE INDEX mvs_elem_bp_lt_st_nd_geom_gist ON mvs_elem_bp_lt_st_nd USING GIST (geom);
 CREATE INDEX mvs_elem_lv_nd_geom_gist ON mvs_elem_lv_nd USING GIST (geom);
 CREATE INDEX mvs_elem_mq_nd_geom_gist ON mvs_elem_mq_nd USING GIST (geom);
 CREATE INDEX mvs_elem_pt_nd_geom_gist ON mvs_elem_pt_nd USING GIST (geom);

@@ -750,6 +750,7 @@ REM -silent
 GOTO:EOF
 
 :SFK
+REM Cette solution est beaucoup trop lente. 
 ECHO Suppression des délimiteurs quotes et double quotes 
 %GLSFK% replace -text "_;'_;_" -dir %GLSHPOUTPATH%\ -file .csv -yes
 %GLSFK% replace -text "_';_;_" -dir %GLSHPOUTPATH%\ -file .csv -yes

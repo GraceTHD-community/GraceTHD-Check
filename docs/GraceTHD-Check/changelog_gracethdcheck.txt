@@ -1,0 +1,267 @@
+GraceTHD-Check
+
+### Changelog
+
+v0.02.0
+# Général
+# Documentation
+- chg: GraceTHD-Check_-_Manuel_utilisateur_Postgis : mise à jour pour GraceTHD-Layers v0.03 et GraceTHD-MCD v2.0.1. 
+- chg: changelog_gracethdcheck.txt déplacé de la racine à .\docs\GraceTHD-Check\
+- chg: gracethdcheck-mcd-v0.02 : mise à jour pour la version et logos. 
+
+# GraceTHD-Layers
+- chg: gracethd-layers v0.03 intégré. 
+- chg: gracethdcheck_qgis2.14_postgis.qgs : réintègre désormais les relations comme dans GraceTHD-Layers. 
+- chg: gracethdcheck_qgis2.14_postgis.qgs : Les définitions de datasources ont été unifiées pour les 3 groupes de couches. On ne tappe plus qu'une fois la mot de passe. 
+- chg: gracethdcheck_qgis2.14_postgis.qgs : cablage, suppression vs_elem_cl_cb_lv, remplacé par vs_elem_cl_cb + relation t_fibre. 
+- chg: gracethd20ct_pg.qlr : datasource unifiée. 
+- chg: gracethd20ct_pg_check.qlr : datasource unifiée. 
+- chg: gracethd20ct_pg_materialized.qlr : datasource unifiée. 
+- chg: gracethdcheck_qgis2.14_postgis.qgs : mise à jour avec GraceTHD-Layers 0.03 + ajout vues manquantes. 
+
+# GraceTHD-MCD v2.0.1
+- chg: gracethd_pg_create_db.bat : adaptation à GraceTHD-MCD v2.0.1
+- add: .\db_spatialite\ : ajout d'une base Spatialite vierge (Mais préférer créer des bases vierges avec gracethd_spl_dbinteg_create.bat). 
+
+#GraceTHD-Demo v2.0.1
+- chg: intégration de GraceTHD-Demo01 v2.0.1 dans shpcsv-in. 
+
+# SQL
+- fix: gracethdcheck_63_views_synt_vmat.sql : ajout des vues mvs_ct_synt_t_ebp-sf, mvs_ct_synt_t_ebp-lt, mvs_ct_synt_t_cassette-lt. 
+
+# Batchs
+- add: gracethd_shpcsv_in_to_out.bat : script qui copie les shp/csv vierges de db_shpcsv dans shpcsv-out puis y copie les entités des shp/csv de shpcsv-in. Ceci permet d'utiliser la structure exacte des shp et csv. 
+- chg: gracethd_spl_dbinteg_import_shpcsv-in_ogr.bat : suppression mention gracelite. 
+- add: gracethd_spl_dbprod_import_shpcsv-in_ogr.bat : ajout. 
+- fix: gracethdcheck_pg_import_shpcsv-in_psql.bat : t_coax remplacé par t_zcoax. 
+- fix: gracethd_pg_import_shpcsv-in_psql.bat : t_coax remplacé par t_zcoax. 
+- chg: gracethd_pg_export_shpcsv-out.bat : ajout de l'export des listes. 
+- chg: config_db_spl.bat : ajout de variables GLDBINTEGSKIPF et GLDBPRODSKIPF
+- fix: gracethdcheck_pg_export_pub_shpcsv.bat : prise en compte mvs_ct_synt_t_ebp-sf, mvs_ct_synt_t_ebp-lt, mvs_ct_synt_t_cassette-lt. 
+
+
+#TODO: 
+- Doc : MAJ concernant le datasource des qgs et qlr pour les rechercher-remplacer. 
+- qgis : 
+	- mvs_ct_synt_t_zpbo manque (pb dans la base megalis ?)
+	- manque t_cable pour avoir les anomalies dans câbles sans geom. 
+	- avec Demo01, mvs_ct_synt_t_conduite et mvs_ct_synt_t_ropt ne fonctionnent pas. 
+	- 
+
+	
+v0.01-alpha6a
+# Général
+- chg: tous les batchs, homogénéisation de l'entête. 
+- add: gracethdcheck_pg.bat : exécution de toutes les opérations en un script. 
+- chg: gracethdcheck_pg_export_tab_csv.bat : renommage de gracethdcheck_pg_export_csv.bat
+- chg: gracethdcheck_pg_export_tab_sql.bat : renommage de gracethdcheck_pg_export_sql.bat
+- chg: gracethdcheck_pg_export_anom_csv.bat : renommage de gracethdcheck_pg_export_csv_anom.bat
+- chg: gracethdcheck_pg_update_cat_from_csv.bat : renommage de gracethdcheck_pg_maj_cat_csv.bat
+- chg: gracethdcheck_pg_update_fill.bat : renommage de gracethdcheck_pg_maj_remplissage.bat
+- add: zip.exe : ajout zip.exe pour créer des archives. 
+- chg: config_apps.bat : ajout SET GLZIP=%GLBIN%zip.exe
+- del: gracethdcheck_pg_maj_conf.bat : suppression. 
+- chg: gracethdcheck_33_conf_insert.sql : ct_1_liv n'a plus LIV0001 comme valeur par défaut, mais le nom de la base de données. 
+# Intégration de t_ct_exe
+- chg: gracethdcheck_pg_create_tables.bat : ajout appel gracethdcheck_60_views.sql
+- chg: gracethdcheck_10_lists.sql : ajout création l_ct_exe. 
+- chg: gracethdcheck_20_insert.sql : ajout chargement l_ct_exe
+- chg: gracethdcheck_30_tables.sql : ajout création t_ct_exe. 
+- chg: gracethdcheck_32_fillatt_update.sql : remplacement des valeurs '' ou NULL par F. 
+- chg: gracethdcheck_50_index.sql : ajout indexes t_ct_exe. 
+- add: gracethdcheck_60_views.sql : avec v_ct_exe
+- chg: gracethdcheck_pg_create_v_ct_anom.bat : v_ct_anom et v_ct_anom_[statut]
+- chg: gracethdcheck_pg_export_v_ct_anom_csv.bat : prise de compte de chaque statut (plus de xxx_ou_yyy)
+- chg: gracethdcheck_pg_export_csv.bat : prise en compte de t_ct_exe. 
+- chg: gracethdcheck_pg_export_sql.bat : prise en compte de t_ct_exe. 
+- chg: config_text.bat : prise en compte de %GLPGCONFPATH%\t_ct_cat , %GLPGCONFPATH%\t_ct_code , %GLPGCONFPATH%\t_ct_conf , %GLPGCONFPATH%\t_ct_exe
+- add: gracethdcheck_37_exe_pgs_fillatt_to_exe.sql : insert dans t_ct_exe par extrapolation t_ct_conf_fillatt. 
+- add: gracethdcheck_37_exe_pgs_from_user.sql
+# Amélioration des messages
+- chg: gracethdcheck_pg_create_v_ct_anom.bat : affichage nom de batch exécuté
+- chg: gracethdcheck_pg_create_v_ct_unit.bat : affichage nom de batch exécuté
+- chg: gracethdcheck_pg_create_tables.bat : affichage nom de batch exécuté
+- chg: gracethdcheck_pg_maj_from_user.bat : affichage nom de batch exécuté. 
+- chg: gracethd_pg_import_shpcsv-in_psql.bat : Gracelite remplacé par GraceTHD. 
+- chg: gracethdcheck_pg_import_shpcsv-in_psql.bat : Gracelite remplacé par GraceTHD. 
+# Vues synthétiques
+- add: gracethdcheck_63_views_synt.sql : création des vues pour créer des vues synthétiques. 
+- add: gracethdcheck_pg_create_v_ct_synt.bat : création des vues synthétiques. 
+# GraceTHD-Check Publication (gracethdcheckpub)
+- chg: gracethdcheck_pg_create_db.bat : ajout de la création du schéma gracethdcheckpub. 
+- add: gracethdcheck_62_views_anom_vmat.sql : création des vues matérialisées pour les rapports d'anomalies. 
+- add: gracethdcheck_63_views_synt_vmat.sql : création des vues matérialisées pour les vues synthétiques. 
+- add: gracethdcheck_pg_refresh.bat : Refresh des vues matérialisées GraceTHD-Check (gracethdcheckpub). 
+- chg: gracethdcheck_pg_export_csv_anom.bat : renommage de gracethdcheck_pg_export_v_ct_anom_csv.bat 
+- add: gracethdcheck_pg_export_pub_shpcsv.bat : 
+# Simplification ct_script
+- chg: gracethdcheck_35_code_pgs_insert.sql : requête unitaire n'a plus que ct_code, ct_detail et les attributs de la table contrôlée. 
+- chg: gracethdcheck_62_views_anom.sql : now() remplacé par LOCALTIMESTAMP(0)
+# Gestion des versions de MCD
+- chg: gracethdcheck_30_tables.sql : ajout de la creation de la table t_ct_conf_exe_pgs
+# Optimisations
+- add: gracethd_61_vues_elem_vmat.sql : Vues élémentaires MATERIALIZED. 
+- chg: gracethd_pg_create_tables.bat : prise en compte gracethd_61_vues_elem_vmat.sql
+- add: gracethd_pg_refresh.bat : REFRESH des vues élémentaires matérialisées. 
+# Debug
+- fix: gracethdcheck_pg_create_tables.bat : correction problème de double exécution du script. 
+- fix: gracethdcheck_pg_create_db.bat : ajout -d %GLCTPGDB%
+- fix: gracethd_pg_create_db.bat : ajout -d %GLCTPGDB%
+- fix: gracethd_pg_export_shpcsv-out.bat : ajout -k pour export des noms d'attributs en minuscules. 
+- fix: gracethd_pg_create_db.bat : correction du nom da sous-routine :SCHEMA_GRACETHD
+# Indicateurs
+- add: gracethdcheck_65_views_indi.sql : ajout de ce fichier pour stocker des indicateurs calculés sous forme de vues dans le schéma gracethd. 
+- add: gracethdcheck_65_views_indi.sql : ajout v_in_1_rowsnb. 
+- add: gracethdcheck_65_views_indi.sql : ajout v_in_1_rowsmd5. 
+- add: gracethdcheck_65_views_indi.sql : ajout v_in_1_cblgreel
+# Intégration Gracelite
+- add: sql_spatialite : ajout des SQL Spatialite GraceTHD-MCD 2.0.1 (gracethd_10_lists.sql, gracethd_20_insert.sql, gracethd_30_tables.sql, gracethd_40_spatialite.sql, gracethd_50_index.sql, gracethd_61_vues_elem.sql, gracethd_90_labo.sql, gracethd_91_patchs.sql)
+- add: gracethd_spl_dbinteg_export_to_shpcsv-out.bat : export Spatialite dbinteg vers shpcsv-out. 
+# Points de contrôle
+- add: gracethdcheck_33_conf_insert.sql : ajout de la variable ct_1_srsepsg. 
+- add: gracethdcheck_34_cat_insert.sql : t_ct_cat, ajout cm_nature_1_m00001.
+- fix: gracethdcheck_35_code_pgs_insert.sql : correction cl_geom_1_g80010
+- fix: gracethdcheck_35_code_pgs_insert.sql : correction cl_geom_1_g80012
+- fix: gracethdcheck_35_code_pgs_insert.sql : correction ad_geom_1_g80005
+# QGIS
+- add: gracethdcheck_qgis2.14_postgis.qgs : gracethd-layers + vues matérialisées gracethd-layers + gracethd-check (vues dynamiques et matérialisées). 
+- chg: gracethdcheck_qgis2.14_postgis.qgs : amélioration de la symbologie pour certaines couches GraceTHD-Layers (affichage par échelle, étiquetage, ...)
+# Doc
+- chg: mise à jour de tous les éléments de la documentation. 
+- chg: déplacement dans le dossier .\docs\GraceTHD-Check\
+- add: ajout du contenu de mcd_doc dans .\docs\GraceTHD-MCD\
+- add: ajout du contenu de mod_doc dans .\docs\GraceTHD-MOD\
+- add: ajout du contenu de layers_doc dans .\docs\GraceTHD-Layers\
+
+v0.01-alpha5d
+- fix: \temp : ajout temp.md
+- fix: \check\postgis : ajout postgis.md
+- fix: \check\spatialite : ajout spatialite.md
+- chg: gracethd_pg_import_shpcsv-in_psql.bat : remplacement de COPY par \COPY
+- chg: gracethdcheck_pg_import_shpcsv-in_psql.bat : remplacement de COPY par \COPY
+- chg: gracethdcheck_pg_create_v_ct_anom.bat : remplacement de COPY par \COPY
+- fix: gracethdcheck_pg_create_v_ct_anom.bat : prise en compte des LF et pas seulement CRLF (ajout ligne 139 : %GLSFK% replace %FOUT% -spat "/UNION\n;/;/" -yes). 
+- chg: gracethdcheck_pg_create_v_ct_unit.bat : remplacement de COPY par \COPY
+- chg: gracethdcheck_pg_maj_cat_csv.bat : remplacement de COPY par \COPY
+- chg: gracethdcheck_pg_export_csv.bat : remplacement de COPY par \COPY
+- chg: gracethdcheck_pg_export_v_ct_anom_csv.bat : remplacement de COPY par \COPY
+- chg: gracethd_pg_export_shpcsv-out.bat : remplacement de COPY par \COPY
+- chg: config_db_pg.bat : PGCODE par défaut sur cp1252. 
+- chg: config_db_pg.bat : ajout SET PGTEMPLATE=postgres
+- chg: config_db_pg.bat : par défaut SET GLPGPATHSHARE=.\
+- fix: config_test.bat : CALL config.bat commenté. 
+- chg: config.bat : passage partie DEBUG en tête. 
+- chg: config.bat : remplacement GRACELITE par GRACETHD-CHECK. 
+- fix: gracethdcheck_pg_create_db.bat : ligne 55 ajout de -d %PGTEMPLATE%
+- fix: gracethd_pg_create_db.bat : ligne 51 ajout de -d %PGTEMPLATE%
+- chg: renommage dossier doc en docs pour accueillir la Github page. 
+- chg: config_db_pg.bat : SET PGROLE=%PGUSER% au lieu de postgres. 
+
+v0.01-alpha5c
+- fix: gracethdcheck_pg_import_shpcsv-in_psql.bat : remise en ordre de l'exécution (zones passent de la fin au début du script). 
+- fix: gracethd_pg_import_shpcsv-in_psql.bat : idem gracethdcheck_pg_import_shpcsv-in_psql.bat mais sur PGDB et non GLCTPGDB. 
+- fix: gracethdcheck_pg_export_v_ct_anom_csv.bat : désormais opérationnel. 
+- fix: gracethdcheck_30_tables.sql : renommage t_ct_func_pgs en t_ct_fct_pgs 
+- add: gracethd_pg_create_tables.bat : ajout
+- chg: gracethd_pg_create_db.bat : uniformisation avec gracethdcheck_pg_create_db.bat + appel gracethd_pg_create_tables.bat
+- chg: gracethdcheck_pg_create_db.bat : appel gracethd_pg_create_tables.bat
+- fix: gracethdcheck_pg_create_on_db.bat : opérationnel
+- fix: gracethd_pg_import_shpcsv-in_psql.bat
+- chg: config_db_pg.bat : restructuration afin que PGDB soit la première variable déclarée. 
+- fix: gracethd_pg_export_shpcsv-out.bat : remplacement GLCTPGDB par PGDB. 
+
+v0.01-alpha5b
+- fix: config.bat - mauvaise version publiée dans la version 0.01-alpha5. 
+
+v0.01-alpha5
+Développement pour Spatialite suspendu depuis v0.01-alpha3. 
+
+#DOC :
+- add: GraceTHD-Check_-_Index_des_scripts.pdf
+- chg: GraceTHD-Check_-_Manuel_administrateur_Postgis.pdf
+- chg: GraceTHD-Check_-_Manuel_développeur.pdf
+- chg: GraceTHD-Check_-_Manuel_utilisateur_Postgis.pdf
+- chg: gracethdcheck-mcd-v0.01-alpha5.pdf
+- chg: gracethdcheck-mcd_schema_v03.png
+
+#ARCHITECTURE : 
+- add: gracethdcheck_50_index.sql
+- chg: gracethdcheck_pg_create_tables.bat - ajout gracethdcheck_50_index.sql. 
+- add: gracethdcheck_30_tables.sql - ajout t_ct_cat_user. 
+- add: gracethdcheck_30_tables.sql - ajout t_ct_code_pgs_user. 
+- add: gracethdcheck_30_tables.sql - ajout t_ct_code_spl_user. 
+- chg: Dossier qgis2.12 renommé qgis. 
+- chg: Renommage des projets qgs en *_qgis2.14_*.qgs. Les projets restent enregistrés en 2.12.3 incitation à la migration 2.14. 
+- fix: .\temp\temp.md : ajout pour documenter l'usage du dossier, et éviter que ce dossier vide soit ignoré. 
+- fix: .\log\log.md : ajout pour documenter l'usage du dossier, et éviter que ce dossier vide soit ignoré. 
+- fix: .\doc\doc.md : ajout pour documenter l'usage du dossier. 
+- fix: .\check\check.md : ajout pour documenter l'usage du dossier. 
+- fix: .\conf\conf.md : ajout pour documenter l'usage du dossier. 
+- fix: .\qgis\qgis.md : ajout pour documenter l'usage du dossier. 
+- chg: renommage gracethdcheck_pg_create_db-exist-TODO.bat en gracethdcheck_pg_create_on_db-TODO.bat
+- chg: gracethdcheck_20_insert.sql : suppression des caractères francophones dans les libellés des listes de valeurs. 
+- add: gracethd_pg_export_shpcsv-out.bat
+- fix: gracethdcheck_pg_import_shpcsv-in_psql.bat : ajout de "" pour PGSHP et PGCSV. 
+- add: gracethdcheck_pg_import_shpcsv-in_psql.bat : ajout :DEBUG
+- chg: config.bat n'intègre plus de définition de variables (sauf GLCONF et GLPAUSE). Il appelle les fichiers de configuration suivants : config_tree.bat, config_apps.bat, config_db_shpcsv.bat, config_db_spl.bat, config_db_pg.bat. Ensuite il appelle config_test.bat. 
+- add: config_apps.bat : ajout GL_PGSQL2SHP
+- chg: config_test.bat : ajout test GL_PGSQL2SHP
+- add: gracethdcheck_pg_conf_liv.bat : Saisie interactive d'un code identifiant une livraison (valeur de ct_1_liv dans t_ct_conf). 
+- add: gracethdcheck_41_functions.sql
+- chg: gracethdcheck_30_tables.sql : ajout t_ct_fct_pgs. 
+- chg: gracethdcheck_pg_create_tables.bat : ajout :CTSQLFUNCTIONS
+- chg: gracethdcheck_pg_maj_conf.bat renommé gracethdcheck_pg_maj_from_user.bat
+- chg: gracethdcheck_pg_maj_from_user.bat intègre la mise à jour de t_ct_cat à partir de t_ct_cat_user, et la mise à jour de t_ct_code_pgs à partir de t_ct_code_pgs_user. 
+- chg: les batchs pour Spatialite sont suffixés -TODO pour signifier que le développpement est suspendu. 
+- chg: les batchs pour shpcsv-in sont suffixés -TODO pour signifier que le développpement est suspendu. 
+
+#POINTS DE CONTROLE : 
+- add: Ajout t_ct_cat : "zn_geom_1_g80016";"La ZNRO se superpose à une autre ZNRO, au delà de la tolérance admise."
+- add: Ajout t_ct_cat : "zn_geom_1_m80019";"Le NRO est très éloigné de la zone dont il dépend."
+- add: Ajout t_ct_cat : "zp_geom_1_g80018";"La ZPBO se superpose à une autre ZPBO, au delà de la tolérance admise."
+- add: Ajout t_ct_cat : "zp_geom_1_m80015";"Le contour de la ZPBO n'est pas à l'intérieur du contour de la ZSRO (erreur de SRO ou débordement supérieur à la tolérance.)"
+- add: Ajout t_ct_cat : "zp_geom_1_m80021";"Le PBO est très éloigné de la zone dont il dépend."
+- add: Ajout t_ct_cat : "zs_geom_1_g80017";"La ZSRO se supperpose à une autre ZSRO, au delà de la tolérance admise."
+- add: Ajout t_ct_cat : "zs_geom_1_m80014";"Le contour de la ZSRO n’est pas à l’intérieur du contour de sa ZNRO (erreur de NRO ou débordement supérieur à la tolérance.)"
+- add: Ajout t_ct_cat : "zs_geom_1_m80020";"Le SRO est très éloigné de la zone dont il dépend."
+- add: Ajout variable t_ct_conf : "ct_1_distnrozanro";"Distance maximale entre le NRO et sa zone arrière (0 si le NRO doit être à l'intérieur)"
+- add: Ajout variable t_ct_conf : "ct_1_distpbozapbo";"Distance maximale entre le PBO et sa zone arrière (0 si le PBO doit être à l'intérieur)"
+- add: Ajout variable t_ct_conf : "ct_1_distsrozasro";"Distance maximale entre le SRO et sa zone arrière (0 si le SRO doit être à l'intérieur)"
+
+
+v0.01-alpha4
+Racine : 
+- add: Ajout de ce changelog
+- add: Ajout gracethdcheck_pg_maj_conf.bat
+- add: Ajout gracethdcheck_pg_maj_remplissage.bat
+- chg: gracethdcheck_pg_maj_cat.bat renommé gracethdcheck_pg_maj_cat_csv.bat
+- chg: gracethdcheck_pg_create_tables.bat : Restructuration 
+- chg: gracethdcheck_pg_create_db.bat : EXIT à la fin. 
+- chg: gracethdcheck_pg_create_db.bat : CALL config_test.bat dans :DEBUG
+- add: Déclaration GPLv3 dans les .bat. 
+- chg: config.bat : changement ordre, GLCTPGDB en fin de sous-routine et :GL_CONFIG_DEBUG en fin de batch. 
+- chg: config.bat : passage par défaut sur QGIS 2.14 (Essen). 
+- chg: config_test.bat : GLPAUSE à la fin. 
+Sources : 
+- add: Ajout .\sources\gracethd-check-mcd-vxxx.ods
+Doc : 
+- add: Ajout GraceTHD-Check_-_Manuel_administrateur_Postgis.pdf
+- chg: Evolution GraceTHD-Check_-_Manuel_développeur.pdf
+- del: Suppression GraceTHD-Check_-_Manuel_utilisateur.pdf
+- add: Ajout GraceTHD-Check_-_Manuel_utilisateur_Postgis.pdf
+- add: Ajout gracethdcheck-mcd-v0.01-alpha4.pdf
+sql_postgis : 
+- chg: Simplification gracethdcheck_33_conf_insert.sql
+- chg: gracethdcheck_33_conf_insert.sql : ajout ct_1_topotol
+- add: Création gracethdcheck_33_conf_user_insert.sql
+- add: Ajout gracethdcheck_33_conf_user_to_conf.sql
+- add: Déclaration GPLv3 dans les .sql. 
+- chg: gracethdcheck_34_cat_insert.sql : ajout valeurs ct_source et ct_date. 
+- fix: gracethdcheck_34_cat_insert.sql : corrections. 
+- chg: gracethdcheck_34_cat_insert.sql : amélioration des ct_def des contrôles de type R. 
+- fix: gracethdcheck_35_code_pgs_insert.sql : correction appels erronés sur t_ct_conf. 
+- chg: gracethdcheck_35_code_pgs_insert.sql : amélioration définition des contrôles de type R dans ct_pgs_script. 
+- chg: gracethdcheck_30_tables.sql : t_ct_cat, renommage commentaire en ct_comment
+- add: gracethdcheck_34_cat_insert.sql : ajout des points de contrôle "cl_geom_1_g80012", "cl_geom_1_m80010", "cm_geom_1_g80013", "cm_geom_1_m80011"
+- add: gracethdcheck_35_code_pgs_insert.sql : ajout des points de contrôle "cl_geom_1_g80012", "cl_geom_1_m80010", "cm_geom_1_g80013", "cm_geom_1_m80011"
+- fix: gracethdcheck_62_views_anom.sql : correction bug C.ct_att remplacé par C.ct_attunique. 

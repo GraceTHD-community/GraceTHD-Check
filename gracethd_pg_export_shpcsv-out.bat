@@ -3,7 +3,7 @@
 REM gracethdcheck_pg_create_tables.bat
 REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
 REM Author : stephane dot byache at aleno dot eu
-REM Rev. date : 28/03/2017
+REM Rev. date : 19/09/2017
 
 
     REM This file is part of GraceTHD.
@@ -31,8 +31,10 @@ CALL:CONF
 REM Decommenter quand ca coince. 
 REM CALL :DEBUG
 
-ECHO Gracelite - Debut export SHP CSV depuis la base PostGIS %PGHOSTNAME%:%PGDB%. 
+ECHO GRACETHD - PG - Debut export SHP CSV depuis la base PostGIS %PGHOSTNAME%:%PGDB% vers %PGSHPOUTPATH%. 
 CALL:EXPORT
+CALL:EXPORTL
+CALL:END
 %GLPAUSE%
 GOTO:EOF
 
@@ -199,3 +201,160 @@ REM Pour placer des commandes en attente, quand ca coince.
 
 GOTO:EOF
 
+:EXPORTL
+
+SET PGTBL=l_adresse_etat
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_avancement
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_baie_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_bp_racco
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_bp_type_log
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_bp_type_phy
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_cable_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_cassette_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_clim_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_conduite_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_doc_tab
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_doc_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_etat_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_fo_color
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_fo_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_geoloc_classe
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_geoloc_mode
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_immeuble_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_implantation_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_infra_nature
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_infra_type_log
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_masque_face
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_noeud_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_nro_etat
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_nro_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_occupation_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_passage_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_pose_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_position_fonction
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_position_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_propriete_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_ptech_nature
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_ptech_type_log
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_ptech_type_phy
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_qualite_info
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_reference_etat
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_reference_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_site_emission_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_site_type_log
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_site_type_phy
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_sro_emplacement
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_sro_etat
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_statut
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_suf_racco
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_suf_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_technologie_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_tiroir_type
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_tube
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+SET PGTBL=l_zone_densite
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+
+GOTO:EOF
+
+
+:END
+ECHO GRACETHD - PG - %PGSHPOUTPATH% : EXPORT TERMINE
+
+%GLPAUSE%

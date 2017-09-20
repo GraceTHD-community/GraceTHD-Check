@@ -1,11 +1,38 @@
-/*GraceTHD v2.0*/
-/*Creation des vues élémentaires*/
+/*GraceTHD-MCD v2.0.1*/
+/*Insertion des valeurs dans les listes*/
+/* gracethd_61_vues_elem.sql */
 /*Spatialite*/
+
+/* Owner : GraceTHD-Community - http://gracethd-community.github.io/ */
+/* Author : stephane dot byache at aleno dot eu */
+/* Rev. date : 07/09/2017 */
+
+/* ********************************************************************
+    This file is part of GraceTHD.
+
+    GraceTHD is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    GraceTHD is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with GraceTHD.  If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************** */
 
 /*######################################*/
 /*TODO*/
-/*vs_elem_cb_cl_lv : Vérifier comment ça se passe s il y a plusieurs loves sur un câble. */
-
+/*- vs_elem_cb_cd : un câble peut passer par plusieurs conduites. */
+/*- vs_elem_sf_ad_nd : les suf avec les infos des adresses*/
+/*- vs_elem_cb_cl_lv : Vérifier comment ça se passe s il y a plusieurs loves sur un câble. */
+/*- Cassettes : 
+	- manquera vue vs_elem_cs_ti_ba_lt_st_nd dans MCD 2.1
+	- une vue qui fait l'union localisée de toutes les cassettes  (vs_elem_cs_bp_lt_st_nd, vs_elem_cs_bp_pt_nd, vs_elem_cs_ti_ba_lt_st_nd) ? Soit avec tous les attributs, même si vides, soit en oubliant les att de pt, lt, ti, ... Peut-être une vue obj et pas une vue elem ? 
+*/
 
 /*######################################*/
 /*VUES ELEMENTAIRES SPATIALES*/
@@ -103,10 +130,11 @@ SELECT nd.rowid AS rowid,
         st.st_prop AS st_prop, st.st_gest AS st_gest,
         st.st_user AS st_user, st.st_proptyp AS st_proptyp,
         st.st_statut AS st_statut, st.st_etat AS st_etat,
-        st.st_dateins AS st_dateins, st.st_avct AS st_avct,
+        st.st_dateins AS st_dateins, st_datemes AS st_datemes, 
+		st.st_avct AS st_avct,
         st.st_typephy AS st_typephy, st.st_typelog AS st_typelog,
         st.st_nblines AS st_nblines, st.st_ad_code AS st_ad_code,
-        st.st_comment AS st_comment, st.st_creadat AS st_creadata,
+        st.st_comment AS st_comment, st.st_creadat AS st_creadat,
         st.st_majdate AS st_majdate, st.st_majsrc AS st_majsrc,
         st.st_abddate AS st_abddate, st_abdsrc AS st_abdsrc,
         nd.nd_code AS nd_code, nd.nd_codeext AS nd_codeext,
@@ -394,6 +422,149 @@ WHERE
 INSERT INTO views_geometry_columns VALUES
 ('vs_elem_eq_ba_lt_st_nd', 'geom', 'rowid', 't_noeud', 'geom', 1); 
 
+/*vs_elem_bp_lt_st_nd*/
+DROP VIEW IF EXISTS vs_elem_bp_lt_st_nd;
+CREATE VIEW vs_elem_bp_lt_st_nd AS
+SELECT nd.rowid AS rowid,
+	bp_code AS bp_code, bp_etiquet AS bp_etiquet,
+    bp_codeext AS bp_codeext, bp_pt_code AS bp_pt_code,
+    bp_lt_code AS bp_lt_code, bp_sf_code AS bp_sf_code,
+    bp_prop AS bp_prop, bp_gest AS bp_gest, bp_user AS bp_user,
+    bp_proptyp AS bp_proptyp, bp_statut AS bp_statut,
+    bp_etat AS bp_etat, bp_occp AS bp_occp, bp_datemes AS bp_datemes,
+    bp_avct AS bp_avct, bp_typephy AS bp_typephy,
+    bp_typelog AS bp_typelog, bp_rf_code AS bp_rf_code,
+    bp_entrees AS bp_entrees, bp_ref_kit AS bp_ref_kit,
+    bp_ca_nb AS bp_ca_nb, bp_nb_pas AS bp_nb_pas,
+    bp_linecod AS bp_linecod, bp_oc_code AS bp_oc_code,
+    bp_racco AS bp_racco, bp_comment AS bp_comment,
+    bp_creadat AS bp_creadat, bp_majdate AS bp_majdate,
+    bp_majsrc AS bp_majsrc, bp_abddate AS bp_abddate,
+    bp_abdsrc AS bp_abdsrc,
+	lt.lt_code AS lt_code, lt.lt_codeext AS lt_codeext,
+    lt.lt_etiquet AS lt_etiquet, lt.lt_st_code AS lt_st_code,
+    lt.lt_prop AS lt_prop, lt.lt_gest AS lt_gest,
+    lt.lt_user AS lt_user, lt.lt_proptyp AS lt_proptyp,
+    lt.lt_statut AS lt_statut, lt.lt_etat AS lt_etat,
+    lt.lt_dateins AS lt_dateins, lt.lt_datemes AS lt_datemes,
+    lt.lt_local AS lt_local, lt.lt_elec AS lt_elec,
+    lt.lt_clim AS lt_clim, lt.lt_occp AS lt_occp,
+    lt.lt_idmajic AS lt_idmajic, lt.lt_comment AS lt_comment,
+    lt.lt_creadat AS lt_creadat, lt.lt_majdate AS lt_majdate,
+    lt.lt_majsrc AS lt_majsrc, lt.lt_abddate AS lt_abddate,
+    lt.lt_abdsrc AS lt_abdsrc, 
+	st.st_code AS st_code,
+    st.st_nd_code AS st_nd_code, st.st_codeext AS st_codeext,
+    st.st_nom AS st_nom, st.st_prop AS st_prop,
+    st.st_gest AS st_gest, st.st_user AS st_user,
+    st.st_proptyp AS st_proptyp, st.st_statut AS st_statut,
+    st.st_etat AS st_etat, st.st_dateins AS st_dateins,
+    st.st_datemes AS st_datemes, st.st_avct AS st_avct,
+    st.st_typephy AS st_typephy, st.st_typelog AS st_typelog,
+    st.st_nblines AS st_nblines, st.st_ad_code AS st_ad_code,
+    st.st_comment AS st_comment, st.st_creadat AS st_creadat,
+    st.st_majdate AS st_majdate, st.st_majsrc AS st_majsrc,
+    st.st_abddate AS st_abddate, st.st_abdsrc AS st_abdsrc,
+    nd.nd_code AS nd_code, nd.nd_codeext AS nd_codeext,
+    nd.nd_nom AS nd_nom, nd.nd_coderat AS nd_coderat,
+    nd.nd_r1_code AS nd_r1_code, nd.nd_r2_code AS nd_r2_code,
+    nd.nd_r3_code AS nd_r3_code, nd.nd_r4_code AS nd_r4_code,
+	nd.nd_voie AS nd_voie, nd.nd_type AS nd_type,
+	nd.nd_type_ep AS nd_type_ep, nd.nd_comment AS nd_comment,
+	nd.nd_dtclass AS nd_dtclass, nd.nd_geolqlt AS nd_geolqlt,
+	nd.nd_geolmod AS nd_geolmod, nd.nd_geolsrc AS nd_geolsrc,
+	nd.nd_creadat AS nd_creadat, nd.nd_majdate AS nd_majdate,
+	nd.nd_majsrc AS nd_majsrc, nd.nd_abddate AS nd_abddate,
+	nd.nd_abdsrc AS nd_abdsrc, nd.geom AS geom
+FROM
+   t_ebp AS bp,
+   t_ltech AS lt,
+   t_sitetech AS st,   
+   t_noeud AS nd
+WHERE
+	bp.bp_lt_code = lt.lt_code
+   AND lt.lt_st_code = st.st_code
+   AND st.st_nd_code = nd.nd_code 
+;
+
+INSERT INTO views_geometry_columns VALUES
+('vs_elem_bp_lt_st_nd', 'geom', 'rowid', 't_noeud', 'geom', 1); 
+
+/*vs_elem_cs_bp_lt_st_nd*/
+DROP VIEW IF EXISTS vs_elem_cs_bp_lt_st_nd;
+CREATE VIEW vs_elem_cs_bp_lt_st_nd AS
+SELECT nd.rowid AS rowid,
+	cs_code AS cs_code, cs_nb_pas AS cs_nb_pas,
+    cs_bp_code AS cs_bp_code, cs_num AS cs_num,
+    cs_type AS cs_type, cs_face AS cs_face, cs_rf_code AS cs_rf_code,
+    cs_comment AS cs_comment, cs_creadat AS cs_creadat,
+    cs_majdate AS cs_majdate, cs_majsrc AS cs_majsrc,
+    cs_abddate AS cs_abddate, cs_abdsrc AS cs_abdsrc,
+	bp_code AS bp_code, bp_etiquet AS bp_etiquet,
+    bp_codeext AS bp_codeext, bp_pt_code AS bp_pt_code,
+    bp_lt_code AS bp_lt_code, bp_sf_code AS bp_sf_code,
+    bp_prop AS bp_prop, bp_gest AS bp_gest, bp_user AS bp_user,
+    bp_proptyp AS bp_proptyp, bp_statut AS bp_statut,
+    bp_etat AS bp_etat, bp_occp AS bp_occp, bp_datemes AS bp_datemes,
+    bp_avct AS bp_avct, bp_typephy AS bp_typephy,
+    bp_typelog AS bp_typelog, bp_rf_code AS bp_rf_code,
+    bp_entrees AS bp_entrees, bp_ref_kit AS bp_ref_kit,
+    bp_ca_nb AS bp_ca_nb, bp_nb_pas AS bp_nb_pas,
+    bp_linecod AS bp_linecod, bp_oc_code AS bp_oc_code,
+    bp_racco AS bp_racco, bp_comment AS bp_comment,
+    bp_creadat AS bp_creadat, bp_majdate AS bp_majdate,
+    bp_majsrc AS bp_majsrc, bp_abddate AS bp_abddate,
+    bp_abdsrc AS bp_abdsrc,
+	lt.lt_code AS lt_code, lt.lt_codeext AS lt_codeext,
+    lt.lt_etiquet AS lt_etiquet, lt.lt_st_code AS lt_st_code,
+    lt.lt_prop AS lt_prop, lt.lt_gest AS lt_gest,
+    lt.lt_user AS lt_user, lt.lt_proptyp AS lt_proptyp,
+    lt.lt_statut AS lt_statut, lt.lt_etat AS lt_etat,
+    lt.lt_dateins AS lt_dateins, lt.lt_datemes AS lt_datemes,
+    lt.lt_local AS lt_local, lt.lt_elec AS lt_elec,
+    lt.lt_clim AS lt_clim, lt.lt_occp AS lt_occp,
+    lt.lt_idmajic AS lt_idmajic, lt.lt_comment AS lt_comment,
+    lt.lt_creadat AS lt_creadat, lt.lt_majdate AS lt_majdate,
+    lt.lt_majsrc AS lt_majsrc, lt.lt_abddate AS lt_abddate,
+    lt.lt_abdsrc AS lt_abdsrc, 
+	st.st_code AS st_code,
+    st.st_nd_code AS st_nd_code, st.st_codeext AS st_codeext,
+    st.st_nom AS st_nom, st.st_prop AS st_prop,
+    st.st_gest AS st_gest, st.st_user AS st_user,
+    st.st_proptyp AS st_proptyp, st.st_statut AS st_statut,
+    st.st_etat AS st_etat, st.st_dateins AS st_dateins,
+    st.st_datemes AS st_datemes, st.st_avct AS st_avct,
+    st.st_typephy AS st_typephy, st.st_typelog AS st_typelog,
+    st.st_nblines AS st_nblines, st.st_ad_code AS st_ad_code,
+    st.st_comment AS st_comment, st.st_creadat AS st_creadat,
+    st.st_majdate AS st_majdate, st.st_majsrc AS st_majsrc,
+    st.st_abddate AS st_abddate, st.st_abdsrc AS st_abdsrc,
+    nd.nd_code AS nd_code, nd.nd_codeext AS nd_codeext,
+    nd.nd_nom AS nd_nom, nd.nd_coderat AS nd_coderat,
+    nd.nd_r1_code AS nd_r1_code, nd.nd_r2_code AS nd_r2_code,
+    nd.nd_r3_code AS nd_r3_code, nd.nd_r4_code AS nd_r4_code,
+	nd.nd_voie AS nd_voie, nd.nd_type AS nd_type,
+	nd.nd_type_ep AS nd_type_ep, nd.nd_comment AS nd_comment,
+	nd.nd_dtclass AS nd_dtclass, nd.nd_geolqlt AS nd_geolqlt,
+	nd.nd_geolmod AS nd_geolmod, nd.nd_geolsrc AS nd_geolsrc,
+	nd.nd_creadat AS nd_creadat, nd.nd_majdate AS nd_majdate,
+	nd.nd_majsrc AS nd_majsrc, nd.nd_abddate AS nd_abddate,
+	nd.nd_abdsrc AS nd_abdsrc, nd.geom AS geom
+FROM
+	t_cassette AS cs,
+   t_ebp AS bp,
+   t_ltech AS lt,
+   t_sitetech AS st,   
+   t_noeud AS nd
+WHERE
+	cs.cs_bp_code = bp.bp_code
+	AND bp.bp_lt_code = lt_code
+   AND lt.lt_st_code = st.st_code
+   AND st.st_nd_code = nd.nd_code 
+;
+
+INSERT INTO views_geometry_columns VALUES
+('vs_elem_cs_bp_lt_st_nd', 'geom', 'rowid', 't_noeud', 'geom', 1); 
 
 /*vs_elem_pt_nd*/
 DROP VIEW IF EXISTS vs_elem_pt_nd;

@@ -1,0 +1,9 @@
+GraceTHD-Demo
+
+### Changelog
+
+v2.0.1
+- chg: application du modèle de données GraceTHD-MCD v2.0.1. Mais aucune modification sur le jeu de données. 
+- chg: modification d'arborescence pour homogénéisation avec les autres projets GraceTHD.  
+- add: ajout de GraceTHD-Layers v0.03 (Spatialite). 
+- add: changelog_gracethddemo01.txt

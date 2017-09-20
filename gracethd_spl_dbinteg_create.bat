@@ -3,7 +3,7 @@
 REM gracethd_spl_dbinteg_create.bat
 REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
 REM Author : stephane dot byache at aleno dot eu
-REM Rev. date : 01/06/2017
+REM Rev. date : 15/09/2017
 
     REM This file is part of GraceTHD.
 
@@ -21,25 +21,24 @@ REM Rev. date : 01/06/2017
     REM along with GraceTHD.  If not, see <http://www.gnu.org/licenses/>.
 
 
-ECHO CREATION DE LA BASE gracelite_integ.sqlite
-PAUSE
+
 
 :LAUNCH
 CALL:CONFIG
 CALL:BASE
 CALL:SCHEMA
-PAUSE
-GOTO:EOF
+GOTO:END
 
 :CONFIG
 CALL config.bat
 GOTO:EOF
 
 :BASE
+ECHO CREATION DE LA BASE %GLDBINTEG%
+PAUSE
 ECHO SUPPRESSION BASE
 IF EXIST %GLDBINTEG% DEL /s %GLDBINTEG%
 
-ECHO CREATION BASE
 %GLSPLEX% %GLDBINTEG% "PRAGMA foreign_keys = ON;"
 
 GOTO:EOF
@@ -68,5 +67,12 @@ SET FSQL=%GLDBINTEGSCHEMA%\gracethd_61_vues_elem.sql
 ECHO GRACELITE - AJOUT DES SPECIFICITES
 SET FSQL=%GLDBINTEGSCHEMA%\gracethd_90_labo.sql
 %GLSPLEX% %GLDBINTEG% < %FSQL%
+ECHO GRACELITE - AJOUT DES TABLES DE PATCH OPTIONNELLES
+SET FSQL=%GLDBINTEGSCHEMA%\gracethd_91_patchs.sql
+%GLSPLEX% %GLDBINTEG% < %FSQL%
 
 GOTO:EOF
+
+:END
+ECHO GRACELITE - TERMINE
+PAUSE

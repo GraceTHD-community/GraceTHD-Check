@@ -83,11 +83,19 @@ ECHO GraceTHD - Postgis - %FSQL%
 "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f "%GLCTPGSQLPATH%\%FSQL%" -d %PGDB% -U %PGUSER%
 %GLPAUSE% 
 
-SET FSQL=gracethd_62_vues_indi.sql
+SET FSQL=gracethd_80_triggers.sql
 ECHO GraceTHD - Postgis - %FSQL%
 "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f "%GLCTPGSQLPATH%\%FSQL%" -d %PGDB% -U %PGUSER%
 
 SET FSQL=gracethd_90_labo.sql
+ECHO GraceTHD - Postgis - %FSQL%
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f "%GLCTPGSQLPATH%\%FSQL%" -d %PGDB% -U %PGUSER%
+
+SET FSQL=gracethd_91_patchs.sql
+ECHO GraceTHD - Postgis - %FSQL%
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f "%GLCTPGSQLPATH%\%FSQL%" -d %PGDB% -U %PGUSER%
+
+SET FSQL=gracethd_99_grant.sql
 ECHO GraceTHD - Postgis - %FSQL%
 "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f "%GLCTPGSQLPATH%\%FSQL%" -d %PGDB% -U %PGUSER%
 

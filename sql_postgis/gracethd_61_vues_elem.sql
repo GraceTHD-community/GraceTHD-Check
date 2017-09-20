@@ -1,70 +1,57 @@
-/*GraceTHD v2.0*/
-/*Creation des vues élémentaires*/
+/*GraceTHD-MCD v2.0.1*/
+/*Insertion des valeurs dans les listes*/
+/* gracethd_61_vues_elem.sql */
 /*PostGIS*/
+
+/* Owner : GraceTHD-Community - http://gracethd-community.github.io/ */
+/* Author : stephane dot byache at aleno dot eu */
+/* Rev. date : 07/09/2017 */
+
+/* ********************************************************************
+    This file is part of GraceTHD.
+
+    GraceTHD is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    GraceTHD is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with GraceTHD.  If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************** */
 
 SET search_path TO gracethd, public;
 
 /*######################################*/
 /*TODO  : */
 
-/*GraceTHD-Demo01*/
---Saisir les conduites aériennes virtuelles. 
---t_zcoax : récupérer de la beta
---Saisir des ancrages façade, ptech immeuble, ...
---Saisir les do_rx_code
-
 /*VUES ELEMENTAIRES*/
-/*vs_elem_cb_cd : un câble peut passer par plusieurs conduites. */
-/*vs_elem_sf_ad_nd : les suf avec les infos des adresses*/
+/*- vs_elem_cb_cd : un câble peut passer par plusieurs conduites. */
+/*- vs_elem_sf_ad_nd : les suf avec les infos des adresses*/
+/*- vs_elem_cb_cl_lv : Vérifier comment ça se passe s il y a plusieurs loves sur un câble. */
+/*- Cassettes : 
+	- manquera vue vs_elem_cs_ti_ba_lt_st_nd dans MCD 2.1
+	- une vue qui fait l'union localisée de toutes les cassettes  (vs_elem_cs_bp_lt_st_nd, vs_elem_cs_bp_pt_nd, vs_elem_cs_ti_ba_lt_st_nd) ? Soit avec tous les attributs, même si vides, soit en oubliant les att de pt, lt, ti, ... Peut-être une vue obj et pas une vue elem ? 
+*/
+/* Extrêmités des câbles (vs_elem_cb_nd) */	  
+--Pertinence ? 
+--Faisable ?
+
 
 /*VUES D'OBJETS (vs_obj): */
 /*--> Pour l'instant sous QGIS via vues élementaires*/
 /*vs_obj_ropt : group by ?*/
 /*vs_obj_cables-intra*/
 /* Join ZAPBO / PBO, etc. Peut-être besoin de vues PBO, SRO, NRO mais ça ne serait plus des vues élémentaires, mais des vues objets (ou vues publication)*/
-/*Ptech : une vue par typephy*/
-	/*QGIS le fait faire à PostGIS (et Spatialite ?) donc peu utile ?*/
+
 
 /*VUES DE PUBLICATION : */
-/*libellés à la place des codes. Pour l'instant quelques unes sous QGIS*/
+/*libellés à la place des codes. */
 /*Jointures t_organisme sur les attributs concernés : vs_pub */
-
-/*VUES DE CONTRÔLE : */
-/*voir quelles requêtes de contrôle méritent d'être conservées en vues*/
-
-/*VUES EDITABLES : vsw_*/
-
-
-
-/*QGIS - Couches*/
-/*Une couche Conduites aériennes et une couche avec les autres*/
-/*Chambre : rotation*/
-/*Fibres : fo_color - voir si on peut afficher la couleur dans la table (QGIS plus récent). */
-/*Affichages par échelle : ptechs, adresse, suf, ...*/
-
-/*QGIS - Styles*/
-/*Appuis : symbologie par type*/
-
-/*QGIS - Etiquettes*/
-/*Virer police MS Shell Dlg 2 par autre chose*/
-/*adresses, si numéro NULL, affiche rien. Mettre un CASE pour NULL ou ne pas plomber les perfs et laisser comme ça ?*/
-
-/*QGIS - JOINTURES*/
-/*Jointures vs_elem_do_od sur les objets concernés : vues élementaires ou */
-/*Jointures t_reference sur les objets concernés ?*/
-
-/*QGIS - Formulaires*/
-
-
-/*QGIS - RELATIONS*/
-/* Positions*/ 
-	--ps_1 et ps_2 sur fo
-	--ps_cs_code sur cs
-	--ps_cs_code sur ti
-/*Relation MQ CD : QGIS ?*/
-/*LOVE : relation sur câble dans QGIS*/
-/*cb_cd : besoin de créer une vue cc_cd et sous QGIS on pourra faire la relation câbles/conduites. */
-
 
 
 /*######################################*/
@@ -123,6 +110,39 @@ WHERE
   t_ltech.lt_st_code = t_sitetech.st_code;
   
 
+/*vs_elem_bp_lt_st_nd*/ 
+DROP VIEW IF EXISTS "vs_elem_bp_lt_st_nd";
+CREATE VIEW "vs_elem_bp_lt_st_nd" AS
+SELECT 
+  * 
+FROM 
+  gracethd.t_ebp,
+  gracethd.t_ltech,
+  gracethd.t_sitetech, 
+  gracethd.t_noeud 
+WHERE 
+  t_sitetech.st_nd_code = t_noeud.nd_code AND
+  t_ltech.lt_st_code = t_sitetech.st_code AND
+  t_ebp.bp_lt_code = t_ltech.lt_code;  
+
+/*vs_elem_cs_bp_lt_st_nd*/ 
+DROP VIEW IF EXISTS "vs_elem_cs_bp_lt_st_nd";
+CREATE VIEW "vs_elem_cs_bp_lt_st_nd" AS
+SELECT 
+  * 
+FROM 
+  gracethd.t_cassette,
+  gracethd.t_ebp,
+  gracethd.t_ltech,
+  gracethd.t_sitetech, 
+  gracethd.t_noeud 
+WHERE 
+  t_sitetech.st_nd_code = t_noeud.nd_code AND
+  t_ltech.lt_st_code = t_sitetech.st_code AND
+  t_ebp.bp_lt_code = t_ltech.lt_code AND
+  t_cassette.cs_bp_code = t_ebp.bp_code
+  ;  
+  
 /*vs_elem_ba_lt_st_nd*/
 DROP VIEW IF EXISTS "vs_elem_ba_lt_st_nd";
 CREATE VIEW "vs_elem_ba_lt_st_nd" AS
