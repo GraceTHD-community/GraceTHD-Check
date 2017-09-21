@@ -9,6 +9,8 @@ La **plateforme de gestion du projet** GraceTHD : [http://redmine.gracethd.org](
 
 GraceTHD-Check est un des projets développés et maintenus par la communauté GraceTD : [GraceTHD-community](https://github.com/GraceTHD-community)
 
+**GraceTHD-Check compile tous les projets GraceTHD.** 
+
 ### Utilisation
 
 Download GraceTHD-Check sur Github : 
