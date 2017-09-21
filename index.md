@@ -1,6 +1,9 @@
 # GraceTHD-Check
 Auto-contrôle d'une base de données GraceTHD.
 
+Download GraceTHD-Check : 
+https://github.com/GraceTHD-community/GraceTHD-Check/archive/master.zip
+
 GraceTHD-MCD est le modèle de données validé par la Covadis comme [Geostandard Aménagement Numérique des Territoires v2](http://www.geoinformations.developpement-durable.gouv.fr/standard-covadis-amenagement-numerique-des-a3300.html). 
 
 La **page de présentation** du projet GraceTHD : http://www.avicca.org/content/gracethd
@@ -8,6 +11,19 @@ La **page de présentation** du projet GraceTHD : http://www.avicca.org/content/
 La **plateforme de gestion du projet** GraceTHD : [http://redmine.gracethd.org](http://redmine.gracethd.org)
 
 GraceTHD-Check est un des projets maintenus par [GraceTHD-community](https://github.com/GraceTHD-community)
+
+### Exploitation
+
+Les manuels sont présents dans le dossier docs. 
+* GraceTHD-Check_-_Présentation.pdf
+* GraceTHD-Check_-_Manuel_administrateur_Postgis.pdf
+* GraceTHD-Check_-_Manuel_utilisateur_Postgis.pdf
+* GraceTHD-Check_-_Index_des_fichiers.pdf
+* GraceTHD-Check_-_Manuel_développeur.pdf
+* gracethdcheck-mcd-v0.02.pdf
+
+La documentation est rédigée sur le wiki du projet GraceTHD-Check sur Redmine. 
+https://redmine.gracethd.org/redmine/projects/gracethd-check/wiki
 
 ### Caractéristiques
 
@@ -43,4 +59,3 @@ Un mécanisme permettant d'ajouter des rapports de synthèse ou des indicateurs 
 
 La liste des contributeurs est disponible sur la plateforme de gestion de projets, voir liste sur [Redmine](http://redmine.gracethd.org). 
 Merci à eux !
-
