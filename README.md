@@ -12,6 +12,16 @@ La **plateforme de gestion du projet** GraceTHD : [http://redmine.gracethd.org](
 
 GraceTHD-Check est un des projets maintenus par [GraceTHD-community](https://github.com/GraceTHD-community)
 
+### Exploitation
+
+Les manuels sont présents dans le dossier docs. 
+* GraceTHD-Check_-_Présentation.pdf
+* GraceTHD-Check_-_Manuel_administrateur_Postgis.pdf
+* GraceTHD-Check_-_Manuel_utilisateur_Postgis.pdf
+* GraceTHD-Check_-_Index_des_fichiers.pdf
+* GraceTHD-Check_-_Manuel_développeur.pdf
+* gracethdcheck-mcd-v0.02.pdf
+
 ### Caractéristiques
 
 GraceTHD-Check est considéré comme une version alpha car l'architecture de GraceTHD-Check est encore en cours d'évolution. La passage en bêta se fera dès que toutes les fonctionnalités importantes de l'architecture seront implémentées. Commencera alors une phase d'implémentation plus importante de points de contrôles. 
