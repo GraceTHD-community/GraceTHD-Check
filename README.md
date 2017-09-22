@@ -56,5 +56,5 @@ Une plateforme de gestion de projet [Redmine](http://redmine.gracethd.org) desti
 Toute contribution au modèle est la bienvenue et encouragée : plus nous serons nombreux à contribuer à ces travaux plus les contrôles pourront être riches et pertinents. 
 Les outils mis en place permettent d'accueillir facilement les contributions sous forme de requêtes de contrôles à ajouter aux outils (voir la documentation développeur).
 
-La liste des contributeurs financier est disponible sur http://gracethd.org
+La liste des contributeurs financier est disponible sur [http://gracethd.org](http://gracethd.org)
 Merci à eux ! 
