@@ -125,7 +125,7 @@
       <layer-tree-layer expanded="1" checked="Qt::Checked" id="l_adresse_etat20150610110351130" name="l_adresse_etat">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="l_avancement20160107190207492" name="l_avancement">
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="l_avancement20160105022933427" name="l_avancement">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Checked" id="l_baie_type20150610110351130" name="l_baie_type">
@@ -392,7 +392,7 @@
       <item>l_zone_densite20150610110351138</item>
       <item>t_cable20150805125440155</item>
       <item>t_cableline20150805125440172</item>
-      <item>l_avancement20160107190207492</item>
+      <item>l_avancement20160105022933427</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
@@ -581,7 +581,7 @@
       </legendlayer>
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="l_avancement" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="l_avancement20160107190207492" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="l_avancement20160105022933427" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="l_baie_type" showFeatureCount="0">
@@ -883,7 +883,7 @@
       </edittypes>
     </maplayer>
     <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-      <id>l_avancement20160107190207492</id>
+      <id>l_avancement20160105022933427</id>
       <datasource>./l_avancement.csv</datasource>
       <title></title>
       <abstract></abstract>
@@ -904,7 +904,7 @@
         </spatialrefsys>
       </srs>
       <customproperties/>
-      <provider encoding="System">ogr</provider>
+      <provider encoding="UTF-8">ogr</provider>
       <previewExpression></previewExpression>
       <vectorjoins/>
       <expressionfields/>
@@ -3791,157 +3791,157 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="AD_CODE">
+        <edittype widgetv2type="TextEdit" name="ad_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_BAN_ID">
+        <edittype widgetv2type="TextEdit" name="ad_ban_id">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NOMVOIE">
+        <edittype widgetv2type="TextEdit" name="ad_nomvoie">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_FANTOIR">
+        <edittype widgetv2type="TextEdit" name="ad_fantoir">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NUMERO">
+        <edittype widgetv2type="TextEdit" name="ad_numero">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_REP">
+        <edittype widgetv2type="TextEdit" name="ad_rep">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_INSEE">
+        <edittype widgetv2type="TextEdit" name="ad_insee">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_POSTAL">
+        <edittype widgetv2type="TextEdit" name="ad_postal">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_ALIAS">
+        <edittype widgetv2type="TextEdit" name="ad_alias">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NOM_LD">
+        <edittype widgetv2type="TextEdit" name="ad_nom_ld">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_X_BAN">
+        <edittype widgetv2type="TextEdit" name="ad_x_ban">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_Y_BAN">
+        <edittype widgetv2type="TextEdit" name="ad_y_ban">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_COMMUNE">
+        <edittype widgetv2type="TextEdit" name="ad_commune">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_SECTION">
+        <edittype widgetv2type="TextEdit" name="ad_section">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_IDPAR">
+        <edittype widgetv2type="TextEdit" name="ad_idpar">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_X_PARC">
+        <edittype widgetv2type="TextEdit" name="ad_x_parc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_Y_PARC">
+        <edittype widgetv2type="TextEdit" name="ad_y_parc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NAT">
+        <edittype widgetv2type="TextEdit" name="ad_nat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NBLHAB">
+        <edittype widgetv2type="TextEdit" name="ad_nblhab">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NBLPRO">
+        <edittype widgetv2type="TextEdit" name="ad_nblpro">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NBPRHAB">
+        <edittype widgetv2type="TextEdit" name="ad_nbprhab">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NBPRPRO">
+        <edittype widgetv2type="TextEdit" name="ad_nbprpro">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_RIVOLI">
+        <edittype widgetv2type="TextEdit" name="ad_rivoli">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_HEXACLE">
+        <edittype widgetv2type="TextEdit" name="ad_hexacle">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_HEXACLV">
+        <edittype widgetv2type="TextEdit" name="ad_hexaclv">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_DISTINF">
+        <edittype widgetv2type="TextEdit" name="ad_distinf">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_ISOLE">
+        <edittype widgetv2type="TextEdit" name="ad_isole">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_PRIO">
+        <edittype widgetv2type="TextEdit" name="ad_prio">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="AD_RACC">
+        <edittype widgetv2type="ValueRelation" name="ad_racc">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="code" Layer="l_implantation_type20150521173933023" Value="libelle" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_BATCODE">
+        <edittype widgetv2type="TextEdit" name="ad_batcode">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NOMBAT">
+        <edittype widgetv2type="TextEdit" name="ad_nombat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_IETAT">
+        <edittype widgetv2type="TextEdit" name="ad_ietat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_ITYPEIM">
+        <edittype widgetv2type="TextEdit" name="ad_itypeim">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_IMNEUF">
+        <edittype widgetv2type="TextEdit" name="ad_imneuf">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_IDATIMN">
+        <edittype widgetv2type="TextEdit" name="ad_idatimn">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_PROP">
+        <edittype widgetv2type="TextEdit" name="ad_prop">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_GEST">
+        <edittype widgetv2type="TextEdit" name="ad_gest">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_IDATSGN">
+        <edittype widgetv2type="TextEdit" name="ad_idatsgn">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_IACCGST">
+        <edittype widgetv2type="TextEdit" name="ad_iaccgst">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_IDATCAB">
+        <edittype widgetv2type="TextEdit" name="ad_idatcab">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_IDATCOM">
+        <edittype widgetv2type="TextEdit" name="ad_idatcom">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_TYPZONE">
+        <edittype widgetv2type="TextEdit" name="ad_typzone">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_COMMENT">
+        <edittype widgetv2type="TextEdit" name="ad_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_GEOLQLT">
+        <edittype widgetv2type="TextEdit" name="ad_geolqlt">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_GEOLMOD">
+        <edittype widgetv2type="TextEdit" name="ad_geolmod">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="ad_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_CREADAT">
+        <edittype widgetv2type="TextEdit" name="ad_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="ad_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="ad_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="ad_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="ad_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -4149,157 +4149,157 @@
       <excludeAttributesWFS/>
       <attributeactions/>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="AD_CODE">
+        <edittype widgetv2type="TextEdit" name="ad_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_BAN_ID">
+        <edittype widgetv2type="TextEdit" name="ad_ban_id">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NOMVOIE">
+        <edittype widgetv2type="TextEdit" name="ad_nomvoie">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_FANTOIR">
+        <edittype widgetv2type="TextEdit" name="ad_fantoir">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NUMERO">
+        <edittype widgetv2type="TextEdit" name="ad_numero">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_REP">
+        <edittype widgetv2type="TextEdit" name="ad_rep">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_INSEE">
+        <edittype widgetv2type="TextEdit" name="ad_insee">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_POSTAL">
+        <edittype widgetv2type="TextEdit" name="ad_postal">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_ALIAS">
+        <edittype widgetv2type="TextEdit" name="ad_alias">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NOM_LD">
+        <edittype widgetv2type="TextEdit" name="ad_nom_ld">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_X_BAN">
+        <edittype widgetv2type="TextEdit" name="ad_x_ban">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_Y_BAN">
+        <edittype widgetv2type="TextEdit" name="ad_y_ban">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_COMMUNE">
+        <edittype widgetv2type="TextEdit" name="ad_commune">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_SECTION">
+        <edittype widgetv2type="TextEdit" name="ad_section">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_IDPAR">
+        <edittype widgetv2type="TextEdit" name="ad_idpar">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_X_PARC">
+        <edittype widgetv2type="TextEdit" name="ad_x_parc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_Y_PARC">
+        <edittype widgetv2type="TextEdit" name="ad_y_parc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NAT">
+        <edittype widgetv2type="TextEdit" name="ad_nat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NBLHAB">
+        <edittype widgetv2type="TextEdit" name="ad_nblhab">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NBLPRO">
+        <edittype widgetv2type="TextEdit" name="ad_nblpro">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NBPRHAB">
+        <edittype widgetv2type="TextEdit" name="ad_nbprhab">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NBPRPRO">
+        <edittype widgetv2type="TextEdit" name="ad_nbprpro">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_RIVOLI">
+        <edittype widgetv2type="TextEdit" name="ad_rivoli">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_HEXACLE">
+        <edittype widgetv2type="TextEdit" name="ad_hexacle">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_HEXACLV">
+        <edittype widgetv2type="TextEdit" name="ad_hexaclv">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_DISTINF">
+        <edittype widgetv2type="TextEdit" name="ad_distinf">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_ISOLE">
+        <edittype widgetv2type="TextEdit" name="ad_isole">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_PRIO">
+        <edittype widgetv2type="TextEdit" name="ad_prio">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="AD_RACC">
+        <edittype widgetv2type="ValueRelation" name="ad_racc">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="code" Layer="l_implantation_type20150521173933023" Value="libelle" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_BATCODE">
+        <edittype widgetv2type="TextEdit" name="ad_batcode">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_NOMBAT">
+        <edittype widgetv2type="TextEdit" name="ad_nombat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_IETAT">
+        <edittype widgetv2type="TextEdit" name="ad_ietat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_ITYPEIM">
+        <edittype widgetv2type="TextEdit" name="ad_itypeim">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_IMNEUF">
+        <edittype widgetv2type="TextEdit" name="ad_imneuf">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_IDATIMN">
+        <edittype widgetv2type="TextEdit" name="ad_idatimn">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_PROP">
+        <edittype widgetv2type="TextEdit" name="ad_prop">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_GEST">
+        <edittype widgetv2type="TextEdit" name="ad_gest">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_IDATSGN">
+        <edittype widgetv2type="TextEdit" name="ad_idatsgn">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_IACCGST">
+        <edittype widgetv2type="TextEdit" name="ad_iaccgst">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_IDATCAB">
+        <edittype widgetv2type="TextEdit" name="ad_idatcab">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_IDATCOM">
+        <edittype widgetv2type="TextEdit" name="ad_idatcom">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_TYPZONE">
+        <edittype widgetv2type="TextEdit" name="ad_typzone">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_COMMENT">
+        <edittype widgetv2type="TextEdit" name="ad_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_GEOLQLT">
+        <edittype widgetv2type="TextEdit" name="ad_geolqlt">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_GEOLMOD">
+        <edittype widgetv2type="TextEdit" name="ad_geolmod">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="ad_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_CREADAT">
+        <edittype widgetv2type="TextEdit" name="ad_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="ad_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="ad_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="ad_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="AD_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="ad_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -4685,9 +4685,6 @@
         <edittype widgetv2type="TextEdit" name="cb_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="cb_creadat">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
         <edittype widgetv2type="TextEdit" name="cb_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
@@ -4803,9 +4800,6 @@
         <edittype widgetv2type="TextEdit" name="cb_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="cb_creadat">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
         <edittype widgetv2type="TextEdit" name="cb_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
@@ -4849,43 +4843,43 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="CL_CODE">
+        <edittype widgetv2type="TextEdit" name="cl_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_CB_CODE">
+        <edittype widgetv2type="TextEdit" name="cl_cb_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_LONG">
+        <edittype widgetv2type="TextEdit" name="cl_long">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_COMMENT">
+        <edittype widgetv2type="TextEdit" name="cl_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_DTCLASS">
+        <edittype widgetv2type="TextEdit" name="cl_dtclass">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_GEOLQLT">
+        <edittype widgetv2type="TextEdit" name="cl_geolqlt">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_GEOLMOD">
+        <edittype widgetv2type="TextEdit" name="cl_geolmod">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="cl_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_CREADAT">
+        <edittype widgetv2type="TextEdit" name="cl_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="cl_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="cl_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="cl_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="cl_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -5091,43 +5085,43 @@
       <excludeAttributesWFS/>
       <attributeactions/>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="CL_CODE">
+        <edittype widgetv2type="TextEdit" name="cl_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_CB_CODE">
+        <edittype widgetv2type="TextEdit" name="cl_cb_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_LONG">
+        <edittype widgetv2type="TextEdit" name="cl_long">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_COMMENT">
+        <edittype widgetv2type="TextEdit" name="cl_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_DTCLASS">
+        <edittype widgetv2type="TextEdit" name="cl_dtclass">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_GEOLQLT">
+        <edittype widgetv2type="TextEdit" name="cl_geolqlt">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_GEOLMOD">
+        <edittype widgetv2type="TextEdit" name="cl_geolmod">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="cl_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_CREADAT">
+        <edittype widgetv2type="TextEdit" name="cl_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="cl_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="cl_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="cl_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CL_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="cl_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -5281,136 +5275,136 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="CM_CODE">
+        <edittype widgetv2type="TextEdit" name="cm_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_CODEEXT">
+        <edittype widgetv2type="TextEdit" name="cm_codeext">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_NDCODE1">
+        <edittype widgetv2type="TextEdit" name="cm_ndcode1">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_NDCODE2">
+        <edittype widgetv2type="TextEdit" name="cm_ndcode2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_CM1">
+        <edittype widgetv2type="TextEdit" name="cm_cm1">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_CM2">
+        <edittype widgetv2type="TextEdit" name="cm_cm2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_R1_CODE">
+        <edittype widgetv2type="TextEdit" name="cm_r1_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_R2_CODE">
+        <edittype widgetv2type="TextEdit" name="cm_r2_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_R3_CODE">
+        <edittype widgetv2type="TextEdit" name="cm_r3_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_R4_CODE">
+        <edittype widgetv2type="TextEdit" name="cm_r4_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_VOIE">
+        <edittype widgetv2type="TextEdit" name="cm_voie">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_GEST_DO">
+        <edittype widgetv2type="TextEdit" name="cm_gest_do">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_PROP_DO">
+        <edittype widgetv2type="TextEdit" name="cm_prop_do">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_STATUT">
+        <edittype widgetv2type="TextEdit" name="cm_statut">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_ETAT">
+        <edittype widgetv2type="TextEdit" name="cm_etat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_DATCONS">
+        <edittype widgetv2type="TextEdit" name="cm_datcons">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_DATEMES">
+        <edittype widgetv2type="TextEdit" name="cm_datemes">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_AVCT">
+        <edittype widgetv2type="TextEdit" name="cm_avct">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_TYPELOG">
+        <edittype widgetv2type="TextEdit" name="cm_typelog">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_TYP_IMP">
+        <edittype widgetv2type="TextEdit" name="cm_typ_imp">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_NATURE">
+        <edittype widgetv2type="TextEdit" name="cm_nature">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_COMPO">
+        <edittype widgetv2type="TextEdit" name="cm_compo">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_CDDISPO">
+        <edittype widgetv2type="TextEdit" name="cm_cddispo">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_FO_UTIL">
+        <edittype widgetv2type="TextEdit" name="cm_fo_util">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_MOD_POS">
+        <edittype widgetv2type="TextEdit" name="cm_mod_pos">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_PASSAGE">
+        <edittype widgetv2type="TextEdit" name="cm_passage">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_REVET">
+        <edittype widgetv2type="TextEdit" name="cm_revet">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_REMBLAI">
+        <edittype widgetv2type="TextEdit" name="cm_remblai">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_CHARGE">
+        <edittype widgetv2type="TextEdit" name="cm_charge">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_LARG">
+        <edittype widgetv2type="TextEdit" name="cm_larg">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_FILDTEC">
+        <edittype widgetv2type="TextEdit" name="cm_fildtec">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_MUT_ORG">
+        <edittype widgetv2type="TextEdit" name="cm_mut_org">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_LONG">
+        <edittype widgetv2type="TextEdit" name="cm_long">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_LGREEL">
+        <edittype widgetv2type="TextEdit" name="cm_lgreel">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_COMMENT">
+        <edittype widgetv2type="TextEdit" name="cm_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_DTCLASS">
+        <edittype widgetv2type="TextEdit" name="cm_dtclass">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_GEOLQLT">
+        <edittype widgetv2type="TextEdit" name="cm_geolqlt">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_GEOLMOD">
+        <edittype widgetv2type="TextEdit" name="cm_geolmod">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="cm_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_CREADAT">
+        <edittype widgetv2type="TextEdit" name="cm_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="cm_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="cm_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="cm_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="cm_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -5650,136 +5644,136 @@
       <excludeAttributesWFS/>
       <attributeactions/>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="CM_CODE">
+        <edittype widgetv2type="TextEdit" name="cm_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_CODEEXT">
+        <edittype widgetv2type="TextEdit" name="cm_codeext">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_NDCODE1">
+        <edittype widgetv2type="TextEdit" name="cm_ndcode1">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_NDCODE2">
+        <edittype widgetv2type="TextEdit" name="cm_ndcode2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_CM1">
+        <edittype widgetv2type="TextEdit" name="cm_cm1">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_CM2">
+        <edittype widgetv2type="TextEdit" name="cm_cm2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_R1_CODE">
+        <edittype widgetv2type="TextEdit" name="cm_r1_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_R2_CODE">
+        <edittype widgetv2type="TextEdit" name="cm_r2_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_R3_CODE">
+        <edittype widgetv2type="TextEdit" name="cm_r3_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_R4_CODE">
+        <edittype widgetv2type="TextEdit" name="cm_r4_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_VOIE">
+        <edittype widgetv2type="TextEdit" name="cm_voie">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_GEST_DO">
+        <edittype widgetv2type="TextEdit" name="cm_gest_do">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_PROP_DO">
+        <edittype widgetv2type="TextEdit" name="cm_prop_do">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_STATUT">
+        <edittype widgetv2type="TextEdit" name="cm_statut">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_ETAT">
+        <edittype widgetv2type="TextEdit" name="cm_etat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_DATCONS">
+        <edittype widgetv2type="TextEdit" name="cm_datcons">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_DATEMES">
+        <edittype widgetv2type="TextEdit" name="cm_datemes">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_AVCT">
+        <edittype widgetv2type="TextEdit" name="cm_avct">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_TYPELOG">
+        <edittype widgetv2type="TextEdit" name="cm_typelog">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_TYP_IMP">
+        <edittype widgetv2type="TextEdit" name="cm_typ_imp">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_NATURE">
+        <edittype widgetv2type="TextEdit" name="cm_nature">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_COMPO">
+        <edittype widgetv2type="TextEdit" name="cm_compo">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_CDDISPO">
+        <edittype widgetv2type="TextEdit" name="cm_cddispo">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_FO_UTIL">
+        <edittype widgetv2type="TextEdit" name="cm_fo_util">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_MOD_POS">
+        <edittype widgetv2type="TextEdit" name="cm_mod_pos">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_PASSAGE">
+        <edittype widgetv2type="TextEdit" name="cm_passage">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_REVET">
+        <edittype widgetv2type="TextEdit" name="cm_revet">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_REMBLAI">
+        <edittype widgetv2type="TextEdit" name="cm_remblai">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_CHARGE">
+        <edittype widgetv2type="TextEdit" name="cm_charge">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_LARG">
+        <edittype widgetv2type="TextEdit" name="cm_larg">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_FILDTEC">
+        <edittype widgetv2type="TextEdit" name="cm_fildtec">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_MUT_ORG">
+        <edittype widgetv2type="TextEdit" name="cm_mut_org">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_LONG">
+        <edittype widgetv2type="TextEdit" name="cm_long">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_LGREEL">
+        <edittype widgetv2type="TextEdit" name="cm_lgreel">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_COMMENT">
+        <edittype widgetv2type="TextEdit" name="cm_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_DTCLASS">
+        <edittype widgetv2type="TextEdit" name="cm_dtclass">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_GEOLQLT">
+        <edittype widgetv2type="TextEdit" name="cm_geolqlt">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_GEOLMOD">
+        <edittype widgetv2type="TextEdit" name="cm_geolmod">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="cm_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_CREADAT">
+        <edittype widgetv2type="TextEdit" name="cm_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="cm_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="cm_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="cm_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="CM_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="cm_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -6605,28 +6599,28 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="EM_CODE">
+        <edittype widgetv2type="TextEdit" name="em_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="EM_DO_CODE">
+        <edittype widgetv2type="TextEdit" name="em_do_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="EM_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="em_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="EM_CREADAT">
+        <edittype widgetv2type="TextEdit" name="em_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="EM_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="em_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="EM_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="em_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="EM_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="em_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="EM_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="em_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -6828,28 +6822,28 @@
       <excludeAttributesWFS/>
       <attributeactions/>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="EM_CODE">
+        <edittype widgetv2type="TextEdit" name="em_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="EM_DO_CODE">
+        <edittype widgetv2type="TextEdit" name="em_do_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="EM_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="em_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="EM_CREADAT">
+        <edittype widgetv2type="TextEdit" name="em_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="EM_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="em_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="EM_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="em_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="EM_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="em_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="EM_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="em_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -7549,67 +7543,67 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="ND_CODE">
+        <edittype widgetv2type="TextEdit" name="nd_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_CODEEXT">
+        <edittype widgetv2type="TextEdit" name="nd_codeext">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_NOM">
+        <edittype widgetv2type="TextEdit" name="nd_nom">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="ND_CODERAT">
+        <edittype widgetv2type="ValueRelation" name="nd_coderat">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="nd_code" Layer="t_noeud20150521173231132" Value="nd_code" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_R1_CODE">
+        <edittype widgetv2type="TextEdit" name="nd_r1_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_R2_CODE">
+        <edittype widgetv2type="TextEdit" name="nd_r2_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_R3_CODE">
+        <edittype widgetv2type="TextEdit" name="nd_r3_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_R4_CODE">
+        <edittype widgetv2type="TextEdit" name="nd_r4_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_VOIE">
+        <edittype widgetv2type="TextEdit" name="nd_voie">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="ND_TYPE">
+        <edittype widgetv2type="ValueRelation" name="nd_type">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="code" Layer="l_noeud_type20150521173933059" Value="libelle" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="ND_TYPE_EP">
+        <edittype widgetv2type="ValueRelation" name="nd_type_ep">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="code" Layer="l_technologie_type20150521173933291" Value="libelle" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_COMMENT">
+        <edittype widgetv2type="TextEdit" name="nd_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="ND_DTCLASS">
+        <edittype widgetv2type="ValueRelation" name="nd_dtclass">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="code" Layer="l_geoloc_classe20150521173932995" Value="libelle" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_GEOLQLT">
+        <edittype widgetv2type="TextEdit" name="nd_geolqlt">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="ND_GEOLMOD">
+        <edittype widgetv2type="ValueRelation" name="nd_geolmod">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="code" Layer="l_geoloc_mode20150521173933004" Value="libelle" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="nd_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_CREADAT">
+        <edittype widgetv2type="TextEdit" name="nd_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="nd_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="nd_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="nd_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="nd_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -7817,67 +7811,67 @@
       <excludeAttributesWFS/>
       <attributeactions/>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="ND_CODE">
+        <edittype widgetv2type="TextEdit" name="nd_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_CODEEXT">
+        <edittype widgetv2type="TextEdit" name="nd_codeext">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_NOM">
+        <edittype widgetv2type="TextEdit" name="nd_nom">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="ND_CODERAT">
+        <edittype widgetv2type="ValueRelation" name="nd_coderat">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="nd_code" Layer="t_noeud20150521173231132" Value="nd_code" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_R1_CODE">
+        <edittype widgetv2type="TextEdit" name="nd_r1_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_R2_CODE">
+        <edittype widgetv2type="TextEdit" name="nd_r2_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_R3_CODE">
+        <edittype widgetv2type="TextEdit" name="nd_r3_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_R4_CODE">
+        <edittype widgetv2type="TextEdit" name="nd_r4_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_VOIE">
+        <edittype widgetv2type="TextEdit" name="nd_voie">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="ND_TYPE">
+        <edittype widgetv2type="ValueRelation" name="nd_type">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="code" Layer="l_noeud_type20150521173933059" Value="libelle" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="ND_TYPE_EP">
+        <edittype widgetv2type="ValueRelation" name="nd_type_ep">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="code" Layer="l_technologie_type20150521173933291" Value="libelle" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_COMMENT">
+        <edittype widgetv2type="TextEdit" name="nd_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="ND_DTCLASS">
+        <edittype widgetv2type="ValueRelation" name="nd_dtclass">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="code" Layer="l_geoloc_classe20150521173932995" Value="libelle" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_GEOLQLT">
+        <edittype widgetv2type="TextEdit" name="nd_geolqlt">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="ND_GEOLMOD">
+        <edittype widgetv2type="ValueRelation" name="nd_geolmod">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="code" Layer="l_geoloc_mode20150521173933004" Value="libelle" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="nd_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_CREADAT">
+        <edittype widgetv2type="TextEdit" name="nd_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="nd_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="nd_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="nd_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ND_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="nd_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -9345,55 +9339,55 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="ZC_CODE">
+        <edittype widgetv2type="TextEdit" name="zc_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_CODEEXT">
+        <edittype widgetv2type="TextEdit" name="zc_codeext">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_ND_CODE">
+        <edittype widgetv2type="TextEdit" name="zc_nd_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_R1_CODE">
+        <edittype widgetv2type="TextEdit" name="zc_r1_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_R2_CODE">
+        <edittype widgetv2type="TextEdit" name="zc_r2_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_R3_CODE">
+        <edittype widgetv2type="TextEdit" name="zc_r3_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_R4_CODE">
+        <edittype widgetv2type="TextEdit" name="zc_r4_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_PROP">
+        <edittype widgetv2type="TextEdit" name="zc_prop">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_GEST">
+        <edittype widgetv2type="TextEdit" name="zc_gest">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_STATUT">
+        <edittype widgetv2type="TextEdit" name="zc_statut">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_COMMENT">
+        <edittype widgetv2type="TextEdit" name="zc_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="zc_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_CREADAT">
+        <edittype widgetv2type="TextEdit" name="zc_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="zc_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="zc_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="zc_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="zc_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -9629,55 +9623,55 @@
       <excludeAttributesWFS/>
       <attributeactions/>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="ZC_CODE">
+        <edittype widgetv2type="TextEdit" name="zc_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_CODEEXT">
+        <edittype widgetv2type="TextEdit" name="zc_codeext">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_ND_CODE">
+        <edittype widgetv2type="TextEdit" name="zc_nd_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_R1_CODE">
+        <edittype widgetv2type="TextEdit" name="zc_r1_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_R2_CODE">
+        <edittype widgetv2type="TextEdit" name="zc_r2_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_R3_CODE">
+        <edittype widgetv2type="TextEdit" name="zc_r3_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_R4_CODE">
+        <edittype widgetv2type="TextEdit" name="zc_r4_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_PROP">
+        <edittype widgetv2type="TextEdit" name="zc_prop">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_GEST">
+        <edittype widgetv2type="TextEdit" name="zc_gest">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_STATUT">
+        <edittype widgetv2type="TextEdit" name="zc_statut">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_COMMENT">
+        <edittype widgetv2type="TextEdit" name="zc_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="zc_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_CREADAT">
+        <edittype widgetv2type="TextEdit" name="zc_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="zc_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="zc_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="zc_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZC_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="zc_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -9711,55 +9705,55 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="ZD_CODE">
+        <edittype widgetv2type="TextEdit" name="zd_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_ND_CODE">
+        <edittype widgetv2type="TextEdit" name="zd_nd_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_ZS_CODE">
+        <edittype widgetv2type="TextEdit" name="zd_zs_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_R1_CODE">
+        <edittype widgetv2type="TextEdit" name="zd_r1_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_R2_CODE">
+        <edittype widgetv2type="TextEdit" name="zd_r2_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_R3_CODE">
+        <edittype widgetv2type="TextEdit" name="zd_r3_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_R4_CODE">
+        <edittype widgetv2type="TextEdit" name="zd_r4_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_PROP">
+        <edittype widgetv2type="TextEdit" name="zd_prop">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_GEST">
+        <edittype widgetv2type="TextEdit" name="zd_gest">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_STATUT">
+        <edittype widgetv2type="TextEdit" name="zd_statut">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_COMMENT">
+        <edittype widgetv2type="TextEdit" name="zd_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="zd_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_CREADAT">
+        <edittype widgetv2type="TextEdit" name="zd_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="zd_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="zd_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="zd_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="zd_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -9961,55 +9955,55 @@
       <excludeAttributesWFS/>
       <attributeactions/>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="ZD_CODE">
+        <edittype widgetv2type="TextEdit" name="zd_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_ND_CODE">
+        <edittype widgetv2type="TextEdit" name="zd_nd_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_ZS_CODE">
+        <edittype widgetv2type="TextEdit" name="zd_zs_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_R1_CODE">
+        <edittype widgetv2type="TextEdit" name="zd_r1_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_R2_CODE">
+        <edittype widgetv2type="TextEdit" name="zd_r2_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_R3_CODE">
+        <edittype widgetv2type="TextEdit" name="zd_r3_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_R4_CODE">
+        <edittype widgetv2type="TextEdit" name="zd_r4_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_PROP">
+        <edittype widgetv2type="TextEdit" name="zd_prop">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_GEST">
+        <edittype widgetv2type="TextEdit" name="zd_gest">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_STATUT">
+        <edittype widgetv2type="TextEdit" name="zd_statut">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_COMMENT">
+        <edittype widgetv2type="TextEdit" name="zd_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="zd_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_CREADAT">
+        <edittype widgetv2type="TextEdit" name="zd_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="zd_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="zd_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="zd_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZD_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="zd_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -10043,58 +10037,58 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="ZN_CODE">
+        <edittype widgetv2type="TextEdit" name="zn_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_ND_CODE">
+        <edittype widgetv2type="TextEdit" name="zn_nd_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_R1_CODE">
+        <edittype widgetv2type="TextEdit" name="zn_r1_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_R2_CODE">
+        <edittype widgetv2type="TextEdit" name="zn_r2_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_R3_CODE">
+        <edittype widgetv2type="TextEdit" name="zn_r3_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_R4_CODE">
+        <edittype widgetv2type="TextEdit" name="zn_r4_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_NROREF">
+        <edittype widgetv2type="TextEdit" name="zn_nroref">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_NROTYPE">
+        <edittype widgetv2type="TextEdit" name="zn_nrotype">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_ETAT">
+        <edittype widgetv2type="TextEdit" name="zn_etat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_ETATLPM">
+        <edittype widgetv2type="TextEdit" name="zn_etatlpm">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_DATELPM">
+        <edittype widgetv2type="TextEdit" name="zn_datelpm">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_COMMENT">
+        <edittype widgetv2type="TextEdit" name="zn_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="zn_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_CREADAT">
+        <edittype widgetv2type="TextEdit" name="zn_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="zn_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="zn_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="zn_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="zn_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -10296,58 +10290,58 @@
       <excludeAttributesWFS/>
       <attributeactions/>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="ZN_CODE">
+        <edittype widgetv2type="TextEdit" name="zn_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_ND_CODE">
+        <edittype widgetv2type="TextEdit" name="zn_nd_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_R1_CODE">
+        <edittype widgetv2type="TextEdit" name="zn_r1_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_R2_CODE">
+        <edittype widgetv2type="TextEdit" name="zn_r2_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_R3_CODE">
+        <edittype widgetv2type="TextEdit" name="zn_r3_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_R4_CODE">
+        <edittype widgetv2type="TextEdit" name="zn_r4_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_NROREF">
+        <edittype widgetv2type="TextEdit" name="zn_nroref">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_NROTYPE">
+        <edittype widgetv2type="TextEdit" name="zn_nrotype">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_ETAT">
+        <edittype widgetv2type="TextEdit" name="zn_etat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_ETATLPM">
+        <edittype widgetv2type="TextEdit" name="zn_etatlpm">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_DATELPM">
+        <edittype widgetv2type="TextEdit" name="zn_datelpm">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_COMMENT">
+        <edittype widgetv2type="TextEdit" name="zn_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="zn_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_CREADAT">
+        <edittype widgetv2type="TextEdit" name="zn_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="zn_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="zn_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="zn_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZN_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="zn_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -10381,49 +10375,49 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="ZP_CODE">
+        <edittype widgetv2type="TextEdit" name="zp_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_ND_CODE">
+        <edittype widgetv2type="TextEdit" name="zp_nd_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_ZS_CODE">
+        <edittype widgetv2type="TextEdit" name="zp_zs_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_R1_CODE">
+        <edittype widgetv2type="TextEdit" name="zp_r1_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_R2_CODE">
+        <edittype widgetv2type="TextEdit" name="zp_r2_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_R3_CODE">
+        <edittype widgetv2type="TextEdit" name="zp_r3_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_R4_CODE">
+        <edittype widgetv2type="TextEdit" name="zp_r4_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_CAPAMAX">
+        <edittype widgetv2type="TextEdit" name="zp_capamax">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_COMMENT">
+        <edittype widgetv2type="TextEdit" name="zp_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="zp_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_CREADAT">
+        <edittype widgetv2type="TextEdit" name="zp_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="zp_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="zp_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="zp_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="zp_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -10625,49 +10619,49 @@
       <excludeAttributesWFS/>
       <attributeactions/>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="ZP_CODE">
+        <edittype widgetv2type="TextEdit" name="zp_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_ND_CODE">
+        <edittype widgetv2type="TextEdit" name="zp_nd_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_ZS_CODE">
+        <edittype widgetv2type="TextEdit" name="zp_zs_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_R1_CODE">
+        <edittype widgetv2type="TextEdit" name="zp_r1_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_R2_CODE">
+        <edittype widgetv2type="TextEdit" name="zp_r2_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_R3_CODE">
+        <edittype widgetv2type="TextEdit" name="zp_r3_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_R4_CODE">
+        <edittype widgetv2type="TextEdit" name="zp_r4_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_CAPAMAX">
+        <edittype widgetv2type="TextEdit" name="zp_capamax">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_COMMENT">
+        <edittype widgetv2type="TextEdit" name="zp_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="zp_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_CREADAT">
+        <edittype widgetv2type="TextEdit" name="zp_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="zp_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="zp_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="zp_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZP_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="zp_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -10701,88 +10695,88 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="ZS_CODE">
+        <edittype widgetv2type="TextEdit" name="zs_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_ND_CODE">
+        <edittype widgetv2type="TextEdit" name="zs_nd_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_ZN_CODE">
+        <edittype widgetv2type="TextEdit" name="zs_zn_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_R1_CODE">
+        <edittype widgetv2type="TextEdit" name="zs_r1_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_R2_CODE">
+        <edittype widgetv2type="TextEdit" name="zs_r2_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_R3_CODE">
+        <edittype widgetv2type="TextEdit" name="zs_r3_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_R4_CODE">
+        <edittype widgetv2type="TextEdit" name="zs_r4_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_REFPM">
+        <edittype widgetv2type="TextEdit" name="zs_refpm">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_ETATPM">
+        <edittype widgetv2type="TextEdit" name="zs_etatpm">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_DATEINS">
+        <edittype widgetv2type="TextEdit" name="zs_dateins">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_TYPEEMP">
+        <edittype widgetv2type="TextEdit" name="zs_typeemp">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_CAPAMAX">
+        <edittype widgetv2type="TextEdit" name="zs_capamax">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_AD_CODE">
+        <edittype widgetv2type="TextEdit" name="zs_ad_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_TYPEING">
+        <edittype widgetv2type="TextEdit" name="zs_typeing">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_NBLOGMT">
+        <edittype widgetv2type="TextEdit" name="zs_nblogmt">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_NBCOLMT">
+        <edittype widgetv2type="TextEdit" name="zs_nbcolmt">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_DATCOMR">
+        <edittype widgetv2type="TextEdit" name="zs_datcomr">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_ACTIF">
+        <edittype widgetv2type="TextEdit" name="zs_actif">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_DATEMAD">
+        <edittype widgetv2type="TextEdit" name="zs_datemad">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_ACCGEST">
+        <edittype widgetv2type="TextEdit" name="zs_accgest">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_BRASSOI">
+        <edittype widgetv2type="TextEdit" name="zs_brassoi">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_COMMENT">
+        <edittype widgetv2type="TextEdit" name="zs_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="zs_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_CREADAT">
+        <edittype widgetv2type="TextEdit" name="zs_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="zs_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="zs_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="zs_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="zs_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -10984,88 +10978,88 @@
       <excludeAttributesWFS/>
       <attributeactions/>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="ZS_CODE">
+        <edittype widgetv2type="TextEdit" name="zs_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_ND_CODE">
+        <edittype widgetv2type="TextEdit" name="zs_nd_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_ZN_CODE">
+        <edittype widgetv2type="TextEdit" name="zs_zn_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_R1_CODE">
+        <edittype widgetv2type="TextEdit" name="zs_r1_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_R2_CODE">
+        <edittype widgetv2type="TextEdit" name="zs_r2_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_R3_CODE">
+        <edittype widgetv2type="TextEdit" name="zs_r3_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_R4_CODE">
+        <edittype widgetv2type="TextEdit" name="zs_r4_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_REFPM">
+        <edittype widgetv2type="TextEdit" name="zs_refpm">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_ETATPM">
+        <edittype widgetv2type="TextEdit" name="zs_etatpm">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_DATEINS">
+        <edittype widgetv2type="TextEdit" name="zs_dateins">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_TYPEEMP">
+        <edittype widgetv2type="TextEdit" name="zs_typeemp">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_CAPAMAX">
+        <edittype widgetv2type="TextEdit" name="zs_capamax">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_AD_CODE">
+        <edittype widgetv2type="TextEdit" name="zs_ad_code">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_TYPEING">
+        <edittype widgetv2type="TextEdit" name="zs_typeing">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_NBLOGMT">
+        <edittype widgetv2type="TextEdit" name="zs_nblogmt">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_NBCOLMT">
+        <edittype widgetv2type="TextEdit" name="zs_nbcolmt">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_DATCOMR">
+        <edittype widgetv2type="TextEdit" name="zs_datcomr">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_ACTIF">
+        <edittype widgetv2type="TextEdit" name="zs_actif">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_DATEMAD">
+        <edittype widgetv2type="TextEdit" name="zs_datemad">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_ACCGEST">
+        <edittype widgetv2type="TextEdit" name="zs_accgest">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_BRASSOI">
+        <edittype widgetv2type="TextEdit" name="zs_brassoi">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_COMMENT">
+        <edittype widgetv2type="TextEdit" name="zs_comment">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_GEOLSRC">
+        <edittype widgetv2type="TextEdit" name="zs_geolsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_CREADAT">
+        <edittype widgetv2type="TextEdit" name="zs_creadat">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_MAJDATE">
+        <edittype widgetv2type="TextEdit" name="zs_majdate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_MAJSRC">
+        <edittype widgetv2type="TextEdit" name="zs_majsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_ABDDATE">
+        <edittype widgetv2type="TextEdit" name="zs_abddate">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ZS_ABDSRC">
+        <edittype widgetv2type="TextEdit" name="zs_abdsrc">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>

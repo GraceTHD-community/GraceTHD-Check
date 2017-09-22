@@ -33,20 +33,10 @@ v0.02.0
 - add: gracethd_shpcsv_in_to_out.bat : script qui copie les shp/csv vierges de db_shpcsv dans shpcsv-out puis y copie les entités des shp/csv de shpcsv-in. Ceci permet d'utiliser la structure exacte des shp et csv. 
 - chg: gracethd_spl_dbinteg_import_shpcsv-in_ogr.bat : suppression mention gracelite. 
 - add: gracethd_spl_dbprod_import_shpcsv-in_ogr.bat : ajout. 
-- fix: gracethdcheck_pg_import_shpcsv-in_psql.bat : t_coax remplacé par t_zcoax. 
 - fix: gracethd_pg_import_shpcsv-in_psql.bat : t_coax remplacé par t_zcoax. 
 - chg: gracethd_pg_export_shpcsv-out.bat : ajout de l'export des listes. 
 - chg: config_db_spl.bat : ajout de variables GLDBINTEGSKIPF et GLDBPRODSKIPF
-- fix: gracethdcheck_pg_export_pub_shpcsv.bat : prise en compte mvs_ct_synt_t_ebp-sf, mvs_ct_synt_t_ebp-lt, mvs_ct_synt_t_cassette-lt. 
-
-
-#TODO: 
-- Doc : MAJ concernant le datasource des qgs et qlr pour les rechercher-remplacer. 
-- qgis : 
-	- mvs_ct_synt_t_zpbo manque (pb dans la base megalis ?)
-	- manque t_cable pour avoir les anomalies dans câbles sans geom. 
-	- avec Demo01, mvs_ct_synt_t_conduite et mvs_ct_synt_t_ropt ne fonctionnent pas. 
-	- 
+- fix: gracethdcheck_pg_import_shpcsv-in_psql.bat : t_coax remplacé par t_zcoax. - fix: gracethdcheck_pg_export_pub_shpcsv.bat : prise en compte mvs_ct_synt_t_ebp-sf, mvs_ct_synt_t_ebp-lt, mvs_ct_synt_t_cassette-lt. 
 
 	
 v0.01-alpha6a
