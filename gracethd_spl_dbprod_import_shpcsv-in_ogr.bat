@@ -3,7 +3,7 @@
 REM gracethd_spl_dbprod_import_shpcsv-in_ogr.bat
 REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
 REM Author : stephane dot byache at aleno dot eu
-REM Rev. date : 18/09/2017
+REM Rev. date : 12/10/2017
 
     REM This file is part of GraceTHD.
 
@@ -21,13 +21,14 @@ REM Rev. date : 18/09/2017
     REM along with GraceTHD.  If not, see <http://www.gnu.org/licenses/>.
 
 
-REM TODO : 
-REM Le -update ne semble pas fonctionner. Il faudra un script plus complexe. 
-REM Le -skipfailures n'est pas forcément souhaitable dans tous les cas. 
-	
 CALL config.bat
+CALL:IMPORT
+CALL:IMPORT201
+CALL:UPLSTATS
+CALL:END
+
 SET GLDB=%GLDBPROD%
-SET GLDBPRAGMA=%GLDBPRODPRAGMA%
+SET GLDBPRAGMA=%GLDBINTEGPRAGMA%
 REM FOR %%f IN ("%GLOSGEOPATH%\etc\ini\*.bat") DO CALL "%%f"
 
 REM CHEMIN VERS ogr2ogr.exe
@@ -37,6 +38,7 @@ REM SET GLOGR2OGR=C:\OSGeo4w\bin
 REM ogr2ogr --config OGR_SQLITE_PRAGMA = "foreign_keys=on,cache_size=500000" %GLDBPRODSKIPF% -update -append -f SQLite .\dbinteg\GRACETHD_integ.sqlite .\shpcsv-in\t_adresse.shp -nln t_adresse
 REM ogr2ogr %GLDBPRODSKIPF% -update -append .\dbinteg\GRACETHD_integ.sqlite .\shpcsv-in\t_organisme.csv -nln t_organisme
 
+:IMPORT
 
 SET GLTBL=t_adresse
 SET GLFILE=%GLSHPINPATH%\%GLTBL%.shp
@@ -236,8 +238,43 @@ ECHO GRACETHD - INSERT %GLFILE%
 IF EXIST "%GLFILE%" "%GLOGR2OGR%" %GLDBPRODSKIPF% -update -append %GLDB% "%GLFILE%" -nln %GLTBL% -nlt PROMOTE_TO_MULTI
 %GLPAUSE%
 
+GOTO:EOF
+
+:IMPORT201
+
+SET GLTBL=t_cable_patch201
+SET GLFILE=%GLSHPINPATH%\%GLTBL%.csv
+ECHO GRACETHD - INSERT %GLFILE%
+IF EXIST "%GLFILE%" "%GLOGR2OGR%" %GLDBPRODSKIPF% -update -append %GLDB% "%GLFILE%" -nln %GLTBL%
+%GLPAUSE%
+
+SET GLTBL=t_zpbo_patch201
+SET GLFILE=%GLSHPINPATH%\%GLTBL%.csv
+ECHO GRACETHD - INSERT %GLFILE%
+IF EXIST "%GLFILE%" "%GLOGR2OGR%" %GLDBPRODSKIPF% -update -append %GLDB% "%GLFILE%" -nln %GLTBL%
+%GLPAUSE%
+
+SET GLTBL=t_cassette_patch201
+SET GLFILE=%GLSHPINPATH%\%GLTBL%.csv
+ECHO GRACETHD - INSERT %GLFILE%
+IF EXIST "%GLFILE%" "%GLOGR2OGR%" %GLDBPRODSKIPF% -update -append %GLDB% "%GLFILE%" -nln %GLTBL%
+
+SET GLTBL=t_ltech_patch201
+SET GLFILE=%GLSHPINPATH%\%GLTBL%.csv
+ECHO GRACETHD - INSERT %GLFILE%
+IF EXIST "%GLFILE%" "%GLOGR2OGR%" %GLDBPRODSKIPF% -update -append %GLDB% "%GLFILE%" -nln %GLTBL%
+
+%GLPAUSE%
+
+GOTO:EOF
+
 :UPLSTATS
-ECHO GRACETHD - MISE A JOUR DES STATISTIQUES DE LA BASE. 
 %GLSPLEX% -silent %GLDB% "SELECT UpdateLayerStatistics();"
 
+GOTO:EOF
+
+:END
+ECHO GraceTHD - Fin d'import de shp csv dans la base %GLDBINTEG% 
 PAUSE
+
+EXIT /B

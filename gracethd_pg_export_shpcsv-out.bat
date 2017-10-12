@@ -3,7 +3,7 @@
 REM gracethdcheck_pg_create_tables.bat
 REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
 REM Author : stephane dot byache at aleno dot eu
-REM Rev. date : 19/09/2017
+REM Rev. date : 12/10/2017
 
 
     REM This file is part of GraceTHD.
@@ -34,6 +34,8 @@ REM CALL :DEBUG
 ECHO GRACETHD - PG - Debut export SHP CSV depuis la base PostGIS %PGHOSTNAME%:%PGDB% vers %PGSHPOUTPATH%. 
 CALL:EXPORT
 CALL:EXPORTL
+REM Decommenter la ligne suivante si vous souhaiter exporter les tables de patch v2.0.1
+REM CALL:EXPORT201
 CALL:END
 %GLPAUSE%
 GOTO:EOF
@@ -353,6 +355,30 @@ SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
 
 GOTO:EOF
 
+:EXPORT201
+
+REM Export des tables de patch v2.0.1
+REM Décommenter REM CALL:EXPORT201 pour rendre ceci operationnel. 
+
+SET PGTBL=t_cable_patch201
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+
+SET PGTBL=t_zpbo_patch201
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+
+SET PGTBL=t_cassette_patch201
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+
+SET PGTBL=t_ltech_patch201
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%gl_psql%" -h %pghostname% -p %pgport% -c "\copy %pgschema%.%pgtbl% to '%pgcsv%' %pgcsvconf%;" -d %pgdb% %pguser%
+
+%GLPAUSE%
+
+GOTO:EOF
 
 :END
 ECHO GRACETHD - PG - %PGSHPOUTPATH% : EXPORT TERMINE

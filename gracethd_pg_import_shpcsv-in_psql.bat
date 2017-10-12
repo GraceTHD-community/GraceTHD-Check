@@ -3,7 +3,7 @@
 REM gracethd_pg_import_shpcsv-in_psql.bat
 REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
 REM Author : stephane dot byache at aleno dot eu
-REM Rev. date : 18/09/2017
+REM Rev. date : 12/10/2017
 
     REM This file is part of GraceTHD.
 
@@ -43,6 +43,7 @@ REM CALL:DEBUG
 
 ECHO GraceTHD - Debut import SHP CSV dans la base PostGIS %PGHOSTNAME%:%PGDB%. 
 CALL:IMPORT
+CALL:IMPORT201
 
 CALL:END
 
@@ -344,9 +345,40 @@ ECHO GraceTHD - Fin Import %PGTBL%
 
 %GLPAUSE%
 
+GOTO:EOF
 
+
+:IMPORT201
+
+SET PGTBL=t_cable_patch201
+SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
+ECHO GraceTHD - Debut import %PGTBL%
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+ECHO GraceTHD - Fin import %PGTBL%
+
+SET PGTBL=t_zpbo_patch201
+SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
+ECHO GraceTHD - Debut import %PGTBL%
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+ECHO GraceTHD - Fin import %PGTBL%
+
+SET PGTBL=t_cassette_patch201
+SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
+ECHO GraceTHD - Debut import %PGTBL%
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+ECHO GraceTHD - Fin import %PGTBL%
+
+SET PGTBL=t_ltech_patch201
+SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
+ECHO GraceTHD - Debut import %PGTBL%
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+ECHO GraceTHD - Fin import %PGTBL%
+
+%GLPAUSE%
 
 GOTO:EOF
+
+
 
 :WAIT
 REM CETTE SOUS-ROUTINE N'EST PAS APPELEE. 
@@ -356,6 +388,12 @@ REM 1. Dupliquer ce batch pour ne pas casser l'original.
 REM 2. Placer toutes les commandes d'import jusqu'a t_siteemission dans :OK pour ne pas les executer de nouveau (concretement on place déplace la ligne :IMPORT avant t_znro). 
 REM 3. Placer le :WAIT avant t_zsro de sortes que la suite ne soit pas executee et que l'on puisse se concentrer sur t_znro. 
 REM 4. Enregistrer et exécuter cette copie.  
+
+
+
+
+
+
 
 
 REM ############################################################################

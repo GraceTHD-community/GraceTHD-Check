@@ -3,7 +3,7 @@
 REM gracethd_spl_dbinteg_export_to_shpcsv-out.bat
 REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
 REM Author : stephane dot byache at aleno dot eu
-REM Rev. date : 01/06/2017
+REM Rev. date : 12/10/2017
 
     REM This file is part of GraceTHD.
 
@@ -31,6 +31,8 @@ CALL:EXPORTSHP_T
 CALL:EXPORTCSV_T
 
 CALL:EXPORTCSV_L
+
+CALL:EXPORT201
 
 CALL:SFK
 REM APPEL UNE SECONDE FOIS CAR BUG, DES " RESTENT EN FIN DE LA LIGNE LA 1ERE FOIS
@@ -746,6 +748,46 @@ IF EXIST %CSVOUT% DEL %CSVOUT%
 ECHO Export %CSVOUT%
 REM -silent 
 %GLSPLEX% -header -csv -separator ';' %GLDBINTEG% "SELECT * FROM %CSVTBL%;" > %CSVOUT%
+
+GOTO:EOF
+
+:EXPORT201
+
+REM Export des tables de patch v2.0.1
+REM Décommenter REM CALL:EXPORT201
+
+SET CSVTBL=t_cable_patch201
+SET CSVOUT=%GLSHPOUTPATH%\%CSVTBL%.csv
+ECHO Suppression %CSVOUT%
+IF EXIST %CSVOUT% DEL %CSVOUT%
+ECHO Export %CSVOUT%
+REM -silent 
+%GLSPLEX% -header -csv -separator ';' %GLDBINTEG% "SELECT * FROM %CSVTBL%;" > %CSVOUT%
+
+SET CSVTBL=t_zpbo_patch201
+SET CSVOUT=%GLSHPOUTPATH%\%CSVTBL%.csv
+ECHO Suppression %CSVOUT%
+IF EXIST %CSVOUT% DEL %CSVOUT%
+ECHO Export %CSVOUT%
+REM -silent 
+%GLSPLEX% -header -csv -separator ';' %GLDBINTEG% "SELECT * FROM %CSVTBL%;" > %CSVOUT%
+
+SET CSVTBL=t_cassette_patch201
+SET CSVOUT=%GLSHPOUTPATH%\%CSVTBL%.csv
+ECHO Suppression %CSVOUT%
+IF EXIST %CSVOUT% DEL %CSVOUT%
+ECHO Export %CSVOUT%
+REM -silent 
+%GLSPLEX% -header -csv -separator ';' %GLDBINTEG% "SELECT * FROM %CSVTBL%;" > %CSVOUT%
+
+SET CSVTBL=t_ltech_patch201
+SET CSVOUT=%GLSHPOUTPATH%\%CSVTBL%.csv
+ECHO Suppression %CSVOUT%
+IF EXIST %CSVOUT% DEL %CSVOUT%
+ECHO Export %CSVOUT%
+REM -silent 
+%GLSPLEX% -header -csv -separator ';' %GLDBINTEG% "SELECT * FROM %CSVTBL%;" > %CSVOUT%
+
 
 GOTO:EOF
 

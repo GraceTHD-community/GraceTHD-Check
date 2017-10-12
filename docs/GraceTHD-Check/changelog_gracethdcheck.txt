@@ -2,6 +2,17 @@ GraceTHD-Check
 
 ### Changelog
 
+v0.02.1
+- chg: gracethd_pg_import_shpcsv-in_psql.bat : ajout de l'import des tables de patch 201. 
+- chg: gracethdcheck_pg_import_shpcsv-in_psql.bat : ajout de l'import des tables de patch 201. 
+- chg: gracethd_spl_dbinteg_import_shpcsv-in_ogr.bat : restructuration et ajout de l'import des tables de patch 201. 
+- fix: gracethd_spl_dbinteg_import_shpcsv-in_ogr.bat : correction de bug %GLDBPRODSKIPF% au lieu de %GLDBINTEGSKIPF%. 
+- chg: gracethd_spl_dbprod_import_shpcsv-in_ogr.bat : restructuration et ajout de l'import des tables de patch 201. 
+- chg: gracethd_pg_export_shpcsv-out.bat : ajout de l'export optionnel des tables de patch 201 (décommenter REM CALL:EXPORT201)
+- chg: gracethd_spl_dbinteg_export_to_shpcsv-out.bat : ajout de l'export optionnel des tables de patch 201 (décommenter REM CALL:EXPORT201)
+- chg: gracethd-mcd-v2.0.1_doc_v03.pdf : remplace gracethd-mcd-v2.0.1_doc_v01.pdf
+- chg: gracethd-mcd-v2.0.1_doc_v03.ods : remplace gracethd-mcd-v2.0.1_doc_v01.ods
+
 v0.02.0
 # Général
 # Documentation
