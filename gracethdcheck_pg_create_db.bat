@@ -3,7 +3,7 @@
 REM gracethdcheck_pg_create_db.bat
 REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
 REM Author : stephane dot byache at aleno dot eu
-REM Rev. date : 08/05/2017
+REM Rev. date : 14/10/2017
 
 
     REM This file is part of GraceTHD.
@@ -42,6 +42,8 @@ CALL:SCHEMA_GRACETHDCHECKPUB
 CALL:TABLES_GRACETHDCHECK 
 CALL:VUES_GRACETHDCHECK 
 CALL:VUES_GRACETHDCHECKPUB
+
+CALL:GRANT_GRACETHDCHECK
 
 CALL:END
 
@@ -160,6 +162,14 @@ GOTO:EOF
 :VUES_GRACETHDCHECKPUB
 
 CALL gracethdcheck_pg_create_v_ct_vmat.bat
+
+GOTO:EOF
+
+:GRANT_GRACETHDCHECK
+SET FSQL=gracethdcheck_99_grant.sql
+ECHO GraceTHD - Postgis - %FSQL%
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f "%GLCTPGSQLPATH%\%FSQL%" -d %GLCTPGDB% -U %PGUSER%
+%GLPAUSE%
 
 GOTO:EOF
 
