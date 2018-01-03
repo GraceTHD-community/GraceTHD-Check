@@ -26,6 +26,11 @@
 
 SET search_path TO gracethd, public;
 
+DROP TABLE IF EXISTS t_cable_patch201 CASCADE;
+DROP TABLE IF EXISTS t_zpbo_patch201 CASCADE;
+DROP TABLE IF EXISTS t_cassette_patch201 CASCADE;
+DROP TABLE IF EXISTS t_ltech_patch201 CASCADE;
+
 /*###################### PATCHS 2.0.1 ##################################*/
 
 /*Patch de la version 2.0 pour les câbles*/
