@@ -74,17 +74,17 @@ GOTO:EOF
 
 :TABLES
 ECHO Gracepg - CREATION DES TABLES - 10_LISTS
-psql %PGHOSTNAME% %PGPORT% -f %SQLPOSTGIS%gracethd_10_lists.sql -d %PGDB% -U %PGUSER%
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f %SQLPOSTGIS%gracethd_10_lists.sql -d %PGDB% -U %PGUSER%
 ECHO Gracepg - CREATION DES TABLES - 20_INSERTS
-psql %PGHOSTNAME% %PGPORT% -f %SQLPOSTGIS%gracethd_20_insert.sql -d %PGDB% -U %PGUSER%
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f %SQLPOSTGIS%gracethd_20_insert.sql -d %PGDB% -U %PGUSER%
 ECHO Gracepg - CREATION DES TABLES - 30_TABLES
-psql %PGHOSTNAME% %PGPORT% -f %SQLPOSTGIS%gracethd_30_tables.sql -d %PGDB% -U %PGUSER%
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f %SQLPOSTGIS%gracethd_30_tables.sql -d %PGDB% -U %PGUSER%
 ECHO Gracepg - CREATION DES TABLES - 40_POSTGIS
-psql %PGHOSTNAME% %PGPORT% -f %SQLPOSTGIS%gracethd_40_postgis.sql -d %PGDB% -U %PGUSER%
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f %SQLPOSTGIS%gracethd_40_postgis.sql -d %PGDB% -U %PGUSER%
 ECHO Gracepg - CREATION DES TABLES - 50_INDEX
-psql %PGHOSTNAME% %PGPORT% -f %SQLPOSTGIS%gracethd_50_index.sql -d %PGDB% -U %PGUSER%
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f %SQLPOSTGIS%gracethd_50_index.sql -d %PGDB% -U %PGUSER%
 ECHO Gracepg - CREATION DES TABLES - 90_LABO
-psql %PGHOSTNAME% %PGPORT% -f %SQLPOSTGIS%gracethd_90_labo.sql -d %PGDB% -U %PGUSER%
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -f %SQLPOSTGIS%gracethd_90_labo.sql -d %PGDB% -U %PGUSER%
 
 GOTO:EOF
 
